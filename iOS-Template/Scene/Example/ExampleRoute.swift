@@ -22,4 +22,11 @@ extension ExampleRoute where Self: RouterProtocol {
         
         open(viewController, transition: transition)
     }
+    
+    
+    /*
+     PushTransition() sadece UINAvigationController ekranından çalışır.
+     ModalTransition() navigation + default viewcontroller ekranından çarğılabilir.
+     OnWindow çağırırsan tüm ekranları deinit yapar.
+     */
 }
