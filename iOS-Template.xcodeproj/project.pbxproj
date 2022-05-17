@@ -146,6 +146,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7026CC4F2833E71E00F72FA5 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
 		70BD6A6C2831897600E5D179 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +335,7 @@
 		FEBA463E27E648D0009A75F9 /* iOS-Template */ = {
 			isa = PBXGroup;
 			children = (
+				7026CC4F2833E71E00F72FA5 /* OnBoard */,
 				FE42629D2825A7CE009CCA73 /* Scene */,
 				FE42629C2825A7C0009CCA73 /* Resources */,
 				FE42627B2825A73F009CCA73 /* Routing */,

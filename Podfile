@@ -31,12 +31,6 @@ target 'iOS-Template' do
   # UI
   pod 'SwiftEntryKit', '2.0.0'
   
-  # Auth
-  pod 'GoogleSignIn'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
-  pod 'FBSDKShareKit'
-  
   # FireBase
   pod 'FirebaseCore'
   pod 'FirebaseAnalytics'
