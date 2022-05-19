@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70BD6A702831898300E5D179 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A6D2831898300E5D179 /* RootRouter.swift */; };
-		70BD6A712831898300E5D179 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A6E2831898300E5D179 /* RootViewController.swift */; };
-		70BD6A722831898300E5D179 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A6F2831898300E5D179 /* RootViewModel.swift */; };
-		70BD6A742831899000E5D179 /* RootRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A732831898F00E5D179 /* RootRoute.swift */; };
+		7026CC532833ED9C00F72FA5 /* MainOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC522833ED9C00F72FA5 /* MainOnboard.swift */; };
+		7026CC5A2833EF2D00F72FA5 /* SecondOnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC552833EF2D00F72FA5 /* SecondOnboardVC.swift */; };
+		7026CC5B2833EF2D00F72FA5 /* GetNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC562833EF2D00F72FA5 /* GetNameVC.swift */; };
+		7026CC5C2833EF2D00F72FA5 /* ThirdOnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC572833EF2D00F72FA5 /* ThirdOnboardVC.swift */; };
+		7026CC5D2833EF2D00F72FA5 /* FourthOnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */; };
+		7026CC5E2833EF2D00F72FA5 /* FirstOnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */; };
 		9DBD666A4402FDF552DA39CF /* Pods_iOS_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04877A26D51F1347A8C99379 /* Pods_iOS_Template.framework */; };
 		FE41B4CE2825ADBA00EB6DDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE41B4CD2825ADBA00EB6DDB /* GoogleService-Info.plist */; };
-		FE41B4D02825B02F00EB6DDB /* AppDelegate+SocialLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41B4CF2825B02F00EB6DDB /* AppDelegate+SocialLogin.swift */; };
 		FE4262712825A6A8009CCA73 /* AppDeleagate+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42626D2825A6A8009CCA73 /* AppDeleagate+Firebase.swift */; };
 		FE4262722825A6A8009CCA73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42626E2825A6A8009CCA73 /* AppDelegate.swift */; };
 		FE4262732825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42626F2825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift */; };
@@ -71,13 +72,14 @@
 /* Begin PBXFileReference section */
 		04877A26D51F1347A8C99379 /* Pods_iOS_Template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		657B568054FDB8B78B36A64A /* Pods-iOS-Template.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Template.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Template/Pods-iOS-Template.debug.xcconfig"; sourceTree = "<group>"; };
-		70BD6A6D2831898300E5D179 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		70BD6A6E2831898300E5D179 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		70BD6A6F2831898300E5D179 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
-		70BD6A732831898F00E5D179 /* RootRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRoute.swift; sourceTree = "<group>"; };
+		7026CC522833ED9C00F72FA5 /* MainOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnboard.swift; sourceTree = "<group>"; };
+		7026CC552833EF2D00F72FA5 /* SecondOnboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondOnboardVC.swift; sourceTree = "<group>"; };
+		7026CC562833EF2D00F72FA5 /* GetNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNameVC.swift; sourceTree = "<group>"; };
+		7026CC572833EF2D00F72FA5 /* ThirdOnboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdOnboardVC.swift; sourceTree = "<group>"; };
+		7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthOnboardVC.swift; sourceTree = "<group>"; };
+		7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstOnboardVC.swift; sourceTree = "<group>"; };
 		EE3233FF4021667B45E2EF20 /* Pods-iOS-Template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Template.release.xcconfig"; path = "Target Support Files/Pods-iOS-Template/Pods-iOS-Template.release.xcconfig"; sourceTree = "<group>"; };
 		FE41B4CD2825ADBA00EB6DDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FE41B4CF2825B02F00EB6DDB /* AppDelegate+SocialLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+SocialLogin.swift"; sourceTree = "<group>"; };
 		FE42626D2825A6A8009CCA73 /* AppDeleagate+Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDeleagate+Firebase.swift"; sourceTree = "<group>"; };
 		FE42626E2825A6A8009CCA73 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE42626F2825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
@@ -149,19 +151,22 @@
 		7026CC4F2833E71E00F72FA5 /* OnBoard */ = {
 			isa = PBXGroup;
 			children = (
+				7026CC522833ED9C00F72FA5 /* MainOnboard.swift */,
+				7026CC542833EF1400F72FA5 /* ViewControllers */,
 			);
 			path = OnBoard;
 			sourceTree = "<group>";
 		};
-		70BD6A6C2831897600E5D179 /* Root */ = {
+		7026CC542833EF1400F72FA5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				70BD6A6D2831898300E5D179 /* RootRouter.swift */,
-				70BD6A6E2831898300E5D179 /* RootViewController.swift */,
-				70BD6A6F2831898300E5D179 /* RootViewModel.swift */,
-				70BD6A732831898F00E5D179 /* RootRoute.swift */,
+				7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */,
+				7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */,
+				7026CC562833EF2D00F72FA5 /* GetNameVC.swift */,
+				7026CC552833EF2D00F72FA5 /* SecondOnboardVC.swift */,
+				7026CC572833EF2D00F72FA5 /* ThirdOnboardVC.swift */,
 			);
-			path = Root;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F2ECFF5F2502586978FE9DC5 /* Pods */ = {
@@ -179,7 +184,6 @@
 				FE42626D2825A6A8009CCA73 /* AppDeleagate+Firebase.swift */,
 				FE42626E2825A6A8009CCA73 /* AppDelegate.swift */,
 				FE42626F2825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift */,
-				FE41B4CF2825B02F00EB6DDB /* AppDelegate+SocialLogin.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -249,7 +253,6 @@
 		FE42629D2825A7CE009CCA73 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				70BD6A6C2831897600E5D179 /* Root */,
 				FE4262A72825A87B009CCA73 /* Base */,
 				FE42629E2825A7D1009CCA73 /* Example */,
 			);
@@ -464,23 +467,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4262922825A73F009CCA73 /* PlaceOnWindow.swift in Sources */,
+				7026CC5B2833EF2D00F72FA5 /* GetNameVC.swift in Sources */,
 				FE4262B22825A87B009CCA73 /* ModalNavigationController.swift in Sources */,
-				70BD6A702831898300E5D179 /* RootRouter.swift in Sources */,
 				FE42629B2825A73F009CCA73 /* PopToRoute.swift in Sources */,
 				FE4262792825A6D9009CCA73 /* APILogger.swift in Sources */,
 				FE42627A2825A6D9009CCA73 /* APIRequestInterceptor.swift in Sources */,
 				FE4262722825A6A8009CCA73 /* AppDelegate.swift in Sources */,
-				70BD6A742831899000E5D179 /* RootRoute.swift in Sources */,
 				FE4262B12825A87B009CCA73 /* BaseViewModel.swift in Sources */,
+				7026CC5C2833EF2D00F72FA5 /* ThirdOnboardVC.swift in Sources */,
 				FE42629A2825A73F009CCA73 /* DismissableRoute.swift in Sources */,
-				FE41B4D02825B02F00EB6DDB /* AppDelegate+SocialLogin.swift in Sources */,
+				7026CC532833ED9C00F72FA5 /* MainOnboard.swift in Sources */,
 				FE4262732825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift in Sources */,
+				7026CC5A2833EF2D00F72FA5 /* SecondOnboardVC.swift in Sources */,
 				FE42628F2825A73F009CCA73 /* Router.swift in Sources */,
 				FE4262932825A73F009CCA73 /* Transition.swift in Sources */,
 				FE42628E2825A73F009CCA73 /* Animator.swift in Sources */,
-				70BD6A712831898300E5D179 /* RootViewController.swift in Sources */,
 				FE4262942825A73F009CCA73 /* PushTransition.swift in Sources */,
+				7026CC5D2833EF2D00F72FA5 /* FourthOnboardVC.swift in Sources */,
 				FE4262A32825A7EA009CCA73 /* ExampleViewController.swift in Sources */,
+				7026CC5E2833EF2D00F72FA5 /* FirstOnboardVC.swift in Sources */,
 				FE4262A22825A7EA009CCA73 /* ExampleRouter.swift in Sources */,
 				FE4262B32825A87B009CCA73 /* CleanNavigationController.swift in Sources */,
 				FE4262992825A73F009CCA73 /* PopToViewController.swift in Sources */,
@@ -488,7 +493,6 @@
 				FE4262712825A6A8009CCA73 /* AppDeleagate+Firebase.swift in Sources */,
 				FE4262912825A73F009CCA73 /* SetRootViewControllerTransition.swift in Sources */,
 				FE4262A62825A7F6009CCA73 /* ExampleRoute.swift in Sources */,
-				70BD6A722831898300E5D179 /* RootViewModel.swift in Sources */,
 				FE4262902825A73F009CCA73 /* ModalTransition.swift in Sources */,
 				FE4262982825A73F009CCA73 /* AppRouter.swift in Sources */,
 				FE4262B42825A87B009CCA73 /* BaseNavigationController.swift in Sources */,

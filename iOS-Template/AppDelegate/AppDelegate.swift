@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FBSDKCoreKit
 import FirebaseCore
 
 @main
@@ -20,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // For Facebook
-        ApplicationDelegate.shared.application(
-            application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
+//        ApplicationDelegate.shared.application(
+//            application,
+//            didFinishLaunchingWithOptions: launchOptions
+//        )
         enableIQKeyboardManager()
         
         let bounds = UIScreen.main.bounds

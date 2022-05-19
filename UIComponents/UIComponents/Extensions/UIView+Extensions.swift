@@ -28,6 +28,12 @@ public extension UIView {
         let click = ClickListener(action)
         self.addGestureRecognizer(click)
     }
+    
+    func addSubviews(_ views: UIView...) {
+        for view in views {
+            addSubview(view)
+        }
+    }
 }
 
 public extension UIView {

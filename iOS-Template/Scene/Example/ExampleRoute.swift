@@ -14,7 +14,7 @@ extension ExampleRoute where Self: RouterProtocol {
     func presentExample() {
         let router = ExampleRouter()
         let viewModel = ExampleViewModel(router: router)
-        let viewController = ExampleViewController(viewModel: viewModel)
+        let viewController = GetNameVC()
         
         let transition = PlaceOnWindowTransition()
         router.viewController = viewController

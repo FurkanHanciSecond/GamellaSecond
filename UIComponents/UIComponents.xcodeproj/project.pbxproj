@@ -58,7 +58,6 @@
 		70BD6A7528318C9B00E5D179 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				70BD6A7728318CAB00E5D179 /* CollectionView */,
 				70BD6A7628318CA600E5D179 /* TableView */,
 			);
 			path = Cell;
@@ -70,13 +69,6 @@
 				70BD6A7828318CB200E5D179 /* ExampleCell */,
 			);
 			path = TableView;
-			sourceTree = "<group>";
-		};
-		70BD6A7728318CAB00E5D179 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		70BD6A7828318CB200E5D179 /* ExampleCell */ = {
