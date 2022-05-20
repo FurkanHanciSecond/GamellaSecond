@@ -7,8 +7,9 @@
 
 import UIKit
 import MobilliumBuilders
+import MobilliumUserDefaults
 class GetNameVC: UIViewController {
-
+    
     private let welcomeText = UILabelBuilder()
         .textColor(.label)
         .numberOfLines(0)
@@ -42,10 +43,20 @@ class GetNameVC: UIViewController {
         view.backgroundColor = .systemBackground
         setupLayout()
         setupText()
+        configureButton()
     }
     
     private func setupText() {
         welcomeText.text = "Hi, game lover! What is your name?"
+    }
+    
+    private func configureButton() {
+        nextButton.addTarget(self, action: #selector(nextButtonHandle(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func nextButtonHandle(_ sender: UIButton) {
+        DefaultsKey.userName.value = getNameTextField.text
+        print(DefaultsKey.userName.value)
     }
     
     private func setupLayout() {
@@ -58,7 +69,7 @@ class GetNameVC: UIViewController {
         
         NSLayoutConstraint.activate([
             welcomeText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            welcomeText.centerYAnchor.constraint(equalTo: view.centerYAnchor , constant: -padding - 100),
+            welcomeText.centerYAnchor.constraint(equalTo: view.centerYAnchor , constant: -padding - 110),
             welcomeText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: padding),
             welcomeText.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: padding),
             
@@ -74,7 +85,7 @@ class GetNameVC: UIViewController {
     }
     
     deinit {
-        print("the class has been deinit \(self)")
+        debugPrint("the class has been deinit \(self)")
     }
 
 }

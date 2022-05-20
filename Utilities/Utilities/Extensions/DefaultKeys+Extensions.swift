@@ -10,4 +10,5 @@ import MobilliumUserDefaults
 
 public extension DefaultsKey {
     static let isFirstRun = Key<Bool>(key: "firstRun")
+    static let userName = Key<String>(key: "userName")
 }
