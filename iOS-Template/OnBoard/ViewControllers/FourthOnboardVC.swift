@@ -15,7 +15,7 @@ class FourthOnboardVC: UIViewController {
         .build()
     
     private let onboardDescription = UILabelBuilder()
-        .font(.systemFont(ofSize: 25, weight: .regular))
+        .font(.systemFont(ofSize: 20, weight: .regular))
         .textColor(.label)
         .numberOfLines(0)
         .build()

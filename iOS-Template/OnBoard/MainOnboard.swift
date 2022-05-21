@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Utilities
 class MainOnboardPageController: UIPageViewController {
     private var pageControl = UIPageControl()
     
@@ -37,8 +37,8 @@ class MainOnboardPageController: UIPageViewController {
           self.pageControl.numberOfPages = orderedViewControllers.count
           self.pageControl.currentPage = 0
        self.pageControl.tintColor = .black
-       self.pageControl.pageIndicatorTintColor = .gray
-       self.pageControl.currentPageIndicatorTintColor = .orange
+       self.pageControl.pageIndicatorTintColor = AppConstants.Style.Color.gray
+       self.pageControl.currentPageIndicatorTintColor = AppConstants.Style.Color.orange
           self.view.addSubview(pageControl)
       }
     
