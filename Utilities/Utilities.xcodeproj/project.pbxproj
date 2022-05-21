@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F7E951D18CCD225FB6C0F41 /* libPods-Utilities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4231784BA23251F1B51E696E /* libPods-Utilities.a */; };
+		7001CFC62839266100C888F1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001CFC52839266100C888F1 /* AppConstants.swift */; };
 		FE4262D22825AA08009CCA73 /* Clousers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262C02825AA08009CCA73 /* Clousers.swift */; };
 		FE4262D32825AA08009CCA73 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262C22825AA08009CCA73 /* DeviceModel.swift */; };
 		FE4262D42825AA08009CCA73 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262C42825AA08009CCA73 /* UIViewController+Extensions.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4231784BA23251F1B51E696E /* libPods-Utilities.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Utilities.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7001CFC52839266100C888F1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		AC48599E399FDEE92AA44A3A /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		F7663313341B6845AD79EF54 /* Pods-Utilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.release.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.release.xcconfig"; sourceTree = "<group>"; };
 		FE4262C02825AA08009CCA73 /* Clousers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clousers.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				FE4262C02825AA08009CCA73 /* Clousers.swift */,
+				7001CFC52839266100C888F1 /* AppConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				FE4262DA2825AA08009CCA73 /* Share+Extension.swift in Sources */,
 				FE4262D32825AA08009CCA73 /* DeviceModel.swift in Sources */,
 				FE4262DC2825AA08009CCA73 /* Url+Extensions.swift in Sources */,
+				7001CFC62839266100C888F1 /* AppConstants.swift in Sources */,
 				FE4262D92825AA08009CCA73 /* UIApplication+Extensions.swift in Sources */,
 				FE4262DF2825AA08009CCA73 /* NotificationNames.swift in Sources */,
 				FE4262D82825AA08009CCA73 /* UIDevice+Extensions.swift in Sources */,
