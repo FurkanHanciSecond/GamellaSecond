@@ -20,6 +20,14 @@ class FourthOnboardVC: UIViewController {
         .numberOfLines(0)
         .build()
     
+    private let startButton = UIButtonBuilder()
+        .cornerRadius(20)
+        .title(AppConstants.Texts.Button.onboardButtonText)
+        .titleFont(.systemFont(ofSize: 25))
+        .backgroundColor(AppConstants.Style.Color.indigo!)
+        .titleColor(AppConstants.Style.Color.white, for: .normal)
+        .build()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -38,10 +46,11 @@ class FourthOnboardVC: UIViewController {
     
     private func setupLayout() {
         let descriptionPadding : CGFloat = 20
-        view.addSubviews(onboardTitle , onboardDescription)
+        view.addSubviews(onboardTitle , onboardDescription , startButton)
         
         onboardTitle.translatesAutoresizingMaskIntoConstraints = false
         onboardDescription.translatesAutoresizingMaskIntoConstraints = false
+        startButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             onboardTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -52,7 +61,10 @@ class FourthOnboardVC: UIViewController {
             onboardDescription.widthAnchor.constraint(equalToConstant: 350),
             onboardDescription.heightAnchor.constraint(equalToConstant: 80),
             
-            
+            startButton.centerXAnchor.constraint(equalTo: onboardTitle.centerXAnchor),
+            startButton.topAnchor.constraint(equalTo: onboardDescription.bottomAnchor , constant: descriptionPadding),
+            startButton.widthAnchor.constraint(equalToConstant: 230),
+            startButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
 }

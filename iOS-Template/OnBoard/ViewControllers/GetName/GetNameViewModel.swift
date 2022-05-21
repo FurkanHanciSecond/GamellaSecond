@@ -14,7 +14,7 @@ protocol GetNameViewProtocol {
 
 final class GetNameViewModel: BaseViewModel<GetNameRouter>, GetNameViewProtocol {
     func nextButtonTapped() {
-        let transition = ModalTransition(modalTransitionStyle: .coverVertical, modalPresentationStyle: .fullScreen)
+        let transition = ModalTransition(modalTransitionStyle: .flipHorizontal, modalPresentationStyle: .fullScreen)
         router.open(MainOnboardPageController(), transition: transition)
     }
     
