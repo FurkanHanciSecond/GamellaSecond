@@ -8,15 +8,15 @@
 import UIKit
 import MobilliumBuilders
 class FourthOnboardVC: UIViewController {
-    private let onboardDescription = UILabelBuilder()
-        .font(.systemFont(ofSize: 24))
-        .textColor(.red)
+    private let onboardTitle = UILabelBuilder()
+        .font(.systemFont(ofSize: 50, weight: .thin))
+        .textColor(.label)
         .numberOfLines(0)
         .build()
     
-    private let onboardTitle = UILabelBuilder()
-        .font(.systemFont(ofSize: 24))
-        .textColor(.red)
+    private let onboardDescription = UILabelBuilder()
+        .font(.systemFont(ofSize: 25, weight: .regular))
+        .textColor(.label)
         .numberOfLines(0)
         .build()
     
@@ -28,17 +28,20 @@ class FourthOnboardVC: UIViewController {
     private func configure() {
         setupTexts()
         setupLayout()
+        view.backgroundColor = .systemBackground
     }
     
     private func setupTexts() {
-        onboardTitle.text = "AppConstants.appName"
-        onboardDescription.text = "AppConstants.OnBoard.OnboardDescription.description4"
+        onboardTitle.text = "Gamella"
+        onboardDescription.text = "You can also see free games on all platfroms and all of features."
     }
     
     private func setupLayout() {
         let descriptionPadding : CGFloat = 20
         view.addSubviews(onboardTitle , onboardDescription)
-        view.backgroundColor = .systemBackground
+        
+        onboardTitle.translatesAutoresizingMaskIntoConstraints = false
+        onboardDescription.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             onboardTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -49,10 +52,7 @@ class FourthOnboardVC: UIViewController {
             onboardDescription.widthAnchor.constraint(equalToConstant: 350),
             onboardDescription.heightAnchor.constraint(equalToConstant: 80),
             
+            
         ])
-    }
-    
-    deinit {
-        print("deinit \(self)")
     }
 }

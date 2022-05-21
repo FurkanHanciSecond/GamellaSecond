@@ -9,14 +9,14 @@ import UIKit
 import MobilliumBuilders
 class FirstOnboardVC: UIViewController {    
     private let onboardTitle = UILabelBuilder()
-        .font(.systemFont(ofSize: 24))
-        .textColor(.red)
+        .font(.systemFont(ofSize: 50, weight: .thin))
+        .textColor(.label)
         .numberOfLines(0)
         .build()
     
     private let onboardDescription = UILabelBuilder()
-        .font(.systemFont(ofSize: 24))
-        .textColor(.red)
+        .font(.systemFont(ofSize: 30, weight: .regular))
+        .textColor(.label)
         .numberOfLines(0)
         .build()
     
@@ -28,17 +28,20 @@ class FirstOnboardVC: UIViewController {
     private func configure() {
         setupTexts()
         setupLayout()
+        view.backgroundColor = .systemBackground
     }
     
     private func setupTexts() {
-        onboardTitle.text = "AppConstants.appName"
-        onboardDescription.text = "AppConstants.OnBoard.OnboardDescription.description1"
+        onboardTitle.text = "Gamella"
+        onboardDescription.text = "See the all free giveaway games!"
     }
     
     private func setupLayout() {
         let descriptionPadding : CGFloat = 20
         view.addSubviews(onboardTitle , onboardDescription)
-        view.backgroundColor = .systemBackground
+        
+        onboardTitle.translatesAutoresizingMaskIntoConstraints = false
+        onboardDescription.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             onboardTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),

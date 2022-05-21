@@ -164,9 +164,9 @@
 			children = (
 				70D818342838BC330088E2C0 /* GetName */,
 				7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */,
-				7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */,
 				7026CC552833EF2D00F72FA5 /* SecondOnboardVC.swift */,
 				7026CC572833EF2D00F72FA5 /* ThirdOnboardVC.swift */,
+				7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
