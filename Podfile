@@ -30,12 +30,6 @@ target 'iOS-Template' do
 
   # UI
   pod 'SwiftEntryKit', '2.0.0'
-  
-  # FireBase
-  pod 'FirebaseCore'
-  pod 'FirebaseAnalytics'
-  pod 'FirebaseAuth'
-  pod 'FirebaseFirestore'
 
 end
 

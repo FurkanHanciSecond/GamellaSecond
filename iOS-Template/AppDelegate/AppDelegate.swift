@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseCore
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -30,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         AppRouter.shared.window = window
         AppRouter.shared.startApp()
-        firebaseConfigure()
         return true
         
     }

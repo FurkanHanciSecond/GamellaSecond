@@ -8,8 +8,7 @@
 import UIKit
 
 final class AppRouter: Router, AppRouter.Routes {
-    
-    typealias Routes = ExampleRoute
+    typealias Routes = GetNameRoute
     
     weak var window: UIWindow?
     
@@ -25,6 +24,6 @@ final class AppRouter: Router, AppRouter.Routes {
     }
     
     func startApp() {
-        AppRouter.shared.presentExample()
+        AppRouter.shared.presentGetName()
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import MobilliumBuilders
 import MobilliumUserDefaults
-class GetNameVC: UIViewController {
+final class GetNameVC: BaseViewController<GetNameViewModel> {
     
     private let welcomeText = UILabelBuilder()
         .textColor(.label)
@@ -35,8 +35,8 @@ class GetNameVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configure()
+        viewModel.viewDidLoad()
     }
     
     private func configure() {
@@ -55,9 +55,22 @@ class GetNameVC: UIViewController {
     }
     
     @objc private func nextButtonHandle(_ sender: UIButton) {
-        DefaultsKey.userName.value = getNameTextField.text
-        print(DefaultsKey.userName.value)
+        saveUserName()
+        viewModel.nextButtonTapped()
     }
+    
+    private func saveUserName() {
+        DefaultsKey.userName.value = getNameTextField.text
+    }
+    
+    deinit {
+        debugPrint("the class has been deinit \(self)")
+    }
+
+}
+
+// MARK: - UILayout
+extension GetNameVC {
     
     private func setupLayout() {
         let padding : CGFloat = 20
@@ -83,9 +96,5 @@ class GetNameVC: UIViewController {
             nextButton.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
-    
-    deinit {
-        debugPrint("the class has been deinit \(self)")
-    }
-
 }
+
