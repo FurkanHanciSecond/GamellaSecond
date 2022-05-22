@@ -8,6 +8,7 @@
 import UIKit
 import MobilliumBuilders
 import MobilliumUserDefaults
+import Utilities
 final class GetNameVC: BaseViewController<GetNameViewModel> {
     
     private let welcomeText = UILabelBuilder()
@@ -55,8 +56,18 @@ final class GetNameVC: BaseViewController<GetNameViewModel> {
     }
     
     @objc private func nextButtonHandle(_ sender: UIButton) {
-        saveUserName()
-        viewModel.nextButtonTapped()
+        switch getNameTextField.text?.isEmpty {
+        case .init(booleanLiteral: true):
+            AlertManager.showAlert(title: "Your name is cannot be empty!", message: "Fix it", viewController: self)
+            
+        case .init(booleanLiteral: false):
+            saveUserName()
+            viewModel.nextButtonTapped()
+            
+        default:
+            break;
+        }
+
     }
     
     private func saveUserName() {
@@ -66,7 +77,7 @@ final class GetNameVC: BaseViewController<GetNameViewModel> {
     deinit {
         debugPrint("the class has been deinit \(self)")
     }
-
+    
 }
 
 // MARK: - UILayout

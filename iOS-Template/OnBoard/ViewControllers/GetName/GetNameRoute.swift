@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol GetNameRoute {
     func presentGetName()
 }

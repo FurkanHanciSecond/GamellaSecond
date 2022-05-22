@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F7E951D18CCD225FB6C0F41 /* libPods-Utilities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4231784BA23251F1B51E696E /* libPods-Utilities.a */; };
 		7001CFC62839266100C888F1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001CFC52839266100C888F1 /* AppConstants.swift */; };
+		705BBB6C283A1C3800F61E53 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB6B283A1C3800F61E53 /* AlertManager.swift */; };
 		FE4262D22825AA08009CCA73 /* Clousers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262C02825AA08009CCA73 /* Clousers.swift */; };
 		FE4262D32825AA08009CCA73 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262C22825AA08009CCA73 /* DeviceModel.swift */; };
 		FE4262D42825AA08009CCA73 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262C42825AA08009CCA73 /* UIViewController+Extensions.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		4231784BA23251F1B51E696E /* libPods-Utilities.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Utilities.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7001CFC52839266100C888F1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		705BBB6B283A1C3800F61E53 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		AC48599E399FDEE92AA44A3A /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		F7663313341B6845AD79EF54 /* Pods-Utilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.release.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.release.xcconfig"; sourceTree = "<group>"; };
 		FE4262C02825AA08009CCA73 /* Clousers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clousers.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		705BBB6A283A1C2A00F61E53 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				705BBB6B283A1C3800F61E53 /* AlertManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8E8617DBAF6755A985C4AE65 /* Frameworks */ = {
@@ -146,6 +156,7 @@
 		FE7347EC27E7157A0019DB4F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				705BBB6A283A1C2A00F61E53 /* Helpers */,
 				FE4262BF2825AA08009CCA73 /* Constants */,
 				FE4262C12825AA08009CCA73 /* Enum */,
 				FE4262C32825AA08009CCA73 /* Extensions */,
@@ -261,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4262DB2825AA08009CCA73 /* Formatter+Extension.swift in Sources */,
+				705BBB6C283A1C3800F61E53 /* AlertManager.swift in Sources */,
 				FE4262D72825AA08009CCA73 /* UIView+Extension.swift in Sources */,
 				FE4262E02825AA08009CCA73 /* NotificationCenter+Extensions.swift in Sources */,
 				FE4262D62825AA08009CCA73 /* String+Extensions.swift in Sources */,

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import UIComponents
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let tableView: UITableView = {

@@ -15,7 +15,7 @@ class FourthOnboardVC: UIViewController {
         .build()
     
     private let onboardDescription = UILabelBuilder()
-        .font(.systemFont(ofSize: 20, weight: .regular))
+        .font(.systemFont(ofSize: 25, weight: .regular))
         .textColor(.label)
         .numberOfLines(0)
         .build()
@@ -36,12 +36,21 @@ class FourthOnboardVC: UIViewController {
     private func configure() {
         setupTexts()
         setupLayout()
+        configureButton()
         view.backgroundColor = .systemBackground
     }
     
     private func setupTexts() {
         onboardTitle.text = "Gamella"
         onboardDescription.text = "You can also see free games on all platfroms and all of features."
+    }
+    
+    private func configureButton() {
+        startButton.addTarget(self, action: #selector(startButtonHandle(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func startButtonHandle(_ sender: UIButton) {
+        print("kdlsnf")
     }
     
     private func setupLayout() {

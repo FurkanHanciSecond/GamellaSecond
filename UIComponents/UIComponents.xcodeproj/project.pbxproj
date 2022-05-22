@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		705BBB66283A1A6600F61E53 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB64283A1A6600F61E53 /* HomeCell.swift */; };
+		705BBB67283A1A6600F61E53 /* HomeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB65283A1A6600F61E53 /* HomeCellModel.swift */; };
 		70BD6A7B28318CC700E5D179 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A7928318CC700E5D179 /* ExampleCell.swift */; };
 		70BD6A7C28318CC700E5D179 /* ExampleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A7A28318CC700E5D179 /* ExampleCellModel.swift */; };
 		E72F1B73163D45C5A7CAA1D0 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6F78B05FEFA3BCB786A95F /* Pods_UIComponents.framework */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		017205D27D9379550173DA92 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		63FFBDCF860852E97C663915 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		705BBB64283A1A6600F61E53 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		705BBB65283A1A6600F61E53 /* HomeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModel.swift; sourceTree = "<group>"; };
 		70BD6A7928318CC700E5D179 /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		70BD6A7A28318CC700E5D179 /* ExampleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCellModel.swift; sourceTree = "<group>"; };
 		FC6F78B05FEFA3BCB786A95F /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +59,15 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		705BBB63283A1A4800F61E53 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				705BBB64283A1A6600F61E53 /* HomeCell.swift */,
+				705BBB65283A1A6600F61E53 /* HomeCellModel.swift */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
 		70BD6A7528318C9B00E5D179 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +79,7 @@
 		70BD6A7628318CA600E5D179 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				705BBB63283A1A4800F61E53 /* HomeCell */,
 				70BD6A7828318CB200E5D179 /* ExampleCell */,
 			);
 			path = TableView;
@@ -244,8 +258,10 @@
 			files = (
 				70BD6A7C28318CC700E5D179 /* ExampleCellModel.swift in Sources */,
 				70BD6A7B28318CC700E5D179 /* ExampleCell.swift in Sources */,
+				705BBB66283A1A6600F61E53 /* HomeCell.swift in Sources */,
 				FE73480527E716130019DB4F /* UIView+Extensions.swift in Sources */,
 				FE73480927E7164A0019DB4F /* ReusableView.swift in Sources */,
+				705BBB67283A1A6600F61E53 /* HomeCellModel.swift in Sources */,
 				FE73480427E716130019DB4F /* UICollectionView+Extensions.swift in Sources */,
 				FE73480327E716130019DB4F /* NSMutableAttributedString+Extension.swift in Sources */,
 				FE73480627E716130019DB4F /* UITableView+Extensions.swift in Sources */,

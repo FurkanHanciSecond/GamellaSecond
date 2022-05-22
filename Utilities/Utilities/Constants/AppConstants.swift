@@ -30,7 +30,7 @@ public struct AppConstants {
         }
         
         public enum Error {
-            //TODO: Complete it
+            public static let ok = "Ok"
         }
         
         public enum Bar {

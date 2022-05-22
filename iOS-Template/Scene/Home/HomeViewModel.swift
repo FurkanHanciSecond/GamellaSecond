@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import UIComponents
 
 protocol HomeViewDataSource {
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> HomeCellProtocol
 }
 
-protocol HomeViewEventSource {}
+protocol HomeViewEventSource {
+    
+}
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {}
 
