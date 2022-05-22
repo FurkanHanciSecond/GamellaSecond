@@ -7,6 +7,7 @@
 
 import UIKit
 import MobilliumBuilders
+import MobilliumUserDefaults
 class FourthOnboardVC: UIViewController {
     private let onboardTitle = UILabelBuilder()
         .font(.systemFont(ofSize: 50, weight: .thin))
@@ -18,12 +19,14 @@ class FourthOnboardVC: UIViewController {
         .font(.systemFont(ofSize: 25, weight: .regular))
         .textColor(.label)
         .numberOfLines(0)
+        .adjustsFontSizeToFitWidth(true)
+        .minimumScaleFactor(0.5)
         .build()
     
     private let startButton = UIButtonBuilder()
         .cornerRadius(20)
         .title(AppConstants.Texts.Button.onboardButtonText)
-        .titleFont(.systemFont(ofSize: 25))
+        .titleFont(.systemFont(ofSize: 20))
         .backgroundColor(AppConstants.Style.Color.indigo!)
         .titleColor(AppConstants.Style.Color.white, for: .normal)
         .build()
@@ -50,7 +53,11 @@ class FourthOnboardVC: UIViewController {
     }
     
     @objc private func startButtonHandle(_ sender: UIButton) {
-        print("kdlsnf")
+        //TODO: MIMARIYE UYGUN YAP AMK 😡
+        let mainTabBar = TestVC()
+        mainTabBar.modalTransitionStyle = .partialCurl
+        mainTabBar.modalPresentationStyle = .fullScreen
+        present(mainTabBar, animated: true, completion: nil)        
     }
     
     private func setupLayout() {
@@ -72,8 +79,7 @@ class FourthOnboardVC: UIViewController {
             
             startButton.centerXAnchor.constraint(equalTo: onboardTitle.centerXAnchor),
             startButton.topAnchor.constraint(equalTo: onboardDescription.bottomAnchor , constant: descriptionPadding),
-            startButton.widthAnchor.constraint(equalToConstant: 230),
-            startButton.heightAnchor.constraint(equalToConstant: 45)
+            startButton.widthAnchor.constraint(equalToConstant: 200),
         ])
     }
 }

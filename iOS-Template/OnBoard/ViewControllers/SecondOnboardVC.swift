@@ -17,7 +17,9 @@ class SecondOnboardVC: UIViewController {
     private let onboardDescription = UILabelBuilder()
         .font(.systemFont(ofSize: 30, weight: .regular))
         .textColor(.label)
-        .numberOfLines(0)
+        .numberOfLines(1)
+        .adjustsFontSizeToFitWidth(true)
+        .minimumScaleFactor(0.5)
         .build()
     
     override func viewDidLoad() {
@@ -49,8 +51,7 @@ class SecondOnboardVC: UIViewController {
             
             onboardDescription.topAnchor.constraint(equalTo: onboardTitle.bottomAnchor, constant: descriptionPadding),
             onboardDescription.centerXAnchor.constraint(equalTo: onboardTitle.centerXAnchor),
-            onboardDescription.widthAnchor.constraint(equalToConstant: 350),
-            onboardDescription.heightAnchor.constraint(equalToConstant: 80),
+            onboardDescription.widthAnchor.constraint(equalToConstant: 250),
             
             
         ])
