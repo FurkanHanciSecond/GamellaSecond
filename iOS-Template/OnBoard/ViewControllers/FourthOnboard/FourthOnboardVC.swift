@@ -9,6 +9,7 @@ import UIKit
 import MobilliumBuilders
 import MobilliumUserDefaults
 class FourthOnboardVC: UIViewController {
+    private var router : HomeRouter = HomeRouter()
     private let onboardTitle = UILabelBuilder()
         .font(.systemFont(ofSize: 50, weight: .thin))
         .textColor(.label)
@@ -54,7 +55,7 @@ class FourthOnboardVC: UIViewController {
     
     @objc private func startButtonHandle(_ sender: UIButton) {
         //TODO: MIMARIYE UYGUN YAP AMK 😡
-        let mainTabBar = TestVC()
+        let mainTabBar = HomeViewController(viewModel: HomeViewModel.init(router: router))
         mainTabBar.modalTransitionStyle = .partialCurl
         mainTabBar.modalPresentationStyle = .fullScreen
         present(mainTabBar, animated: true, completion: nil)        

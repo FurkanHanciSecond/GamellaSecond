@@ -9,6 +9,7 @@ import UIKit
 import MobilliumBuilders
 import MobilliumUserDefaults
 import Utilities
+import SwiftEntryKit
 final class GetNameVC: BaseViewController<GetNameViewModel> {
     
     private let welcomeText = UILabelBuilder()
@@ -55,19 +56,29 @@ final class GetNameVC: BaseViewController<GetNameViewModel> {
         nextButton.addTarget(self, action: #selector(nextButtonHandle(_:)), for: .touchUpInside)
     }
     
+    private func setHapticError() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+    }
+    
+    private func setHapticSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
     @objc private func nextButtonHandle(_ sender: UIButton) {
         switch getNameTextField.text?.isEmpty {
         case .init(booleanLiteral: true):
             AlertManager.showAlert(title: "Your name is cannot be empty!", message: "Fix it", viewController: self)
-            
+            setHapticError()
         case .init(booleanLiteral: false):
             saveUserName()
             viewModel.nextButtonTapped()
-            
+            setHapticSuccess()
         default:
             break;
         }
-
+        
     }
     
     private func saveUserName() {

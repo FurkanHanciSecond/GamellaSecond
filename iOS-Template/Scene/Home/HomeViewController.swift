@@ -17,6 +17,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = AppConstants.Style.Color.indigo
     }
     
 }

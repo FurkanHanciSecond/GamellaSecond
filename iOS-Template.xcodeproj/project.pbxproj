@@ -14,9 +14,6 @@
 		7026CC5D2833EF2D00F72FA5 /* FourthOnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */; };
 		7026CC5E2833EF2D00F72FA5 /* FirstOnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */; };
 		7056A581283A96E10066BC92 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056A580283A96E10066BC92 /* TestVC.swift */; };
-		7056A586283A97F50066BC92 /* FourthVCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056A583283A97F50066BC92 /* FourthVCRouter.swift */; };
-		7056A587283A97F50066BC92 /* FourthVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056A584283A97F50066BC92 /* FourthVCViewModel.swift */; };
-		7056A588283A97F50066BC92 /* FourthVCRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056A585283A97F50066BC92 /* FourthVCRoute.swift */; };
 		705BBB60283A1A0D00F61E53 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5D283A1A0D00F61E53 /* HomeRouter.swift */; };
 		705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */; };
 		705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */; };
@@ -88,9 +85,6 @@
 		7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthOnboardVC.swift; sourceTree = "<group>"; };
 		7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstOnboardVC.swift; sourceTree = "<group>"; };
 		7056A580283A96E10066BC92 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
-		7056A583283A97F50066BC92 /* FourthVCRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthVCRouter.swift; sourceTree = "<group>"; };
-		7056A584283A97F50066BC92 /* FourthVCViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthVCViewModel.swift; sourceTree = "<group>"; };
-		7056A585283A97F50066BC92 /* FourthVCRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthVCRoute.swift; sourceTree = "<group>"; };
 		705BBB5D283A1A0D00F61E53 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -178,10 +172,10 @@
 		7026CC542833EF1400F72FA5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				70EA7BE0283C10E400ABD1B4 /* First */,
+				70EA7BE1283C10ED00ABD1B4 /* Second */,
+				70EA7BE2283C10F600ABD1B4 /* Third */,
 				70D818342838BC330088E2C0 /* GetName */,
-				7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */,
-				7026CC552833EF2D00F72FA5 /* SecondOnboardVC.swift */,
-				7026CC572833EF2D00F72FA5 /* ThirdOnboardVC.swift */,
 				7056A582283A97D30066BC92 /* FourthOnboard */,
 			);
 			path = ViewControllers;
@@ -191,9 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				7026CC582833EF2D00F72FA5 /* FourthOnboardVC.swift */,
-				7056A585283A97F50066BC92 /* FourthVCRoute.swift */,
-				7056A583283A97F50066BC92 /* FourthVCRouter.swift */,
-				7056A584283A97F50066BC92 /* FourthVCViewModel.swift */,
 			);
 			path = FourthOnboard;
 			sourceTree = "<group>";
@@ -218,6 +209,30 @@
 				70D818392838BC690088E2C0 /* GetNameRoute.swift */,
 			);
 			path = GetName;
+			sourceTree = "<group>";
+		};
+		70EA7BE0283C10E400ABD1B4 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				7026CC592833EF2D00F72FA5 /* FirstOnboardVC.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		70EA7BE1283C10ED00ABD1B4 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				7026CC552833EF2D00F72FA5 /* SecondOnboardVC.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		70EA7BE2283C10F600ABD1B4 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				7026CC572833EF2D00F72FA5 /* ThirdOnboardVC.swift */,
+			);
+			path = Third;
 			sourceTree = "<group>";
 		};
 		F2ECFF5F2502586978FE9DC5 /* Pods */ = {
@@ -550,14 +565,11 @@
 				FE4262A62825A7F6009CCA73 /* ExampleRoute.swift in Sources */,
 				FE4262902825A73F009CCA73 /* ModalTransition.swift in Sources */,
 				FE4262982825A73F009CCA73 /* AppRouter.swift in Sources */,
-				7056A588283A97F50066BC92 /* FourthVCRoute.swift in Sources */,
 				FE4262B42825A87B009CCA73 /* BaseNavigationController.swift in Sources */,
 				FE4262A42825A7EA009CCA73 /* ExampleViewModel.swift in Sources */,
 				705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */,
 				FE4262972825A73F009CCA73 /* PopToBack.swift in Sources */,
-				7056A587283A97F50066BC92 /* FourthVCViewModel.swift in Sources */,
 				70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */,
-				7056A586283A97F50066BC92 /* FourthVCRouter.swift in Sources */,
 				FEBA464A27E648D0009A75F9 /* iOS_Template.xcdatamodeld in Sources */,
 				FE4262B62825A87B009CCA73 /* BaseViewController.swift in Sources */,
 			);
