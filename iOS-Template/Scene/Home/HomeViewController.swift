@@ -7,6 +7,8 @@
 
 import UIKit
 import UIComponents
+import Utilities
+import MobilliumUserDefaults
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let tableView: UITableView = {
@@ -18,8 +20,21 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppConstants.Style.Color.indigo
+        viewModel.didload()
+        configrueContents()
+        configrueNavigationBar()
+    }
+}
+
+// MARK: - Configure
+extension HomeViewController {
+    private func configrueContents() {
+        title = "Hello \(DefaultsKey.userName.value ?? "Empty")"
     }
     
+    private func configrueNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
 }
 
 // MARK: - UITableViewDataSource

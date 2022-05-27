@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import MobilliumUserDefaults
 protocol GetNameViewProtocol {
     func viewDidLoad()
     func nextButtonTapped()
@@ -19,6 +19,6 @@ final class GetNameViewModel: BaseViewModel<GetNameRouter>, GetNameViewProtocol 
     }
     
     func viewDidLoad() {
-        print("didLoad")
+        print("Didload GetNameVC")
     }
 }

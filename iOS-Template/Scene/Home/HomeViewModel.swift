@@ -7,6 +7,7 @@
 
 import Foundation
 import UIComponents
+import MobilliumUserDefaults
 
 protocol HomeViewDataSource {
     func numberOfItemsAt(section: Int) -> Int
@@ -14,12 +15,16 @@ protocol HomeViewDataSource {
 }
 
 protocol HomeViewEventSource {
-    
+    func didload()
 }
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {}
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    func didload() {
+        print(DefaultsKey.isFirstRun.value)
+    }
+    
     
     func numberOfItemsAt(section: Int) -> Int {
         return cellItems.count

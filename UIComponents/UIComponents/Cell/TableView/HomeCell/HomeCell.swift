@@ -22,7 +22,7 @@ public class HomeCell: UITableViewCell, ReusableView {
     }
     
     private func configureContents() {
-        
+        contentView.backgroundColor = .red
     }
     
     public func set(viewModel: HomeCellProtocol) {
