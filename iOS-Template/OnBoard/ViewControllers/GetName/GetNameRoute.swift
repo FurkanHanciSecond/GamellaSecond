@@ -27,7 +27,6 @@ extension GetNameRoute where Self: RouterProtocol {
         open(navController, transition: transition)
     }
     
-    
     /*
      PushTransition() sadece UINAvigationController ekranından çalışır.
      ModalTransition() navigation + default viewcontroller ekranından çarğılabilir.

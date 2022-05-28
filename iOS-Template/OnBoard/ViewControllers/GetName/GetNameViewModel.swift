@@ -19,6 +19,17 @@ final class GetNameViewModel: BaseViewModel<GetNameRouter>, GetNameViewProtocol 
     }
     
     func viewDidLoad() {
-        print("Didload GetNameVC")
+        // MARK: - PLEASE DO IT ARCHITECTURAL AMK
+        let router = HomeRouter()
+        let transition = PlaceOnWindowTransition()
+        let viewController = HomeViewController(viewModel: HomeViewModel.init(router: router))
+        let navController = CleanNavigationController(rootViewController: viewController)
+        switch DefaultsKey.isFirstRun.value {
+        case .init(booleanLiteral: false):
+            router.open(navController, transition: transition)
+            
+        default:
+            break;
+        }
     }
 }

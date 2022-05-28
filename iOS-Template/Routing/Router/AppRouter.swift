@@ -8,7 +8,7 @@
 import UIKit
 
 final class AppRouter: Router, AppRouter.Routes {
-    typealias Routes = GetNameRoute
+    typealias Routes = GetNameRoute & HomeRoute
     
     weak var window: UIWindow?
     
