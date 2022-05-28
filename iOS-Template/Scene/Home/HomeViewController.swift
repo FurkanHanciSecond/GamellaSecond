@@ -11,7 +11,7 @@ import Utilities
 import MobilliumUserDefaults
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
-    private let tableView: UITableView = {
+    private let homeTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(HomeCell.self)
         return tableView
@@ -23,8 +23,25 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         viewModel.didload()
         configrueContents()
         configrueNavigationBar()
+        addSubViews()
+        subscribeViewModel()
     }
 }
+
+
+// MARK: -  UI Layout
+
+extension HomeViewController {
+    private func addSubViews() {
+        addTableView()
+    }
+    
+    private func addTableView() {
+        view.addSubview(homeTableView)
+        homeTableView.edgesToSuperview()
+    }
+}
+
 
 // MARK: - Configure
 extension HomeViewController {
@@ -37,11 +54,21 @@ extension HomeViewController {
     }
 }
 
+// MARK: - SubscribeViewModel
+extension HomeViewController {
+    private func subscribeViewModel() {
+        viewModel.reloadData = { [ weak self ] in
+            guard let self = self else { return }
+            self.homeTableView.reloadData()
+        }
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItemsAt(section: section)
+        return viewModel.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

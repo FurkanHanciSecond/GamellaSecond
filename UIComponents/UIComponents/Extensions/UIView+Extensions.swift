@@ -34,6 +34,17 @@ public extension UIView {
             addSubview(view)
         }
     }
+    
+    func pinToCorners(to view : UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superview?.topAnchor ?? .init()),
+            bottomAnchor.constraint(equalTo: superview?.bottomAnchor ?? .init()),
+            leadingAnchor.constraint(equalTo: superview?.leadingAnchor ?? .init()),
+            trailingAnchor.constraint(equalTo: superview?.trailingAnchor ?? .init())
+        ])
+    }
 }
 
 public extension UIView {
