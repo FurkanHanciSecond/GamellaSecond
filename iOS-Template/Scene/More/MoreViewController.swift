@@ -11,6 +11,9 @@ final class MoreViewController: BaseViewController<MoreViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemIndigo
+        navigationItem.title = "More"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
 }

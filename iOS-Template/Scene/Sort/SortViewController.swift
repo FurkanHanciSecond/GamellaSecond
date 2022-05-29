@@ -11,6 +11,9 @@ final class SortViewController: BaseViewController<SortViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
+        navigationItem.title = "Sort"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
 }

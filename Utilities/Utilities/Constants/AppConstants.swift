@@ -35,6 +35,10 @@ public struct AppConstants {
         
         public enum Bar {
             //TODO: Complete it
+            public static let home = "Home"
+            public static let sort = "Sort"
+            public static let more = "More"
+            public static let settings = "Settings"
         }
     }
     
@@ -49,10 +53,15 @@ public struct AppConstants {
             public static let orange = UIColor(named: "GameOrange")
             public static let lightOrange = UIColor(named: "GameLightOrange")
             public  static let lightPurple = UIColor(named: "GameLightPurple")
+            public static let clear = UIColor.clear
         }
         
         public enum Image {
             public static let grid = UIImage(systemName: "square.grid.3x3")
+            public static let homeTabBar = UIImage(systemName: "house.fill")
+            public static let sortTabBar = UIImage(systemName: "arrow.up.arrow.down")
+            public static let moreTabBar = UIImage(systemName: "ellipsis.circle")
+            public static let settingsTabBar = UIImage(systemName: "gear")
         }
     }
 }

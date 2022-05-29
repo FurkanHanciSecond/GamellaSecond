@@ -22,7 +22,7 @@ final class GetNameViewModel: BaseViewModel<GetNameRouter>, GetNameViewProtocol 
         // MARK: - PLEASE DO IT ARCHITECTURAL AMK
         let router = HomeRouter()
         let transition = PlaceOnWindowTransition()
-        let viewController = HomeViewController(viewModel: HomeViewModel.init(router: router))
+        let viewController = MainTabBarController()
         let navController = CleanNavigationController(rootViewController: viewController)
         switch DefaultsKey.isFirstRun.value {
         case .init(booleanLiteral: false):

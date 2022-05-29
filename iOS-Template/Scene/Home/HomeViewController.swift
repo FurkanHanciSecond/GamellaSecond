@@ -25,6 +25,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         configureContents()
         subscribeViewModel()
         viewModel.viewDidLoad()
+        view.backgroundColor = AppConstants.Style.Color.indigo
     }
 }
 
@@ -39,6 +40,7 @@ extension HomeViewController {
         view.addSubview(tableView)
         tableView.pinToCorners(to: view)
         tableView.separatorStyle = .none
+        tableView.backgroundView = nil
     }
 }
 
@@ -46,7 +48,7 @@ extension HomeViewController {
 extension HomeViewController {
     
     private func configureContents() {
-        title = viewModel.title
+        navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         addBarButton()
     }
