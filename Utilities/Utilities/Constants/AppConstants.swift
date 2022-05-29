@@ -50,5 +50,9 @@ public struct AppConstants {
             public static let lightOrange = UIColor(named: "GameLightOrange")
             public  static let lightPurple = UIColor(named: "GameLightPurple")
         }
+        
+        public enum Image {
+            public static let grid = UIImage(systemName: "square.grid.3x3")
+        }
     }
 }

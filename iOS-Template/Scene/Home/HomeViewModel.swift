@@ -18,6 +18,7 @@ protocol HomeViewDataSource {
 
 protocol HomeViewEventSource {
     var reloadData: VoidClosure? { get set }
+    var title: String { get }
 }
 
 protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
@@ -25,6 +26,9 @@ protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    var title: String {
+        return "Hello \(DefaultsKey.userName.value ?? "")"
+    }
     
     // Privates
     private var cellItems: [HomeCellProtocol] = []

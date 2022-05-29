@@ -38,6 +38,7 @@ extension HomeViewController {
     private func addTableView() {
         view.addSubview(tableView)
         tableView.pinToCorners(to: view)
+        tableView.separatorStyle = .none
     }
 }
 
@@ -45,8 +46,19 @@ extension HomeViewController {
 extension HomeViewController {
     
     private func configureContents() {
-        title = "Hello \(DefaultsKey.userName.value ?? "")"
+        title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        addBarButton()
+    }
+    
+    private func addBarButton() {
+        let navBarButton = UIBarButtonItem(image: AppConstants.Style.Image.grid, style: .plain, target: self, action: #selector(gridButtonHandle(_:)))
+        navBarButton.tintColor = .black
+        self.navigationItem.rightBarButtonItem = navBarButton
+    }
+    
+    @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
+        print("grid")
     }
 }
 
