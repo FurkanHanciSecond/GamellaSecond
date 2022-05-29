@@ -9,49 +9,46 @@ import UIKit
 import MobilliumBuilders
 import TinyConstraints
 public class HomeCell: UITableViewCell, ReusableView {
+    weak var viewModel: HomeCellProtocol?
     
-    private lazy var titleLabel = UILabelBuilder()
+    private let titleLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 24))
         .textColor(.red)
-        .font(.systemFont(ofSize: 35))
         .numberOfLines(0)
         .build()
-    weak var viewModel: HomeCellProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        configureContents()
         addSubViews()
+        configureContents()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureContents()
     }
     
-    public func set(viewModel: HomeCellProtocol) {
+    public func set(viewModel: HomeCellProtocol?) {
         self.viewModel = viewModel
         self.configureContents()
     }
-    
 }
 
-// MARK: - UI Layout
-
+// MARK: -  UILayout
 extension HomeCell {
+    
     private func addSubViews() {
-        addLabel()
+        addTitleLabel()
     }
     
-    private func addLabel() {
+    private func addTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.edgesToSuperview(insets: .horizontal(16) + .vertical(16))
     }
 }
-
-
 // MARK: -  Configure
 extension HomeCell {
+    
     private func configureContents() {
         titleLabel.text = viewModel?.title
     }

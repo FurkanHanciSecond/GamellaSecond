@@ -10,41 +10,36 @@ import UIComponents
 import MobilliumUserDefaults
 
 protocol HomeViewDataSource {
-    var numberOfItems : Int { get }
-    func numberOfItemsAt(section: Int) -> Int
-    func cellItemAt(indexPath: IndexPath) -> HomeCellProtocol
+    var numberOfItems: Int { get }
+    
+    func cellForItemAt(indexPath: IndexPath) -> HomeCellProtocol
+    func didSelectItemAt(indexPath: IndexPath)
 }
 
 protocol HomeViewEventSource {
     var reloadData: VoidClosure? { get set }
 }
 
-protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
-    func didload()
+protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
+    func viewDidLoad()
 }
-final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
-    var numberOfItems: Int {
-        cellItems.count
-    }
-    
-    private var cellItems: [HomeCellProtocol] = []
 
+final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     
-    var reloadData: VoidClosure?
+    // Privates
+    private var cellItems: [HomeCellProtocol] = []
     
-    func didload() {
-        print("Home didLoad")
-    }
-    
-    
-    func numberOfItemsAt(section: Int) -> Int {
+    // DataSource
+    var numberOfItems: Int {
         return cellItems.count
     }
     
-    func cellItemAt(indexPath: IndexPath) -> HomeCellProtocol {
-        return cellItems[indexPath.row]
-    }
+    // EventSource
+    var reloadData: VoidClosure?
     
+    func viewDidLoad() {
+        getUserList()
+    }
 }
 
 // MARK: - DataSource
