@@ -8,13 +8,26 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
+import Utilities
 public class HomeCell: UITableViewCell, ReusableView {
     weak var viewModel: HomeCellProtocol?
+    
+    private let verticalPadding: CGFloat = 10
+    private let horizontalPadding : CGFloat = 20
     
     private let titleLabel = UILabelBuilder()
         .font(.systemFont(ofSize: 24))
         .textColor(.red)
         .numberOfLines(0)
+        .build()
+    
+    private lazy var containerView = UIViewBuilder()
+        .backgroundColor(AppConstants.Style.Color.lightPurple ?? .blue)
+        .shadowColor(AppConstants.Style.Color.lightOrange!.cgColor)
+        .shadowRadius(20)
+        .shadowOpacity(0.6)
+        .shadowOffset(CGSize(width: 0, height: 3))
+        .cornerRadius(contentView.frame.height / 2)
         .build()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -36,13 +49,22 @@ public class HomeCell: UITableViewCell, ReusableView {
 
 // MARK: -  UILayout
 extension HomeCell {
-    
+ 
     private func addSubViews() {
+        addContainerView()
         addTitleLabel()
     }
     
+    private func addContainerView() {
+        contentView.addSubview(containerView)
+        containerView.leadingToSuperview(offset: horizontalPadding)
+        containerView.trailingToSuperview(offset: horizontalPadding)
+        containerView.bottomToSuperview(offset: -verticalPadding)
+        containerView.topToSuperview(offset: verticalPadding)
+    }
+    
     private func addTitleLabel() {
-        contentView.addSubview(titleLabel)
+        containerView.addSubview(titleLabel)
         titleLabel.edgesToSuperview(insets: .horizontal(16) + .vertical(16))
     }
 }
