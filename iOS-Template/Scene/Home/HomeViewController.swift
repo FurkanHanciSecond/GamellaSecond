@@ -53,7 +53,7 @@ extension HomeViewController {
     
     private func addBarButton() {
         let navBarButton = UIBarButtonItem(image: AppConstants.Style.Image.grid, style: .plain, target: self, action: #selector(gridButtonHandle(_:)))
-        navBarButton.tintColor = .black
+        navBarButton.tintColor = AppConstants.Style.Color.labelColor
         self.navigationItem.rightBarButtonItem = navBarButton
     }
     
