@@ -20,6 +20,8 @@
 		5740044427E7225500B36934 /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740044127E7225500B36934 /* APIRequestAdapter.swift */; };
 		5740044527E7225500B36934 /* APIDecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740044227E7225500B36934 /* APIDecodableResponseRequest.swift */; };
 		5740044827E7229900B36934 /* UserCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740044727E7229900B36934 /* UserCacheHelper.swift */; };
+		705595D5284D3D9400B1FDAD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705595D4284D3D9400B1FDAD /* GameModel.swift */; };
+		705595D9284D3F6300B1FDAD /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705595D8284D3F6300B1FDAD /* DataRequest.swift */; };
 		FE4262B92825A93C009CCA73 /* MultiPartFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262B82825A93C009CCA73 /* MultiPartFileData.swift */; };
 		FE4262BD2825A991009CCA73 /* BaseResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262BB2825A991009CCA73 /* BaseResponseError.swift */; };
 		FE4262BE2825A991009CCA73 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262BC2825A991009CCA73 /* NetworkError.swift */; };
@@ -40,6 +42,8 @@
 		5740044127E7225500B36934 /* APIRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestAdapter.swift; sourceTree = "<group>"; };
 		5740044227E7225500B36934 /* APIDecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDecodableResponseRequest.swift; sourceTree = "<group>"; };
 		5740044727E7229900B36934 /* UserCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCacheHelper.swift; sourceTree = "<group>"; };
+		705595D4284D3D9400B1FDAD /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		705595D8284D3F6300B1FDAD /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		8C80EA5F9125D8732530DD42 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 		E9013398018D700BB01FEA03 /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		FE4262B82825A93C009CCA73 /* MultiPartFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPartFileData.swift; sourceTree = "<group>"; };
@@ -101,6 +105,22 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		705595D6284D3F4000B1FDAD /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				705595D7284D3F4900B1FDAD /* FetchData */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		705595D7284D3F4900B1FDAD /* FetchData */ = {
+			isa = PBXGroup;
+			children = (
+				705595D8284D3F6300B1FDAD /* DataRequest.swift */,
+			);
+			path = FetchData;
+			sourceTree = "<group>";
+		};
 		BF62D2B7BF311848C63EECAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +144,7 @@
 			children = (
 				FE4262BA2825A991009CCA73 /* Error */,
 				FE4262B82825A93C009CCA73 /* MultiPartFileData.swift */,
+				705595D4284D3D9400B1FDAD /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +179,7 @@
 		FE7347D827E715690019DB4F /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				705595D6284D3F4000B1FDAD /* Requests */,
 				FE4262B72825A934009CCA73 /* Model */,
 				5740044627E7229900B36934 /* Helper */,
 				5740043F27E7225500B36934 /* Manager */,
@@ -278,6 +300,8 @@
 				5740043D27E7224100B36934 /* RequestEncoding.swift in Sources */,
 				5740044327E7225500B36934 /* APIDataProvider.swift in Sources */,
 				FE4262BD2825A991009CCA73 /* BaseResponseError.swift in Sources */,
+				705595D5284D3D9400B1FDAD /* GameModel.swift in Sources */,
+				705595D9284D3F6300B1FDAD /* DataRequest.swift in Sources */,
 				5740043127E7222A00B36934 /* Encodable+Exntension.swift in Sources */,
 				5740043A27E7224100B36934 /* Typealias.swift in Sources */,
 				5740044527E7225500B36934 /* APIDecodableResponseRequest.swift in Sources */,

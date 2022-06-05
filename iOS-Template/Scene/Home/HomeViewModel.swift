@@ -8,7 +8,6 @@
 import Foundation
 import UIComponents
 import MobilliumUserDefaults
-
 protocol HomeViewDataSource {
     var numberOfItems: Int { get }
     
@@ -63,16 +62,28 @@ extension HomeViewModel {
 extension HomeViewModel {
     
     private func getUserList() {
+        showLoading?()
+        let request = GameDataRequest()
+        dataProvider?.request(for: request, result: { data in
+            switch data {
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            case .success(let response):
+                print(response)
+            }
+        })
         DispatchQueue.main.async {
             // Apiyi çağırıyormuşsun gibi algılayalım. ve cellItems içini dolduralım.
-            self.cellItems = [
-                HomeCellModel(title: "Birinci Model Uzunnnnnnnnnnn Text"),
-                HomeCellModel(title: " Analytics collection enabled  2022-05-15 22:28:06.388358+0300 iOS-Template[5192:133003] 8.13.0 - [Firebase/Analytics][I-ACS023220] Analytics screen reporting is enabled. Call +[FIRAnalytics logEventWithName:FIREventScreenView parameters:] to log a screen view event. To disable aut"),
-                HomeCellModel(title: "2022-05-15 22:28:06.915299+0300 iOS-Template[5192:133000] [boringssl] boringssl_metrics_log_metric_block_invoke(153) Failed to log metrics"),
-                HomeCellModel(title: "Birinci Modt"),
-                HomeCellModel(title: "BiALKSDJSALKDklsajkldsa")
-
-            ]
+//            self.cellItems = [
+//                HomeCellModel(title: "Birinci Model Uzunnnnnnnnnnn Text"),
+//                HomeCellModel(title: " Analytics collection enabled  2022-05-15 22:28:06.388358+0300 iOS-Template[5192:133003] 8.13.0 - [Firebase/Analytics][I-ACS023220] Analytics screen reporting is enabled. Call +[FIRAnalytics logEventWithName:FIREventScreenView parameters:] to log a screen view event. To disable aut"),
+//                HomeCellModel(title: "2022-05-15 22:28:06.915299+0300 iOS-Template[5192:133000] [boringssl] boringssl_metrics_log_metric_block_invoke(153) Failed to log metrics"),
+//                HomeCellModel(title: "Birinci Modt"),
+//                HomeCellModel(title: "BiALKSDJSALKDklsajkldsa")
+//
+//            ]
+            
             self.reloadData?()
         }
     }
