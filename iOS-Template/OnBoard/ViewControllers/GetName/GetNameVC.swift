@@ -9,7 +9,6 @@ import UIKit
 import MobilliumBuilders
 import MobilliumUserDefaults
 import Utilities
-import SwiftEntryKit
 final class GetNameVC: BaseViewController<GetNameViewModel> {
     
     private let welcomeText = UILabelBuilder()

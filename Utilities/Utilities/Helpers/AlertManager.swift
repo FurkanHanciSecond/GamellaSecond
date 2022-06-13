@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 public class AlertManager {
    public static func showAlert(
         title: String,
