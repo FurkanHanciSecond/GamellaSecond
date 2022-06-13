@@ -18,6 +18,7 @@ protocol HomeViewDataSource {
 protocol HomeViewEventSource {
     var reloadData: VoidClosure? { get set }
     var title: String { get }
+    var backgroundColor : UIColor { get }
 }
 
 protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
@@ -25,6 +26,10 @@ protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    var backgroundColor: UIColor {
+        return AppConstants.Style.Color.systemBackground
+    }
+    
     var title: String {
         return "Hello \(DefaultsKey.userName.value ?? "")"
     }
@@ -62,7 +67,7 @@ extension HomeViewModel {
 extension HomeViewModel {
     
     private func configutreCell(cellItem: [GameModel]) {
-        let item = cellItem.map({ HomeCellModel(title: $0.title ?? "" ) })
+        let item = cellItem.map({ HomeCellModel(title: $0.title ?? "", priceLabel: $0.worth ?? "", statusLabel: $0.status?.rawValue ?? "Error" ) })
         cellItems = item
         reloadData?()
     }
@@ -75,15 +80,16 @@ extension HomeViewModel {
         showLoading?()
         let request = GameDataRequest(platform: platfrom)
         dataProvider?.request(for: request, result: { [weak self] data in
-            guard let self = self else { return }
+            guard let self = self else { return }
             switch data {
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showLoading?()
+                
                 
             case .success(let response):
                 self.configutreCell(cellItem: response)
-                
-                    
+                self.hideLoading?()
             }
         })
         self.reloadData?()

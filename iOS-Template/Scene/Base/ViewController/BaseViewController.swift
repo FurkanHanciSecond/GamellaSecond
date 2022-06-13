@@ -12,7 +12,6 @@ import TinyConstraints
 class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
     
     private var animatedPopController = true
-    
     var viewModel: V
     
     init(viewModel: V) {
@@ -62,11 +61,11 @@ extension BaseViewController {
     private func subscribeLoading() {
         viewModel.showLoading = {
             let window = UIApplication.shared.windows.first
-            //window?.showNytLoaderView()
+            window?.startActivityIndicator()
         }
         viewModel.hideLoading = {
             let window = UIApplication.shared.windows.first
-            //window?.hideNytLoaderView()
+            window?.stopActivityIndicator()
         }
     }
 }

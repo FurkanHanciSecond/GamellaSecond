@@ -21,6 +21,12 @@ public class HomeCell: UITableViewCell, ReusableView {
         .numberOfLines(0)
         .build()
     
+    private let priceLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 20, weight: .bold))
+        .textColor(AppConstants.Style.Color.black)
+        .numberOfLines(0)
+        .build()
+    
     private lazy var containerView = UIViewBuilder()
         .backgroundColor(AppConstants.Style.Color.lightPurple ?? .blue)
          .shadowColor(AppConstants.Style.Color.lightOrange!.cgColor)
@@ -53,6 +59,7 @@ extension HomeCell {
     private func addSubViews() {
         addContainerView()
         addTitleLabel()
+        addPriceLabel()
     }
     
     private func addContainerView() {
@@ -67,11 +74,18 @@ extension HomeCell {
         containerView.addSubview(titleLabel)
         titleLabel.edgesToSuperview(insets: .horizontal(16) + .vertical(16))
     }
+    
+    private func addPriceLabel() {
+        containerView.addSubview(priceLabel)
+        priceLabel.topToBottom(of: titleLabel, offset: -5)
+        priceLabel.leadingToSuperview(titleLabel.leadingAnchor)
+    }
 }
 // MARK: -  Configure
 extension HomeCell {
     
     private func configureContents() {
         titleLabel.text = viewModel?.title
+        priceLabel.text = "Price: \(viewModel?.priceLabel ?? "")"
     }
 }

@@ -25,7 +25,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         configureContents()
         subscribeViewModel()
         viewModel.viewDidLoad()
-        view.backgroundColor = AppConstants.Style.Color.indigo
+        view.backgroundColor = viewModel.backgroundColor
     }
 }
 
@@ -70,7 +70,10 @@ extension HomeViewController {
     private func subscribeViewModel() {
         viewModel.reloadData = { [weak self] in
             guard let self = self else { return }
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+           
         }
     }
 }

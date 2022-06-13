@@ -9,13 +9,13 @@ import UIKit
 
 final class ClickListener: UITapGestureRecognizer {
     private var action: () -> Void
-
+    
     init(_ action: @escaping () -> Void) {
         self.action = action
         super.init(target: nil, action: nil)
         self.addTarget(self, action: #selector(execute))
     }
-
+    
     @objc
     private func execute() {
         action()
@@ -45,13 +45,41 @@ public extension UIView {
             trailingAnchor.constraint(equalTo: superview?.trailingAnchor ?? .init())
         ])
     }
+    
+    func startActivityIndicator() {
+        let backgroundView = UIView()
+        backgroundView.frame = .init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+        backgroundView.tag = 99
+        
+        var activityIndicator: UIActivityIndicatorView
+        if #available(iOS 13.0, *) {
+            activityIndicator = UIActivityIndicatorView(style: .large)
+        } else {
+            activityIndicator = UIActivityIndicatorView(style: .gray)
+        }
+        activityIndicator.color = .gray
+        activityIndicator.center = self.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        self.isUserInteractionEnabled = false
+        
+        backgroundView.addSubview(activityIndicator)
+        self.addSubview(backgroundView)
+    }
+    
+    func stopActivityIndicator() {
+        if let background = viewWithTag(99) {
+            background.removeFromSuperview()
+        }
+        self.isUserInteractionEnabled = true
+    }
 }
 
 public extension UIView {
     @discardableResult
     func addLineDashedStroke(pattern: [NSNumber]?, radius: CGFloat, color: CGColor, borderWidth: CGFloat = 2) -> CALayer {
         let borderLayer = CAShapeLayer()
-
+        
         borderLayer.strokeColor = color
         borderLayer.lineDashPattern = pattern
         borderLayer.lineWidth = borderWidth
@@ -61,7 +89,7 @@ public extension UIView {
         borderLayer.path = UIBezierPath(roundedRect: bounds,
                                         byRoundingCorners: .allCorners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
         self.layoutSubviews()
-
+        
         layer.addSublayer(borderLayer)
         return borderLayer
     }
