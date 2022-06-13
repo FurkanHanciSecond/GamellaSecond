@@ -90,6 +90,11 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if viewModel.numberOfItems == 0 {
+            tableView.setEmptyView(message: "No Data!", image: UIImage(systemName: "exclamationmark.triangle.fill")!)
+        } else {
+            tableView.restoreTableView()
+        }
         return viewModel.numberOfItems
     }
     
