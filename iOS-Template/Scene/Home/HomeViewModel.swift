@@ -41,7 +41,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var reloadData: VoidClosure?
     
     func viewDidLoad() {
-        getUserList()
+        getUserList(platfrom: "pc")
     }
 }
 
@@ -58,33 +58,34 @@ extension HomeViewModel {
     }
 }
 
+// MARK: - DataSource
+extension HomeViewModel {
+    
+    private func configutreCell(cellItem: [GameModel]) {
+        let item = cellItem.map({ HomeCellModel(title: $0.title ?? "" ) })
+        cellItems = item
+        reloadData?()
+    }
+}
+
 // MARK: -  Requests
 extension HomeViewModel {
     
-    private func getUserList() {
+    private func getUserList(platfrom: String) {
         showLoading?()
-        let request = GameDataRequest()
-        dataProvider?.request(for: request, result: { data in
+        let request = GameDataRequest(platform: platfrom)
+        dataProvider?.request(for: request, result: { [weak self] data in
+            guard let self = self else { return }
             switch data {
             case .failure(let error):
                 print(error.localizedDescription)
                 
             case .success(let response):
-                print(response)
+                self.configutreCell(cellItem: response)
+                
+                    
             }
         })
-        DispatchQueue.main.async {
-            // Apiyi çağırıyormuşsun gibi algılayalım. ve cellItems içini dolduralım.
-//            self.cellItems = [
-//                HomeCellModel(title: "Birinci Model Uzunnnnnnnnnnn Text"),
-//                HomeCellModel(title: " Analytics collection enabled  2022-05-15 22:28:06.388358+0300 iOS-Template[5192:133003] 8.13.0 - [Firebase/Analytics][I-ACS023220] Analytics screen reporting is enabled. Call +[FIRAnalytics logEventWithName:FIREventScreenView parameters:] to log a screen view event. To disable aut"),
-//                HomeCellModel(title: "2022-05-15 22:28:06.915299+0300 iOS-Template[5192:133000] [boringssl] boringssl_metrics_log_metric_block_invoke(153) Failed to log metrics"),
-//                HomeCellModel(title: "Birinci Modt"),
-//                HomeCellModel(title: "BiALKSDJSALKDklsajkldsa")
-//
-//            ]
-            
-            self.reloadData?()
-        }
+        self.reloadData?()
     }
 }

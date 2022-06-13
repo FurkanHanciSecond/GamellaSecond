@@ -8,7 +8,7 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
-//import Utilities
+import Utilities
 public class HomeCell: UITableViewCell, ReusableView {
     weak var viewModel: HomeCellProtocol?
     
@@ -17,13 +17,13 @@ public class HomeCell: UITableViewCell, ReusableView {
     
     private let titleLabel = UILabelBuilder()
         .font(.systemFont(ofSize: 24))
-        .textColor(.red)
+        .textColor(AppConstants.Style.Color.black)
         .numberOfLines(0)
         .build()
     
     private lazy var containerView = UIViewBuilder()
-       // .backgroundColor(AppConstants.Style.Color.lightPurple ?? .blue)
-        //.shadowColor(AppConstants.Style.Color.lightOrange!.cgColor)
+        .backgroundColor(AppConstants.Style.Color.lightPurple ?? .blue)
+         .shadowColor(AppConstants.Style.Color.lightOrange!.cgColor)
         .shadowRadius(20)
         .shadowOpacity(0.6)
         .shadowOffset(CGSize(width: 0, height: 3))

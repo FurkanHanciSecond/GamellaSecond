@@ -23,7 +23,7 @@ public extension BaseRequest {
 // MARK: - url
 public extension BaseRequest {
     var url: String {
-        return "BASE_URL" + path
+        return "https://www.gamerpower.com/api/" + path
     }
 }
 

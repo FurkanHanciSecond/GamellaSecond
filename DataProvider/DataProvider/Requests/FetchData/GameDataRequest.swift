@@ -5,15 +5,17 @@
 //  Created by Furkan Hanci on 6/13/22.
 //
 
-public struct GameDataRequest: RequestProtocol {
+public struct GameDataRequest: BaseRequest {
     
-    public typealias ResponseType = <#T##Type###>
+    public typealias ResponseType = [GameModel]
     
-    public var path: String = <#T##Type###>
-    public var method: RequestMethod = <#T##Type###>
+    public var path: String = ""
+    public var method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
     
-    public init() {}
-    
+    public init(platform: String) {
+        path = "giveaways"
+        parameters = ["platform" : platform]
+    }
 }

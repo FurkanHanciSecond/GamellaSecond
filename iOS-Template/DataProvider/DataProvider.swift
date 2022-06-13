@@ -8,7 +8,7 @@
 
 #if DEBUG
 let apiDataProvider = APIDataProvider(interceptor: APIRequestInterceptor.shared,
-                                      eventMonitors: [])
+                                      eventMonitors: [APILogger.shared])
 #else
 let apiDataProvider = APIDataProvider(interceptor: APIRequestInterceptor.shared,
                                       eventMonitors: [])
