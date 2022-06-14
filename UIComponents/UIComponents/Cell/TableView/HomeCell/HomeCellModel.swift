@@ -11,7 +11,8 @@ public protocol HomeCellDataSource: AnyObject {
     var title : String? { get set }
     var priceLabel : String? { get set }
     var statusLabel : String? { get set }
-    var deadLine : String? { get set }
+    var deadLineLabel : String? { get set }
+    var typeLabel : String { get set }
 }
 
 public protocol HomeCellEventSource: AnyObject {
@@ -23,15 +24,17 @@ public protocol HomeCellProtocol: HomeCellDataSource, HomeCellEventSource {
 }
 
 public final class HomeCellModel: HomeCellProtocol {
-    public var deadLine: String?
+    public var typeLabel: String
+    public var deadLineLabel: String?
     public var statusLabel: String?
     public var priceLabel: String?
     public var title: String?
     
-    public init(title : String , priceLabel: String , statusLabel : String , deadLine : String) {
+    public init(title : String , priceLabel: String , statusLabel : String , deadLineLabel : String , typeLabel : String) {
         self.title = title
         self.priceLabel = priceLabel
         self.statusLabel = statusLabel
-        self.deadLine = deadLine
+        self.deadLineLabel = deadLineLabel
+        self.typeLabel = typeLabel
     }
 }

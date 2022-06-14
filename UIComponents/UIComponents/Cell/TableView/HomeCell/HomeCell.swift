@@ -40,6 +40,12 @@ public class HomeCell: UITableViewCell, ReusableView {
         .numberOfLines(0)
         .build()
     
+    private let typeLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 13, weight: .medium))
+        .textColor(AppConstants.Style.Color.black)
+        .numberOfLines(0)
+        .build()
+    
     private lazy var containerView = UIViewBuilder()
         .backgroundColor(AppConstants.Style.Color.lightPurple ?? .blue)
          .shadowColor(AppConstants.Style.Color.lightOrange!.cgColor)
@@ -75,6 +81,7 @@ extension HomeCell {
         addPriceLabel()
         addStatusLabel()
         addEndDateLabel()
+        addTypeLabel()
     }
     
     private func addContainerView() {
@@ -104,8 +111,14 @@ extension HomeCell {
     
     private func addEndDateLabel() {
         containerView.addSubview(endDateLabel)
-        endDateLabel.edgesToSuperview(excluding: .top , insets: .horizontal(16) + .bottom(16))
+        endDateLabel.edgesToSuperview(excluding: [.top , .bottom] , insets: .horizontal(16) + .bottom(16))
         endDateLabel.topToBottom(of: statusLabel , offset: 8)
+    }
+    
+    private func addTypeLabel() {
+        containerView.addSubview(typeLabel)
+        typeLabel.edgesToSuperview(excluding: .top, insets: .horizontal(16) + .bottom(16))
+        typeLabel.topToBottom(of: endDateLabel , offset: 8)
     }
 }
 // MARK: -  Configure
@@ -115,6 +128,7 @@ extension HomeCell {
         titleLabel.text = viewModel?.title
         priceLabel.text = "Price: \(viewModel?.priceLabel ?? "")"
         statusLabel.text = "Status: \(viewModel?.statusLabel ?? "")"
-        endDateLabel.text = "EndDate: \(viewModel?.deadLine ?? "")"
+        endDateLabel.text = "EndDate: \(viewModel?.deadLineLabel ?? "")"
+        typeLabel.text = "Type: \(viewModel?.typeLabel ?? "")"
     }
 }
