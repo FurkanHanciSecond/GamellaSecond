@@ -67,7 +67,7 @@ extension HomeViewModel {
 extension HomeViewModel {
     
     private func configutreCell(cellItem: [GameModel]) {
-        let item = cellItem.map({ HomeCellModel(title: $0.title ?? "", priceLabel: $0.worth ?? "", statusLabel: $0.status?.rawValue ?? "Error" ) })
+        let item = cellItem.map({ HomeCellModel(title: $0.title ?? "", priceLabel: $0.worth ?? "", statusLabel: $0.status?.rawValue ?? "Error", deadLine: $0.endDate ?? "") })
         cellItems = item
         reloadData?()
     }

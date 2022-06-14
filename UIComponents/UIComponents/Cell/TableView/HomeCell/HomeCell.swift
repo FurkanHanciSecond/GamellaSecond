@@ -30,7 +30,13 @@ public class HomeCell: UITableViewCell, ReusableView {
     
     private let statusLabel = UILabelBuilder()
         .font(.systemFont(ofSize: 13, weight: .regular))
-        .textColor(AppConstants.Style.Color.gray)
+        .textColor(AppConstants.Style.Color.black)
+        .numberOfLines(0)
+        .build()
+    
+    private let endDateLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 13, weight: .light))
+        .textColor(AppConstants.Style.Color.black)
         .numberOfLines(0)
         .build()
     
@@ -67,7 +73,8 @@ extension HomeCell {
         addContainerView()
         addTitleLabel()
         addPriceLabel()
-        addTestLabel()
+        addStatusLabel()
+        addEndDateLabel()
     }
     
     private func addContainerView() {
@@ -89,10 +96,16 @@ extension HomeCell {
         priceLabel.topToBottom(of: titleLabel, offset: 8)
     }
     
-    private func addTestLabel() {
+    private func addStatusLabel() {
         containerView.addSubview(statusLabel)
-        statusLabel.edgesToSuperview(excluding: .top, insets: .horizontal(16) + .bottom(16))
+        statusLabel.edgesToSuperview(excluding: [.top , .bottom], insets: .horizontal(16) + .bottom(16))
         statusLabel.topToBottom(of: priceLabel, offset: 8)
+    }
+    
+    private func addEndDateLabel() {
+        containerView.addSubview(endDateLabel)
+        endDateLabel.edgesToSuperview(excluding: .top , insets: .horizontal(16) + .bottom(16))
+        endDateLabel.topToBottom(of: statusLabel , offset: 8)
     }
 }
 // MARK: -  Configure
@@ -102,5 +115,6 @@ extension HomeCell {
         titleLabel.text = viewModel?.title
         priceLabel.text = "Price: \(viewModel?.priceLabel ?? "")"
         statusLabel.text = "Status: \(viewModel?.statusLabel ?? "")"
+        endDateLabel.text = "EndDate: \(viewModel?.deadLine ?? "")"
     }
 }
