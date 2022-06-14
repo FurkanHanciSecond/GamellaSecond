@@ -55,11 +55,10 @@ class FourthOnboardVC: UIViewController {
     
     @objc private func startButtonHandle(_ sender: UIButton) {
         //TODO: MIMARIYE UYGUN YAP AMK 😡
-        let tabBar = MainTabBarController()
-       // let cleanNavigation = CleanNavigationController(rootViewController: MainTabBarController())
-        tabBar.modalTransitionStyle = .partialCurl
-        tabBar.modalPresentationStyle = .fullScreen
-        present(tabBar, animated: true, completion: nil)
+        let cleanNavigation = CleanNavigationController(rootViewController: MainTabBarController())
+        cleanNavigation.modalTransitionStyle = .partialCurl
+        cleanNavigation.modalPresentationStyle = .fullScreen
+        present(cleanNavigation, animated: true, completion: nil)
         DefaultsKey.isFirstRun.value = false
     }
     
