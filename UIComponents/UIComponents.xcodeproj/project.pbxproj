@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		705BBB66283A1A6600F61E53 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB64283A1A6600F61E53 /* HomeCell.swift */; };
 		705BBB67283A1A6600F61E53 /* HomeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB65283A1A6600F61E53 /* HomeCellModel.swift */; };
+		70B1AEC82858CBD70035FE2A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1AEC72858CBD70035FE2A /* AppConstants.swift */; };
 		70BD6A7B28318CC700E5D179 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A7928318CC700E5D179 /* ExampleCell.swift */; };
 		70BD6A7C28318CC700E5D179 /* ExampleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD6A7A28318CC700E5D179 /* ExampleCellModel.swift */; };
 		E72F1B73163D45C5A7CAA1D0 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6F78B05FEFA3BCB786A95F /* Pods_UIComponents.framework */; };
@@ -25,6 +26,7 @@
 		63FFBDCF860852E97C663915 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		705BBB64283A1A6600F61E53 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		705BBB65283A1A6600F61E53 /* HomeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModel.swift; sourceTree = "<group>"; };
+		70B1AEC72858CBD70035FE2A /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		70BD6A7928318CC700E5D179 /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		70BD6A7A28318CC700E5D179 /* ExampleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCellModel.swift; sourceTree = "<group>"; };
 		FC6F78B05FEFA3BCB786A95F /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 		FE7347FE27E716040019DB4F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				70B1AEC72858CBD70035FE2A /* AppConstants.swift */,
 				FE7347FF27E716130019DB4F /* NSMutableAttributedString+Extension.swift */,
 				FE73480027E716130019DB4F /* UICollectionView+Extensions.swift */,
 				FE73480227E716130019DB4F /* UITableView+Extensions.swift */,
@@ -265,6 +268,7 @@
 				FE73480427E716130019DB4F /* UICollectionView+Extensions.swift in Sources */,
 				FE73480327E716130019DB4F /* NSMutableAttributedString+Extension.swift in Sources */,
 				FE73480627E716130019DB4F /* UITableView+Extensions.swift in Sources */,
+				70B1AEC82858CBD70035FE2A /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

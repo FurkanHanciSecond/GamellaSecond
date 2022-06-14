@@ -8,7 +8,8 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
-import Utilities
+
+
 public class HomeCell: UITableViewCell, ReusableView {
     weak var viewModel: HomeCellProtocol?
     
@@ -16,14 +17,20 @@ public class HomeCell: UITableViewCell, ReusableView {
     private let horizontalPadding : CGFloat = 20
     
     private let titleLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 24))
+        .font(.systemFont(ofSize: 18 , weight: .semibold))
         .textColor(AppConstants.Style.Color.black)
         .numberOfLines(0)
         .build()
     
     private let priceLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 20, weight: .bold))
+        .font(.systemFont(ofSize: 15, weight: .bold))
         .textColor(AppConstants.Style.Color.black)
+        .numberOfLines(0)
+        .build()
+    
+    private let statusLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 13, weight: .regular))
+        .textColor(AppConstants.Style.Color.gray)
         .numberOfLines(0)
         .build()
     
@@ -60,25 +67,32 @@ extension HomeCell {
         addContainerView()
         addTitleLabel()
         addPriceLabel()
+        addTestLabel()
     }
     
     private func addContainerView() {
         contentView.addSubview(containerView)
         containerView.leadingToSuperview(offset: horizontalPadding)
         containerView.trailingToSuperview(offset: horizontalPadding)
-        containerView.bottomToSuperview(offset: -verticalPadding)
+        containerView.bottomToSuperview()
         containerView.topToSuperview(offset: verticalPadding)
     }
     
     private func addTitleLabel() {
         containerView.addSubview(titleLabel)
-        titleLabel.edgesToSuperview(insets: .horizontal(16) + .vertical(16))
+        titleLabel.edgesToSuperview(excluding: .bottom, insets: .horizontal(16) + .vertical(16))
     }
     
     private func addPriceLabel() {
         containerView.addSubview(priceLabel)
-        priceLabel.topToBottom(of: titleLabel, offset: -5)
-        priceLabel.leadingToSuperview(titleLabel.leadingAnchor)
+        priceLabel.edgesToSuperview(excluding: [.top, .bottom], insets: .horizontal(16) + .bottom(8))
+        priceLabel.topToBottom(of: titleLabel, offset: 8)
+    }
+    
+    private func addTestLabel() {
+        containerView.addSubview(statusLabel)
+        statusLabel.edgesToSuperview(excluding: .top, insets: .horizontal(16) + .bottom(16))
+        statusLabel.topToBottom(of: priceLabel, offset: 8)
     }
 }
 // MARK: -  Configure
@@ -87,5 +101,6 @@ extension HomeCell {
     private func configureContents() {
         titleLabel.text = viewModel?.title
         priceLabel.text = "Price: \(viewModel?.priceLabel ?? "")"
+        statusLabel.text = "Status: \(viewModel?.statusLabel ?? "")"
     }
 }

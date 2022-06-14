@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UIComponents
 
 public class AlertManager {
    public static func showAlert(
