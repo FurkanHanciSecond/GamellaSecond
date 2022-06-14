@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33003160F3957692E618F2BA /* Pods_iOS_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D6340C20F77B5A1B3FCCA9 /* Pods_iOS_Template.framework */; };
 		701FFFB62843E3020018F3A6 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */; };
 		701FFFB72843E3020018F3A6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */; };
 		701FFFB82843E3020018F3A6 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */; };
@@ -36,6 +35,7 @@
 		70D818362838BC570088E2C0 /* GetNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818352838BC570088E2C0 /* GetNameRouter.swift */; };
 		70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818372838BC610088E2C0 /* GetNameViewModel.swift */; };
 		70D8183A2838BC690088E2C0 /* GetNameRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818392838BC690088E2C0 /* GetNameRoute.swift */; };
+		C22789DFC32DF65F6311D431 /* Pods_Gamella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F908CAEA7079B66C87B50EA1 /* Pods_Gamella.framework */; };
 		FE4262722825A6A8009CCA73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42626E2825A6A8009CCA73 /* AppDelegate.swift */; };
 		FE4262732825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42626F2825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift */; };
 		FE4262782825A6D9009CCA73 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262752825A6D9009CCA73 /* DataProvider.swift */; };
@@ -90,7 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1CEF342A0B19B85C246FB043 /* Pods-iOS-Template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Template.release.xcconfig"; path = "Target Support Files/Pods-iOS-Template/Pods-iOS-Template.release.xcconfig"; sourceTree = "<group>"; };
+		1C0141F4B45FFC7EE4C93589 /* Pods-Gamella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamella.debug.xcconfig"; path = "Target Support Files/Pods-Gamella/Pods-Gamella.debug.xcconfig"; sourceTree = "<group>"; };
 		701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
 		701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 		70D818352838BC570088E2C0 /* GetNameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRouter.swift; sourceTree = "<group>"; };
 		70D818372838BC610088E2C0 /* GetNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewModel.swift; sourceTree = "<group>"; };
 		70D818392838BC690088E2C0 /* GetNameRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRoute.swift; sourceTree = "<group>"; };
-		9948464BE7557A0223048540 /* Pods-iOS-Template.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Template.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Template/Pods-iOS-Template.debug.xcconfig"; sourceTree = "<group>"; };
-		F5D6340C20F77B5A1B3FCCA9 /* Pods_iOS_Template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F98EBAF0A604AD17143490 /* Pods-Gamella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamella.release.xcconfig"; path = "Target Support Files/Pods-Gamella/Pods-Gamella.release.xcconfig"; sourceTree = "<group>"; };
+		F908CAEA7079B66C87B50EA1 /* Pods_Gamella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gamella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE42626E2825A6A8009CCA73 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE42626F2825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		FE4262752825A6D9009CCA73 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		FE7347F827E715AA0019DB4F /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7347FB27E715AD0019DB4F /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE73480C27E7182A0019DB4F /* iOS-Template-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS-Template-Bridging-Header.h"; sourceTree = "<group>"; };
-		FEBA463C27E648D0009A75F9 /* iOS-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBA463C27E648D0009A75F9 /* Gamella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gamella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBA464927E648D0009A75F9 /* iOS_Template.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Template.xcdatamodel; sourceTree = "<group>"; };
 		FEBA464B27E648D1009A75F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEBA464E27E648D1009A75F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 				FE7347F927E715AA0019DB4F /* UIComponents.framework in Frameworks */,
 				FE7347F527E715A60019DB4F /* DataProvider.framework in Frameworks */,
 				FE7347FC27E715AD0019DB4F /* Utilities.framework in Frameworks */,
-				33003160F3957692E618F2BA /* Pods_iOS_Template.framework in Frameworks */,
+				C22789DFC32DF65F6311D431 /* Pods_Gamella.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +183,7 @@
 				FE7347F427E715A60019DB4F /* DataProvider.framework */,
 				FE7347A127E714CA0019DB4F /* DataProvider.framework */,
 				FE73479D27E714C40019DB4F /* UIComponents.framework */,
-				F5D6340C20F77B5A1B3FCCA9 /* Pods_iOS_Template.framework */,
+				F908CAEA7079B66C87B50EA1 /* Pods_Gamella.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -309,8 +309,8 @@
 		F2ECFF5F2502586978FE9DC5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9948464BE7557A0223048540 /* Pods-iOS-Template.debug.xcconfig */,
-				1CEF342A0B19B85C246FB043 /* Pods-iOS-Template.release.xcconfig */,
+				1C0141F4B45FFC7EE4C93589 /* Pods-Gamella.debug.xcconfig */,
+				A3F98EBAF0A604AD17143490 /* Pods-Gamella.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -469,7 +469,7 @@
 		FEBA463D27E648D0009A75F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEBA463C27E648D0009A75F9 /* iOS-Template.app */,
+				FEBA463C27E648D0009A75F9 /* Gamella.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -492,24 +492,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEBA463B27E648D0009A75F9 /* iOS-Template */ = {
+		FEBA463B27E648D0009A75F9 /* Gamella */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEBA465327E648D1009A75F9 /* Build configuration list for PBXNativeTarget "iOS-Template" */;
+			buildConfigurationList = FEBA465327E648D1009A75F9 /* Build configuration list for PBXNativeTarget "Gamella" */;
 			buildPhases = (
-				2D88354269DED44E8EF8E0FA /* [CP] Check Pods Manifest.lock */,
+				BB3313FF16F9854DBDD22C41 /* [CP] Check Pods Manifest.lock */,
 				FEBA463827E648D0009A75F9 /* Sources */,
 				FEBA463927E648D0009A75F9 /* Frameworks */,
 				FEBA463A27E648D0009A75F9 /* Resources */,
 				FE7347F727E715A60019DB4F /* Embed Frameworks */,
-				26B18B92649523F176926D14 /* [CP] Embed Pods Frameworks */,
+				A3C3A7D54F9B7F21DAB191A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "iOS-Template";
+			name = Gamella;
 			productName = "iOS-Template";
-			productReference = FEBA463C27E648D0009A75F9 /* iOS-Template.app */;
+			productReference = FEBA463C27E648D0009A75F9 /* Gamella.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -528,7 +528,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FEBA463727E648D0009A75F9 /* Build configuration list for PBXProject "iOS-Template" */;
+			buildConfigurationList = FEBA463727E648D0009A75F9 /* Build configuration list for PBXProject "Gamella" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -541,7 +541,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEBA463B27E648D0009A75F9 /* iOS-Template */,
+				FEBA463B27E648D0009A75F9 /* Gamella */,
 			);
 		};
 /* End PBXProject section */
@@ -559,24 +559,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26B18B92649523F176926D14 /* [CP] Embed Pods Frameworks */ = {
+		A3C3A7D54F9B7F21DAB191A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Template/Pods-iOS-Template-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Gamella/Pods-Gamella-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Template/Pods-iOS-Template-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Gamella/Pods-Gamella-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Template/Pods-iOS-Template-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gamella/Pods-Gamella-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D88354269DED44E8EF8E0FA /* [CP] Check Pods Manifest.lock */ = {
+		BB3313FF16F9854DBDD22C41 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -591,7 +591,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iOS-Template-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Gamella-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -728,7 +728,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "iOS-Template/Configure/info.plist";
+				INFOPLIST_FILE = Gamella/Configure/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -784,7 +784,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "iOS-Template/Configure/info.plist";
+				INFOPLIST_FILE = Gamella/Configure/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -797,7 +797,7 @@
 		};
 		FEBA465427E648D1009A75F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9948464BE7557A0223048540 /* Pods-iOS-Template.debug.xcconfig */;
+			baseConfigurationReference = 1C0141F4B45FFC7EE4C93589 /* Pods-Gamella.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -818,7 +818,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.furkanhanci.iOS-Template";
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanhanci.Gamella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS-Template/Configure/iOS-Template-Bridging-Header.h";
@@ -830,7 +830,7 @@
 		};
 		FEBA465527E648D1009A75F9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CEF342A0B19B85C246FB043 /* Pods-iOS-Template.release.xcconfig */;
+			baseConfigurationReference = A3F98EBAF0A604AD17143490 /* Pods-Gamella.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -851,7 +851,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.furkanhanci.iOS-Template";
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanhanci.Gamella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS-Template/Configure/iOS-Template-Bridging-Header.h";
@@ -863,7 +863,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEBA463727E648D0009A75F9 /* Build configuration list for PBXProject "iOS-Template" */ = {
+		FEBA463727E648D0009A75F9 /* Build configuration list for PBXProject "Gamella" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEBA465127E648D1009A75F9 /* Debug */,
@@ -872,7 +872,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEBA465327E648D1009A75F9 /* Build configuration list for PBXNativeTarget "iOS-Template" */ = {
+		FEBA465327E648D1009A75F9 /* Build configuration list for PBXNativeTarget "Gamella" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEBA465427E648D1009A75F9 /* Debug */,

@@ -11,9 +11,9 @@ def shared_pods
   pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher', :branch => 'version6-xcode13'
 end
 
-workspace 'iOS-Template'
+workspace 'Gamella'
 
-target 'iOS-Template' do
+target 'Gamella' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 

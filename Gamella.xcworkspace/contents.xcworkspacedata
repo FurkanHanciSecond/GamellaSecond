@@ -11,9 +11,9 @@
       location = "group:Utilities/Utilities.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:iOS-Template.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:Gamella.xcodeproj">
    </FileRef>
 </Workspace>
