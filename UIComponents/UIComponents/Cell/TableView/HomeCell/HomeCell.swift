@@ -46,6 +46,18 @@ public class HomeCell: UITableViewCell, ReusableView {
         .numberOfLines(0)
         .build()
     
+    private let testImage = UIImageViewBuilder()
+        .tintColor(.label)
+        .size(.init(width: 50, height: 50))
+        .image(UIImage(systemName: "house")!)
+        .build()
+    
+    private let arrowRightImage = UIImageViewBuilder()
+        .tintColor(.label)
+        .size(.init(width: 30, height: 30))
+        .image(UIImage(systemName: "chevron.forward")!)
+        .build()
+    
     private lazy var containerView = UIViewBuilder()
         .backgroundColor(AppConstants.Style.Color.lightPurple ?? .blue)
          .shadowColor(AppConstants.Style.Color.lightOrange!.cgColor)
@@ -82,6 +94,8 @@ extension HomeCell {
         addStatusLabel()
         addEndDateLabel()
         addTypeLabel()
+        addTestImage()
+        addRightArrow()
     }
     
     private func addContainerView() {
@@ -94,31 +108,47 @@ extension HomeCell {
     
     private func addTitleLabel() {
         containerView.addSubview(titleLabel)
-        titleLabel.edgesToSuperview(excluding: .bottom, insets: .horizontal(16) + .vertical(16))
+        titleLabel.edgesToSuperview(excluding: [.bottom , .leading], insets: .horizontal(8) + .vertical(16))
     }
     
     private func addPriceLabel() {
         containerView.addSubview(priceLabel)
-        priceLabel.edgesToSuperview(excluding: [.top, .bottom], insets: .horizontal(16) + .bottom(8))
+        priceLabel.edgesToSuperview(excluding: [.top, .bottom , .leading], insets: .horizontal(16) + .bottom(8))
         priceLabel.topToBottom(of: titleLabel, offset: 8)
+        priceLabel.leading(to: titleLabel)
     }
     
     private func addStatusLabel() {
         containerView.addSubview(statusLabel)
-        statusLabel.edgesToSuperview(excluding: [.top , .bottom], insets: .horizontal(16) + .bottom(16))
+        statusLabel.edgesToSuperview(excluding: [.top , .bottom , .leading], insets: .horizontal(16) + .bottom(16))
         statusLabel.topToBottom(of: priceLabel, offset: 8)
+        statusLabel.leading(to: priceLabel)
     }
     
     private func addEndDateLabel() {
         containerView.addSubview(endDateLabel)
-        endDateLabel.edgesToSuperview(excluding: [.top , .bottom] , insets: .horizontal(16) + .bottom(16))
+        endDateLabel.edgesToSuperview(excluding: [.top , .bottom , .leading] , insets: .horizontal(16) + .bottom(16))
         endDateLabel.topToBottom(of: statusLabel , offset: 8)
+        endDateLabel.leading(to: statusLabel)
     }
     
     private func addTypeLabel() {
         containerView.addSubview(typeLabel)
-        typeLabel.edgesToSuperview(excluding: .top, insets: .horizontal(16) + .bottom(16))
+        typeLabel.edgesToSuperview(excluding: [.top , .leading], insets: .horizontal(16) + .bottom(16))
         typeLabel.topToBottom(of: endDateLabel , offset: 8)
+        typeLabel.leading(to: endDateLabel)
+    }
+    
+    private func addTestImage() {
+        containerView.addSubview(testImage)
+        testImage.edgesToSuperview(excluding: [.bottom , .trailing] , insets: .horizontal(16) + .vertical(16))
+        testImage.trailingToLeading(of: titleLabel , offset: -24)
+    }
+    
+    private func addRightArrow() {
+        containerView.addSubview(arrowRightImage)
+        arrowRightImage.edgesToSuperview(excluding: [.leading , .top], insets: .horizontal(16) + .vertical(32))
+        //arrowRightImage.leadingToTrailing(of: priceLabel)
     }
 }
 // MARK: -  Configure
