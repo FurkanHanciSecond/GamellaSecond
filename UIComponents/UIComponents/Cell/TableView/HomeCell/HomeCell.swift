@@ -8,7 +8,7 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
-
+import Kingfisher
 
 public class HomeCell: UITableViewCell, ReusableView {
     weak var viewModel: HomeCellProtocol?
@@ -46,10 +46,10 @@ public class HomeCell: UITableViewCell, ReusableView {
         .numberOfLines(0)
         .build()
     
-    private let testImage = UIImageViewBuilder()
-        .tintColor(.label)
-        .size(.init(width: 50, height: 50))
-        .image(UIImage(systemName: "house")!)
+    private let gameImage = UIImageViewBuilder()
+        .tintColor(AppConstants.Style.Color.black)
+        .size(CGSize(width: 75, height: 75))
+        .contentMode(.scaleAspectFit)
         .build()
     
     private let arrowRightImage = UIImageViewBuilder()
@@ -94,7 +94,7 @@ extension HomeCell {
         addStatusLabel()
         addEndDateLabel()
         addTypeLabel()
-        addTestImage()
+        addGameImage()
         addRightArrow()
     }
     
@@ -139,22 +139,35 @@ extension HomeCell {
         typeLabel.leading(to: endDateLabel)
     }
     
-    private func addTestImage() {
-        containerView.addSubview(testImage)
-        testImage.edgesToSuperview(excluding: [.bottom , .trailing] , insets: .horizontal(16) + .vertical(16))
-        testImage.trailingToLeading(of: titleLabel , offset: -24)
+    private func addGameImage() {
+        containerView.addSubview(gameImage)
+        gameImage.edgesToSuperview(excluding: [.bottom , .trailing] , insets: .horizontal(16) + .vertical(32))
+        gameImage.trailingToLeading(of: titleLabel , offset: -24)
     }
     
     private func addRightArrow() {
         containerView.addSubview(arrowRightImage)
-        arrowRightImage.edgesToSuperview(excluding: [.leading , .top], insets: .horizontal(16) + .vertical(32))
-        //arrowRightImage.leadingToTrailing(of: priceLabel)
+        arrowRightImage.edgesToSuperview(excluding: [.leading , .top], insets: .horizontal(16) + .vertical(64))
     }
 }
 // MARK: -  Configure
 extension HomeCell {
     
     private func configureContents() {
+        
+        let imageUrl = URL(string: viewModel?.image ?? "")
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 300, height: 300))
+                     |> RoundCornerImageProcessor(cornerRadius: 20)
+        gameImage.kf.indicatorType = .activity
+        gameImage.kf.setImage(
+            with: imageUrl,
+            placeholder: UIImage(systemName: "bolt.circle.fill"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
         titleLabel.text = viewModel?.title
         priceLabel.text = "Price: \(viewModel?.priceLabel ?? "")"
         statusLabel.text = "Status: \(viewModel?.statusLabel ?? "")"
