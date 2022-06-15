@@ -48,12 +48,11 @@ public class HomeCell: UITableViewCell, ReusableView {
     
     private let gameImage = UIImageViewBuilder()
         .tintColor(AppConstants.Style.Color.black)
-        .size(CGSize(width: 75, height: 75))
         .contentMode(.scaleAspectFit)
         .build()
     
     private let arrowRightImage = UIImageViewBuilder()
-        .tintColor(.label)
+        .tintColor(AppConstants.Style.Color.labelColor)
         .size(.init(width: 30, height: 30))
         .image(UIImage(systemName: "chevron.forward")!)
         .build()
@@ -143,6 +142,8 @@ extension HomeCell {
         containerView.addSubview(gameImage)
         gameImage.edgesToSuperview(excluding: [.bottom , .trailing] , insets: .horizontal(16) + .vertical(32))
         gameImage.trailingToLeading(of: titleLabel , offset: -24)
+        gameImage.height(100)
+        gameImage.width(100)
     }
     
     private func addRightArrow() {
