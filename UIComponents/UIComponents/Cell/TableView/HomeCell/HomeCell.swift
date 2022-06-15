@@ -170,7 +170,7 @@ extension HomeCell {
                 .cacheOriginalImage
             ])
         titleLabel.text = viewModel?.title
-        priceLabel.text = "Price: \(viewModel?.priceLabel ?? "")"
+        priceLabel.text = "Worth: \(viewModel?.priceLabel ?? "")"
         statusLabel.text = "Status: \(viewModel?.statusLabel ?? "")"
         endDateLabel.text = "EndDate: \(viewModel?.deadLineLabel ?? "")"
         typeLabel.text = "Type: \(viewModel?.typeLabel ?? "")"

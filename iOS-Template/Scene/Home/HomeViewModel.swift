@@ -46,7 +46,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var reloadData: VoidClosure?
     
     func viewDidLoad() {
-        getUserList(platfrom: "pc")
+        getUserList(platfrom: "pc" , type: "game" , sortBy: "popularity")
     }
 }
 
@@ -76,9 +76,9 @@ extension HomeViewModel {
 // MARK: -  Requests
 extension HomeViewModel {
     
-    private func getUserList(platfrom: String) {
+    private func getUserList(platfrom: String , type: String , sortBy : String) {
         showLoading?()
-        let request = GameDataRequest(platform: platfrom)
+        let request = GameDataRequest(platform: platfrom , type: type , sortBy: sortBy)
         dataProvider?.request(for: request, result: { [weak self] data in
             guard let self = self else { return }
             switch data {
