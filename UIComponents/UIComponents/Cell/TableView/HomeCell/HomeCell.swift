@@ -162,7 +162,7 @@ extension HomeCell {
         gameImage.kf.indicatorType = .activity
         gameImage.kf.setImage(
             with: imageUrl,
-            placeholder: UIImage(systemName: "bolt.circle.fill"),
+            placeholder: UIImage(systemName: "circle.dotted"),
             options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
