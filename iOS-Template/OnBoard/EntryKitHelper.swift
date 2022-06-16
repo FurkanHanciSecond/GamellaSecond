@@ -64,7 +64,7 @@ final class EntryKitHelper {
         case .additional:
             contentView.backgroundColor = .blue
             imageView.tintColor = .black
-            imageView.image = .actions.withRenderingMode(.alwaysTemplate)
+            imageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
             label.textColor = .white
             addionalLabel.textColor = .label
             stackView.spacing = .pi
