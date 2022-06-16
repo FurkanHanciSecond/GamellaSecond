@@ -32,6 +32,10 @@
 		705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */; };
 		705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */; };
 		705BBB69283A1B2300F61E53 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB68283A1B2300F61E53 /* HomeRoute.swift */; };
+		70A5B3CE285B228400BEA445 /* HomeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3CB285B228400BEA445 /* HomeDetailRouter.swift */; };
+		70A5B3CF285B228400BEA445 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3CC285B228400BEA445 /* HomeDetailViewController.swift */; };
+		70A5B3D0285B228400BEA445 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3CD285B228400BEA445 /* HomeDetailViewModel.swift */; };
+		70A5B3D2285B229200BEA445 /* HomeDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3D1285B229200BEA445 /* HomeDetailRoute.swift */; };
 		70D818362838BC570088E2C0 /* GetNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818352838BC570088E2C0 /* GetNameRouter.swift */; };
 		70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818372838BC610088E2C0 /* GetNameViewModel.swift */; };
 		70D8183A2838BC690088E2C0 /* GetNameRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818392838BC690088E2C0 /* GetNameRoute.swift */; };
@@ -116,6 +120,10 @@
 		705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		705BBB68283A1B2300F61E53 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
+		70A5B3CB285B228400BEA445 /* HomeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailRouter.swift; sourceTree = "<group>"; };
+		70A5B3CC285B228400BEA445 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		70A5B3CD285B228400BEA445 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
+		70A5B3D1285B229200BEA445 /* HomeDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailRoute.swift; sourceTree = "<group>"; };
 		70D818352838BC570088E2C0 /* GetNameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRouter.swift; sourceTree = "<group>"; };
 		70D818372838BC610088E2C0 /* GetNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewModel.swift; sourceTree = "<group>"; };
 		70D818392838BC690088E2C0 /* GetNameRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRoute.swift; sourceTree = "<group>"; };
@@ -263,12 +271,32 @@
 		705BBB5C283A19E600F61E53 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				70A5B3C7285B224400BEA445 /* MainHome */,
+				70A5B3C8285B225100BEA445 /* HomeDetail */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		70A5B3C7285B224400BEA445 /* MainHome */ = {
+			isa = PBXGroup;
+			children = (
 				705BBB5D283A1A0D00F61E53 /* HomeRouter.swift */,
 				705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */,
 				705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */,
 				705BBB68283A1B2300F61E53 /* HomeRoute.swift */,
 			);
-			path = Home;
+			path = MainHome;
+			sourceTree = "<group>";
+		};
+		70A5B3C8285B225100BEA445 /* HomeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				70A5B3CB285B228400BEA445 /* HomeDetailRouter.swift */,
+				70A5B3CC285B228400BEA445 /* HomeDetailViewController.swift */,
+				70A5B3CD285B228400BEA445 /* HomeDetailViewModel.swift */,
+				70A5B3D1285B229200BEA445 /* HomeDetailRoute.swift */,
+			);
+			path = HomeDetail;
 			sourceTree = "<group>";
 		};
 		70D818342838BC330088E2C0 /* GetName */ = {
@@ -651,12 +679,16 @@
 				FE4262912825A73F009CCA73 /* SetRootViewControllerTransition.swift in Sources */,
 				FE4262A62825A7F6009CCA73 /* ExampleRoute.swift in Sources */,
 				FE4262902825A73F009CCA73 /* ModalTransition.swift in Sources */,
+				70A5B3CE285B228400BEA445 /* HomeDetailRouter.swift in Sources */,
 				FE4262982825A73F009CCA73 /* AppRouter.swift in Sources */,
 				FE4262B42825A87B009CCA73 /* BaseNavigationController.swift in Sources */,
+				70A5B3D2285B229200BEA445 /* HomeDetailRoute.swift in Sources */,
 				FE4262A42825A7EA009CCA73 /* ExampleViewModel.swift in Sources */,
 				701FFFD32843E7190018F3A6 /* SettingsRoute.swift in Sources */,
+				70A5B3CF285B228400BEA445 /* HomeDetailViewController.swift in Sources */,
 				705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */,
 				FE4262972825A73F009CCA73 /* PopToBack.swift in Sources */,
+				70A5B3D0285B228400BEA445 /* HomeDetailViewModel.swift in Sources */,
 				70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */,
 				FEBA464A27E648D0009A75F9 /* iOS_Template.xcdatamodeld in Sources */,
 				FE4262B62825A87B009CCA73 /* BaseViewController.swift in Sources */,
