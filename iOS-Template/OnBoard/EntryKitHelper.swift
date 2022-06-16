@@ -21,7 +21,7 @@ final class EntryKitHelper {
     static func show(_ message: String,
                      additionalMessage: String? = nil,
                      type: EntryKitType, statusBar: EKAttributes.StatusBar = .light) {
-        var attributes = EKAttributes.toast
+        var attributes = EKAttributes.float
         attributes.displayDuration = 2.5
         attributes.statusBar = statusBar
         

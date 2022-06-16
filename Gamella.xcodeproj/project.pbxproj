@@ -36,6 +36,7 @@
 		70A5B3CF285B228400BEA445 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3CC285B228400BEA445 /* HomeDetailViewController.swift */; };
 		70A5B3D0285B228400BEA445 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3CD285B228400BEA445 /* HomeDetailViewModel.swift */; };
 		70A5B3D2285B229200BEA445 /* HomeDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3D1285B229200BEA445 /* HomeDetailRoute.swift */; };
+		70A5B3DA285B360100BEA445 /* EntryKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A5B3D9285B360100BEA445 /* EntryKitHelper.swift */; };
 		70D818362838BC570088E2C0 /* GetNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818352838BC570088E2C0 /* GetNameRouter.swift */; };
 		70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818372838BC610088E2C0 /* GetNameViewModel.swift */; };
 		70D8183A2838BC690088E2C0 /* GetNameRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818392838BC690088E2C0 /* GetNameRoute.swift */; };
@@ -124,6 +125,7 @@
 		70A5B3CC285B228400BEA445 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		70A5B3CD285B228400BEA445 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		70A5B3D1285B229200BEA445 /* HomeDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailRoute.swift; sourceTree = "<group>"; };
+		70A5B3D9285B360100BEA445 /* EntryKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryKitHelper.swift; sourceTree = "<group>"; };
 		70D818352838BC570088E2C0 /* GetNameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRouter.swift; sourceTree = "<group>"; };
 		70D818372838BC610088E2C0 /* GetNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewModel.swift; sourceTree = "<group>"; };
 		70D818392838BC690088E2C0 /* GetNameRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRoute.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				7026CC522833ED9C00F72FA5 /* MainOnboard.swift */,
+				70A5B3D9285B360100BEA445 /* EntryKitHelper.swift */,
 				7026CC542833EF1400F72FA5 /* ViewControllers */,
 			);
 			path = OnBoard;
@@ -678,6 +681,7 @@
 				FE4262782825A6D9009CCA73 /* DataProvider.swift in Sources */,
 				FE4262912825A73F009CCA73 /* SetRootViewControllerTransition.swift in Sources */,
 				FE4262A62825A7F6009CCA73 /* ExampleRoute.swift in Sources */,
+				70A5B3DA285B360100BEA445 /* EntryKitHelper.swift in Sources */,
 				FE4262902825A73F009CCA73 /* ModalTransition.swift in Sources */,
 				70A5B3CE285B228400BEA445 /* HomeDetailRouter.swift in Sources */,
 				FE4262982825A73F009CCA73 /* AppRouter.swift in Sources */,

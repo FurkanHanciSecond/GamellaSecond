@@ -68,7 +68,7 @@ final class GetNameVC: BaseViewController<GetNameViewModel> {
     @objc private func nextButtonHandle(_ sender: UIButton) {
         switch getNameTextField.text?.isEmpty {
         case .init(booleanLiteral: true):
-            AlertManager.showAlert(title: "Your name is cannot be empty!", message: "Fix it", viewController: self)
+            EntryKitHelper.show("Error", additionalMessage: "Your Name is cannot be empty", type: .error, statusBar: .ignored)
             setHapticError()
         case .init(booleanLiteral: false):
             saveUserName()
