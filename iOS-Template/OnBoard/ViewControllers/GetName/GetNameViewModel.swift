@@ -7,29 +7,24 @@
 
 import Foundation
 import MobilliumUserDefaults
+
 protocol GetNameViewProtocol {
     func viewDidLoad()
     func nextButtonTapped()
 }
 
+// MARK: -  Splash
 final class GetNameViewModel: BaseViewModel<GetNameRouter>, GetNameViewProtocol {
+    
     func nextButtonTapped() {
-        let transition = ModalTransition(modalTransitionStyle: .flipHorizontal, modalPresentationStyle: .fullScreen)
-        router.open(MainOnboardPageController(), transition: transition)
+        router.presentOnboard()
     }
     
     func viewDidLoad() {
-        // MARK: - PLEASE DO IT ARCHITECTURAL AMK
-        let router = HomeRouter()
-        let transition = PlaceOnWindowTransition()
-        let viewController = MainTabBarController()
-        let navController = CleanNavigationController(rootViewController: viewController)
-        switch DefaultsKey.isFirstRun.value {
-        case .init(booleanLiteral: false):
-            router.open(navController, transition: transition)
-            
-        default:
-            break;
+        if let isFirst = DefaultsKey.isFirstRun.value {
+            if isFirst {
+                router.placeOnWindowMainTabBar()
+            }
         }
     }
 }

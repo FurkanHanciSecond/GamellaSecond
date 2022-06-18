@@ -10,6 +10,8 @@ import UIComponents
 
 final class MainTabBarController: UITabBarController {
     
+    var viewModel: MainTabBarViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBar()
@@ -39,15 +41,18 @@ extension MainTabBarController {
     }
     
     private func homeVC() -> UINavigationController {
-        let homeViewController = HomeViewController(viewModel: HomeViewModel.init(router: HomeRouter.init()))
+        let router = HomeRouter()
+        let viewModel = HomeViewModel(router: router)
+        let homeViewController = HomeViewController(viewModel: viewModel)
         let homeTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.home, image: AppConstants.Style.Image.homeTabBar, tag: 0)
         homeViewController.tabBarItem = homeTabBarItem
-        return UINavigationController(rootViewController: homeViewController)
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        return navigationController
     }
     
     private func sortVC() -> UINavigationController {
         let sortViewController = SortViewController(viewModel: SortViewModel.init(router: SortRouter.init()))
-        let sortTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.sort, image: AppConstants.Style.Image.sortTabBar, tag: 0)
+        let sortTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.sort, image: AppConstants.Style.Image.sortTabBar, tag: 1)
         sortViewController.tabBarItem = sortTabBarItem
         return UINavigationController(rootViewController: sortViewController)
     }
@@ -55,14 +60,14 @@ extension MainTabBarController {
     
     private func moreVC() -> UINavigationController {
         let moreViewController = MoreViewController(viewModel: MoreViewModel.init(router: MoreRouter.init()))
-        let moreTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.more, image: AppConstants.Style.Image.moreTabBar, tag: 0)
+        let moreTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.more, image: AppConstants.Style.Image.moreTabBar, tag: 2)
         moreViewController.tabBarItem = moreTabBarItem
         return UINavigationController(rootViewController: moreViewController)
     }
     
     private func settingsVC() -> UINavigationController {
         let settingsViewController = SettingsViewController(viewModel: SettingsViewModel.init(router: SettingsRouter.init()))
-        let settingsTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.settings, image: AppConstants.Style.Image.settingsTabBar, tag: 0)
+        let settingsTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.settings, image: AppConstants.Style.Image.settingsTabBar, tag: 3)
         settingsViewController.tabBarItem = settingsTabBarItem
         return UINavigationController(rootViewController: settingsViewController)
     }

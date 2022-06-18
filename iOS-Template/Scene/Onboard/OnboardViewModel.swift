@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MobilliumUserDefaults
 
 protocol OnboardViewDataSource {
     func numberOfItemsAt(section: Int) -> Int
@@ -14,9 +15,14 @@ protocol OnboardViewDataSource {
 
 protocol OnboardViewEventSource {}
 
-protocol OnboardViewProtocol: OnboardViewDataSource, OnboardViewEventSource {}
+protocol OnboardViewProtocol: OnboardViewDataSource, OnboardViewEventSource {
+    func didLoad()
+    func presentMainTabBar()
+}
 
 final class OnboardViewModel: BaseViewModel<OnboardRouter>, OnboardViewProtocol {
+    
+    private var cellItems: [OnboardCellProtocol] = []
     
     func numberOfItemsAt(section: Int) -> Int {
         return cellItems.count
@@ -26,6 +32,29 @@ final class OnboardViewModel: BaseViewModel<OnboardRouter>, OnboardViewProtocol 
         return cellItems[indexPath.row]
     }
     
-    private let cellItems: [OnboardCellProtocol] = []
+    func didLoad() {
+        configureCellItems()
+    }
+}
+
+// MARK: - Configure
+extension OnboardViewModel {
     
+    private func configureCellItems() {
+        cellItems = [
+            OnboardCellModel(title: "Title 1"),
+            OnboardCellModel(title: "Title 2"),
+            OnboardCellModel(title: "Title 3"),
+            OnboardCellModel(title: "Title 4", isLast: true)
+        ]
+        DefaultsKey.isFirstRun.value = true
+    }
+}
+
+// MARK: - Routes
+extension OnboardViewModel {
+    
+    func presentMainTabBar() {
+        router.placeOnWindowMainTabBar()
+    }
 }

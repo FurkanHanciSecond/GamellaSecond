@@ -8,7 +8,8 @@
 import Foundation
 
 public protocol OnboardCellDataSource: AnyObject {
-    
+    var title: String? { get set }
+    var isLast: Bool { get set }
 }
 
 public protocol OnboardCellEventSource: AnyObject {
@@ -21,4 +22,11 @@ public protocol OnboardCellProtocol: OnboardCellDataSource, OnboardCellEventSour
 
 public final class OnboardCellModel: OnboardCellProtocol {
     
+    public var isLast: Bool = false
+    public var title: String?
+    
+    public init(title: String?, isLast: Bool = false) {
+        self.title = title
+        self.isLast = isLast
+    }
 }

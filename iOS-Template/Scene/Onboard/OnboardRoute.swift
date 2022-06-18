@@ -16,7 +16,7 @@ extension OnboardRoute where Self: RouterProtocol {
         let viewModel = OnboardViewModel(router: router)
         let viewController = OnboardViewController(viewModel: viewModel)
         
-        let transition = ModalTransition()
+        let transition = ModalTransition(modalTransitionStyle: .flipHorizontal, modalPresentationStyle: .fullScreen)
         router.viewController = viewController
         router.openTransition = transition
         

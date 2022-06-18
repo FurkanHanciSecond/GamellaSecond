@@ -7,4 +7,6 @@
 
 import Foundation
 
-final class GetNameRouter: Router {}
+final class GetNameRouter: Router, GetNameRouter.Routes {
+    typealias Routes = MainTabBarRoute & OnboardRoute
+}

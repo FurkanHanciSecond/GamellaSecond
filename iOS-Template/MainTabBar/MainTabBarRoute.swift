@@ -6,17 +6,18 @@
 //
 
 protocol MainTabBarRoute {
-    func presentMainTabBar()
+    func placeOnWindowMainTabBar()
 }
 
 extension MainTabBarRoute where Self: RouterProtocol {
     
-    func presentMainTabBar() {
+    func placeOnWindowMainTabBar() {
         let router = MainTabBarRouter()
         let viewModel = MainTabBarViewModel(router: router)
-        let viewController = MainTabBarViewController(viewModel: viewModel)
+        let viewController = MainTabBarController()
+        viewController.viewModel = viewModel
         
-        let transition = ModalTransition()
+        let transition = PlaceOnWindowTransition()
         router.viewController = viewController
         router.openTransition = transition
         
