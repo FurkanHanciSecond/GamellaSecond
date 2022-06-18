@@ -42,10 +42,10 @@ extension OnboardViewModel {
     
     private func configureCellItems() {
         cellItems = [
-            OnboardCellModel(title: "Title 1"),
-            OnboardCellModel(title: "Title 2"),
-            OnboardCellModel(title: "Title 3"),
-            OnboardCellModel(title: "Title 4", isLast: true)
+            OnboardCellModel(description: "aksjb", title: "Gamella"),
+            OnboardCellModel(description: "jashdfkjs", title: "Gamella"),
+            OnboardCellModel(description: "ajkshfj", title: "Gamella"),
+            OnboardCellModel(description: "kjasbkjsdb", title: "Gamella", isLast: true)
         ]
         DefaultsKey.isFirstRun.value = true
     }

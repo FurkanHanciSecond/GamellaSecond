@@ -19,8 +19,17 @@ public class OnboardCell: UICollectionViewCell, ReusableView {
     public weak var delegate: OnboardCellDelegate?
     
     private let titleLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 24))
-        .textColor(.black)
+        .font(.systemFont(ofSize: 50, weight: .thin))
+        .textColor(.label)
+        .numberOfLines(0)
+        .build()
+    
+    private let descriptionLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 30, weight: .regular))
+        .textColor(.label)
+        .numberOfLines(1)
+        .adjustsFontSizeToFitWidth(true)
+        .minimumScaleFactor(0.5)
         .build()
     
     private let continueButton = UIButtonBuilder()
@@ -50,11 +59,18 @@ extension OnboardCell {
     private func addSubViews() {
         addTitleLabel()
         addContinueButton()
+        addDescriptionLabel()
     }
     
     private func addTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.centerInSuperview()
+    }
+    
+    private func addDescriptionLabel() {
+        contentView.addSubview(descriptionLabel)
+        descriptionLabel.topToBottom(of: titleLabel , offset: 16)
+        descriptionLabel.centerXToSuperview()
     }
     
     private func addContinueButton() {
