@@ -66,7 +66,7 @@ extension SortViewModel {
 // MARK: - DataSource
 extension SortViewModel {
     private func configureCellItems(cellItem : [GameModel]) {
-        let item = cellItem.map({ SortCellModel(title: $0.title ?? "")})
+        let item = cellItem.map({ SortCellModel(title: $0.title ?? "", priceLabel: $0.worth ?? "", statusLabel: $0.status?.rawValue ?? "", deadLineLabel: $0.endDate ?? "", typeLabel: $0.type?.rawValue ?? "", imageData: $0.thumbnail ?? "")})
         cellItems = item
         reloadData?()
     }

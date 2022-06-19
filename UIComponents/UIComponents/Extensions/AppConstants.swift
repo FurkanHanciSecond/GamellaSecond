@@ -54,6 +54,7 @@ public struct AppConstants {
             public static let lightOrange = UIColor(named: "GameLightOrange")
             public  static let lightPurple = UIColor(named: "GameLightPurple")
             public static let clear = UIColor.clear
+            public static let darkWhite = UIColor(named: "DarkWhite")
         }
         
         public enum Image {
