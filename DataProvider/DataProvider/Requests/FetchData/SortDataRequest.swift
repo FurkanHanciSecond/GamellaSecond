@@ -5,15 +5,17 @@
 //  Created by Furkan Hanci on 6/19/22.
 //
 
-public struct SortDataRequest: RequestProtocol {
+public struct SortDataRequest: BaseRequest {
+    public typealias ResponseType = Game
     
-    public typealias ResponseType = <#T##Type###>
-    
-    public var path: String = <#T##Type###>
-    public var method: RequestMethod = <#T##Type###>
+    public var path: String = ""
+    public var method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
     
-    public init() {}
+    public init(sortBy: String) {
+        path = "giveaways"
+        parameters = ["sort-by" : sortBy]
+    }
     
 }

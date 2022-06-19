@@ -28,7 +28,7 @@ extension MainTabBarController {
     
     private func configureTabBar() {
         tabBar.tintColor = AppConstants.Style.Color.black
-        tabBar.unselectedItemTintColor = AppConstants.Style.Color.indigo
+        tabBar.unselectedItemTintColor = AppConstants.Style.Color.orange
     }
     
     private func setTabs() {

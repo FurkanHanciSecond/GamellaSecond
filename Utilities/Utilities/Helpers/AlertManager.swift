@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import UIComponents
+//import UIComponents
 
 public class AlertManager {
    public static func showAlert(
@@ -17,7 +17,7 @@ public class AlertManager {
             
             DispatchQueue.main.async {
                 let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                let action = UIAlertAction(title: AppConstants.Texts.Error.ok, style: .default) { action in
+                let action = UIAlertAction(title: "AppConstants.Texts.Error.ok", style: .default) { action in
                     alertAction?()
                 }
                 alertController.addAction(action)
