@@ -42,10 +42,10 @@ extension OnboardViewModel {
     
     private func configureCellItems() {
         cellItems = [
-            OnboardCellModel(description: "aksjb", title: "Gamella"),
-            OnboardCellModel(description: "jashdfkjs", title: "Gamella"),
-            OnboardCellModel(description: "ajkshfj", title: "Gamella"),
-            OnboardCellModel(description: "kjasbkjsdb", title: "Gamella", isLast: true)
+            OnboardCellModel(description: "See the all free giveaway games!", title: "Gamella"),
+            OnboardCellModel(description: "Get more detail about Game!", title: "Gamella"),
+            OnboardCellModel(description: "Sort games by date, value and popularity", title: "Gamella"),
+            OnboardCellModel(description: "You can also see free games on all platfroms and all of features.", title: "Gamella", isLast: true)
         ]
         DefaultsKey.isFirstRun.value = true
     }

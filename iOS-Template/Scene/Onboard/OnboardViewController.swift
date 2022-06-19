@@ -17,6 +17,7 @@ final class OnboardViewController: BaseViewController<OnboardViewModel> {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
         collectionView.register(OnboardCell.self)
         return collectionView

@@ -25,7 +25,7 @@ public class OnboardCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let descriptionLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 30, weight: .regular))
+        .font(.systemFont(ofSize: 20, weight: .regular))
         .textColor(.label)
         .numberOfLines(1)
         .adjustsFontSizeToFitWidth(true)
@@ -33,7 +33,11 @@ public class OnboardCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let continueButton = UIButtonBuilder()
-        .backgroundColor(.red)
+        .cornerRadius(20)
+        .title(AppConstants.Texts.Button.onboardButtonText)
+        .titleFont(.systemFont(ofSize: 20))
+        .backgroundColor(AppConstants.Style.Color.indigo!)
+        .titleColor(AppConstants.Style.Color.white, for: .normal)
         .isHidden(true)
         .build()
     
@@ -69,14 +73,14 @@ extension OnboardCell {
     
     private func addDescriptionLabel() {
         contentView.addSubview(descriptionLabel)
-        descriptionLabel.topToBottom(of: titleLabel , offset: 16)
+        descriptionLabel.topToBottom(of: titleLabel , offset: 8)
         descriptionLabel.centerXToSuperview()
     }
     
     private func addContinueButton() {
         contentView.addSubview(continueButton)
-        continueButton.topToBottom(of: titleLabel, offset: 16)
-        continueButton.size(.init(width: 150, height: 50))
+        continueButton.topToBottom(of: titleLabel, offset: 56)
+        continueButton.width(200)
         continueButton.centerXToSuperview()
     }
 }
@@ -87,9 +91,10 @@ extension OnboardCell {
     private func configureContents() {
         guard let viewModel = viewModel else { return }
         titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
         if viewModel.isLast {
             continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
-            continueButton.setTitle("Bu son button sadece en son cellde gözükür.", for: .normal)
+            continueButton.setTitle("Let's get start 🚀", for: .normal)
             continueButton.isHidden = false
         } else {
             continueButton.isHidden = true

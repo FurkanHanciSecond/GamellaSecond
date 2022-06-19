@@ -27,7 +27,7 @@ public final class OnboardCellModel: OnboardCellProtocol {
     public var title: String?
     public var description: String?
     
-    public init(description: String, title: String?, isLast: Bool = false) {
+    public init(description: String?, title: String?, isLast: Bool = false) {
         self.title = title
         self.isLast = isLast
         self.description = description
