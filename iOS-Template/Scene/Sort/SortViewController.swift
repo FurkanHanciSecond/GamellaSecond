@@ -22,6 +22,7 @@ final class SortViewController: BaseViewController<SortViewModel> {
         super.viewDidLoad()
         addSubViews()
         configureContents()
+        subscribeViewModel()
         viewModel.didload()
         view.backgroundColor = viewModel.backgroundColor
     }
@@ -42,6 +43,18 @@ extension SortViewController {
     }
 }
 
+// MARK: - SubscribeViewModel
+extension SortViewController {
+    private func subscribeViewModel() {
+        viewModel.reloadData = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.sortTableView.reloadData()
+            }
+        }
+    }
+}
+
 // MARK: - Configures
 extension SortViewController {
     private func configureContents() {
@@ -59,6 +72,11 @@ extension SortViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if viewModel.numberOfItems == 0 {
+            sortTableView.setEmptyView(message: "No Data!", image: UIImage(systemName: "exclamationmark.triangle.fill")!)
+        } else {
+            sortTableView.restoreTableView()
+        }
         return viewModel.numberOfItems
     }
 }

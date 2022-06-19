@@ -6,16 +6,16 @@
 //
 
 public struct SortDataRequest: BaseRequest {
-    public typealias ResponseType = Game
+    public typealias ResponseType = [GameModel]
     
     public var path: String = ""
     public var method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
     
-    public init(sortBy: String) {
+    public init(platform: String , type: String , sortBy : String) {
         path = "giveaways"
-        parameters = ["sort-by" : sortBy]
+        parameters = ["platform" : platform , "type" : type , "sort-by" : sortBy]
     }
     
 }

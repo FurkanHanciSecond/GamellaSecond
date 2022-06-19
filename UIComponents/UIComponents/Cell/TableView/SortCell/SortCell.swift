@@ -14,7 +14,8 @@ public class SortCell: UITableViewCell, ReusableView {
     
     private let titleLabel = UILabelBuilder()
         .font(.systemFont(ofSize: 18 , weight: .semibold))
-        .textColor(AppConstants.Style.Color.black)
+        .textColor(AppConstants.Style.Color.lightPurple!)
+        .shadowRadius(10)
         .numberOfLines(0)
         .build()
     
@@ -44,7 +45,7 @@ extension SortCell {
     
     private func addTitleLabel() {
         contentView.addSubview(titleLabel)
-        titleLabel.edgesToSuperview()
+        titleLabel.edgesToSuperview(insets: .vertical(16) + .horizontal(16))
     }
 }
 

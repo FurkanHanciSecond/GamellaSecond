@@ -27,16 +27,16 @@ protocol SortViewProtocol: SortViewDataSource, SortViewEventSource {
 }
 
 final class SortViewModel: BaseViewModel<SortRouter>, SortViewProtocol {
+    
+    private var cellItems: [SortCellProtocol] = []
+    
     var numberOfItems: Int {
         return cellItems.count
     }
     
     func didload() {
-        print("sort didload")
-        configureCellItems()
+        getSortByData(platfrom: "pc" , type: "game" , sortBy: "price")
     }
-    
-    private var cellItems: [SortCellProtocol] = []
     
     var reloadData: VoidClosure?
     
@@ -45,9 +45,8 @@ final class SortViewModel: BaseViewModel<SortRouter>, SortViewProtocol {
     }
     
     var backgroundColor: UIColor {
-        return AppConstants.Style.Color.labelColor
+        return AppConstants.Style.Color.systemBackground
     }
-    
     
 }
 
@@ -64,17 +63,33 @@ extension SortViewModel {
     }
 }
 
-// MARK: - Configure
+// MARK: - DataSource
 extension SortViewModel {
-    private func configureCellItems() {
-        cellItems = [
-          SortCellModel(title: "WJDHVFEJDV 1.TITLE"),
-          SortCellModel(title: "WEFKJBVFKJV UZUUUNNNNTEXTTTTTTWEFKJBVFKJV UZUUUNNNNTEXTTTTTTWEFKJBVFKJV UZUUUNNNNTEXTTTTTTWEFKJBVFKJV UZUUUNNNNTEXTTTTTTWEFKJBVFKJV UZUUUNNNNTEXTTTTTTWEFKJBVFKJV UZUUUNNNNTEXTTTTTT"),
-          SortCellModel(title: "WJDHVFEJDV 2.TITLE"),
-          SortCellModel(title: "WJDHVFEJDV 3.TITLE"),
-          SortCellModel(title: "WJDHVFEJDV 4.CELLL UZUUUUNNNN TITILEEEEE"),
-          SortCellModel(title: "WJDHVFEJDV 5.TITLE UZUUUNNNNNN MODEL CELLLL"),
+    private func configureCellItems(cellItem : [GameModel]) {
+        let item = cellItem.map({ SortCellModel(title: $0.title ?? "")})
+        cellItems = item
+        reloadData?()
+    }
+}
 
-        ]
+// MARK: - Requests
+extension SortViewModel {
+    private func getSortByData(platfrom: String , type: String , sortBy : String) {
+        showLoading?()
+        let request = SortDataRequest(platform: platfrom , type: type , sortBy: sortBy)
+        dataProvider?.request(for: request, result: { [weak self] gameData in
+            guard let self = self else { return }
+            switch gameData {
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.showLoading?()
+
+
+            case .success(let response):
+                self.configureCellItems(cellItem: response)
+                self.hideLoading?()
+            }
+        })
+        self.reloadData?()
     }
 }
