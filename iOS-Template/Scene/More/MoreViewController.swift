@@ -11,9 +11,10 @@ final class MoreViewController: BaseViewController<MoreViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemIndigo
+        view.backgroundColor = .systemBackground
         navigationItem.title = "More"
         navigationController?.navigationBar.prefersLargeTitles = true
+        view.addBackground(image: UIImage(systemName: "crown.fill")!, opacity: 1, addBlurEffect: true)
     }
     
 }

@@ -73,6 +73,38 @@ public extension UIView {
         }
         self.isUserInteractionEnabled = true
     }
+    
+    func addBackground(image: UIImage, opacity: Float, addBlurEffect: Bool) {
+        
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        
+        let imageView = UIImageView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: width,
+                height: height
+            )
+        )
+        imageView.image = image
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
+        imageView.layer.opacity = opacity
+        imageView.tintColor = .yellow
+        
+        self.addSubview(imageView)
+        self.sendSubviewToBack(imageView)
+        
+        if addBlurEffect {
+            let blurEffect = UIBlurEffect(style: .prominent)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = imageView.bounds
+            blurEffectView.alpha = 0.75
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            imageView.addSubview(blurEffectView)
+        }
+        
+    }
 }
 
 public extension UIView {
