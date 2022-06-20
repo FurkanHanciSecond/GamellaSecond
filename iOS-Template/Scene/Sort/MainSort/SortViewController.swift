@@ -60,6 +60,17 @@ extension SortViewController {
     private func configureContents() {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        addBarButton()
+    }
+    
+    private func addBarButton() {
+        let navBarButton = UIBarButtonItem(image: AppConstants.Style.Image.sortIcon, style: .plain, target: self, action: #selector(gridButtonHandle(_:)))
+        navBarButton.tintColor = AppConstants.Style.Color.labelColor
+        self.navigationItem.rightBarButtonItem = navBarButton
+    }
+    
+    @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
+        print("sort")
     }
 }
 

@@ -63,6 +63,7 @@ public struct AppConstants {
             public static let sortTabBar = UIImage(systemName: "arrow.up.arrow.down")
             public static let moreTabBar = UIImage(systemName: "ellipsis.circle")
             public static let settingsTabBar = UIImage(systemName: "gear")
+            public static let sortIcon = UIImage(systemName: "arrow.up.arrow.down.square.fill")
         }
     }
 }
