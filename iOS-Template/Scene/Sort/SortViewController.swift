@@ -83,5 +83,19 @@ extension SortViewController: UITableViewDataSource {
 
 // MARK: - TableViewDelegate {
 extension SortViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: cell.contentView.frame.width, y: 0)
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0.03 * Double(indexPath.row),
+            options: [.curveEaseInOut],
+            animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+    }
     
 }
