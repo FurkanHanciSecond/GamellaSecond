@@ -99,14 +99,14 @@ extension SortViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.transform = CGAffineTransform(translationX: cell.contentView.frame.width, y: 0)
-        UIView.animate(
-            withDuration: 0.3,
-            delay: 0.03 * Double(indexPath.row),
-            options: [.curveEaseInOut],
-            animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-            })
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 500, 0, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0.5
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 2.0
+        }
     }
     
 }
