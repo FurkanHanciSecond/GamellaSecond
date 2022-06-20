@@ -23,10 +23,14 @@
 		701FFFD02843E7020018F3A6 /* MoreRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFCF2843E7020018F3A6 /* MoreRoute.swift */; };
 		701FFFD32843E7190018F3A6 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFD22843E7190018F3A6 /* SettingsRoute.swift */; };
 		7026CC5B2833EF2D00F72FA5 /* GetNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC562833EF2D00F72FA5 /* GetNameVC.swift */; };
+		7036032228606AB0000A8CF1 /* SortDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036032128606AB0000A8CF1 /* SortDetailRoute.swift */; };
 		705BBB60283A1A0D00F61E53 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5D283A1A0D00F61E53 /* HomeRouter.swift */; };
 		705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */; };
 		705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */; };
 		705BBB69283A1B2300F61E53 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB68283A1B2300F61E53 /* HomeRoute.swift */; };
+		7091F78D286068BF00788302 /* SortDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78A286068BF00788302 /* SortDetailRouter.swift */; };
+		7091F78E286068BF00788302 /* SortDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78B286068BF00788302 /* SortDetailViewController.swift */; };
+		7091F78F286068BF00788302 /* SortDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78C286068BF00788302 /* SortDetailViewModel.swift */; };
 		709C47E1285E535600D814BF /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E0285E535600D814BF /* MainTabBarRoute.swift */; };
 		709C47E6285E555500D814BF /* OnboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E3285E555500D814BF /* OnboardRouter.swift */; };
 		709C47E7285E555500D814BF /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E4285E555500D814BF /* OnboardViewController.swift */; };
@@ -112,10 +116,14 @@
 		701FFFCF2843E7020018F3A6 /* MoreRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRoute.swift; sourceTree = "<group>"; };
 		701FFFD22843E7190018F3A6 /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
 		7026CC562833EF2D00F72FA5 /* GetNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNameVC.swift; sourceTree = "<group>"; };
+		7036032128606AB0000A8CF1 /* SortDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailRoute.swift; sourceTree = "<group>"; };
 		705BBB5D283A1A0D00F61E53 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		705BBB68283A1B2300F61E53 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
+		7091F78A286068BF00788302 /* SortDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailRouter.swift; sourceTree = "<group>"; };
+		7091F78B286068BF00788302 /* SortDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewController.swift; sourceTree = "<group>"; };
+		7091F78C286068BF00788302 /* SortDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewModel.swift; sourceTree = "<group>"; };
 		709C47E0285E535600D814BF /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
 		709C47E3285E555500D814BF /* OnboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardRouter.swift; sourceTree = "<group>"; };
 		709C47E4285E555500D814BF /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -212,10 +220,8 @@
 		701FFFBF2843E6B40018F3A6 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
-				701FFFB92843E6AD0018F3A6 /* SortRouter.swift */,
-				701FFFBA2843E6AD0018F3A6 /* SortViewController.swift */,
-				701FFFBB2843E6AD0018F3A6 /* SortViewModel.swift */,
-				701FFFC02843E6C70018F3A6 /* SortRoute.swift */,
+				7091F788286068A100788302 /* MainSort */,
+				7091F789286068AD00788302 /* SortDetail */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -249,6 +255,28 @@
 				70A5B3C8285B225100BEA445 /* HomeDetail */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7091F788286068A100788302 /* MainSort */ = {
+			isa = PBXGroup;
+			children = (
+				701FFFB92843E6AD0018F3A6 /* SortRouter.swift */,
+				701FFFBA2843E6AD0018F3A6 /* SortViewController.swift */,
+				701FFFBB2843E6AD0018F3A6 /* SortViewModel.swift */,
+				701FFFC02843E6C70018F3A6 /* SortRoute.swift */,
+			);
+			path = MainSort;
+			sourceTree = "<group>";
+		};
+		7091F789286068AD00788302 /* SortDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7091F78A286068BF00788302 /* SortDetailRouter.swift */,
+				7091F78B286068BF00788302 /* SortDetailViewController.swift */,
+				7091F78C286068BF00788302 /* SortDetailViewModel.swift */,
+				7036032128606AB0000A8CF1 /* SortDetailRoute.swift */,
+			);
+			path = SortDetail;
 			sourceTree = "<group>";
 		};
 		709C47E2285E552D00D814BF /* Onboard */ = {
@@ -617,6 +645,7 @@
 				705BBB60283A1A0D00F61E53 /* HomeRouter.swift in Sources */,
 				FE4262722825A6A8009CCA73 /* AppDelegate.swift in Sources */,
 				701FFFB82843E3020018F3A6 /* MainTabBarViewModel.swift in Sources */,
+				7091F78F286068BF00788302 /* SortDetailViewModel.swift in Sources */,
 				709C47E7285E555500D814BF /* OnboardViewController.swift in Sources */,
 				FE4262B12825A87B009CCA73 /* BaseViewModel.swift in Sources */,
 				705BBB69283A1B2300F61E53 /* HomeRoute.swift in Sources */,
@@ -629,6 +658,7 @@
 				701FFFCC2843E6F80018F3A6 /* SettingsRouter.swift in Sources */,
 				701FFFBD2843E6AD0018F3A6 /* SortViewController.swift in Sources */,
 				701FFFCD2843E6F80018F3A6 /* SettingsViewController.swift in Sources */,
+				7091F78D286068BF00788302 /* SortDetailRouter.swift in Sources */,
 				709C47E1285E535600D814BF /* MainTabBarRoute.swift in Sources */,
 				FE42628F2825A73F009CCA73 /* Router.swift in Sources */,
 				709C47E6285E555500D814BF /* OnboardRouter.swift in Sources */,
@@ -640,6 +670,7 @@
 				701FFFC62843E6DF0018F3A6 /* MoreRouter.swift in Sources */,
 				701FFFD02843E7020018F3A6 /* MoreRoute.swift in Sources */,
 				FE4262A22825A7EA009CCA73 /* ExampleRouter.swift in Sources */,
+				7091F78E286068BF00788302 /* SortDetailViewController.swift in Sources */,
 				701FFFC82843E6DF0018F3A6 /* MoreViewModel.swift in Sources */,
 				FE4262B32825A87B009CCA73 /* CleanNavigationController.swift in Sources */,
 				FE4262992825A73F009CCA73 /* PopToViewController.swift in Sources */,
@@ -659,6 +690,7 @@
 				701FFFD32843E7190018F3A6 /* SettingsRoute.swift in Sources */,
 				70A5B3CF285B228400BEA445 /* HomeDetailViewController.swift in Sources */,
 				705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */,
+				7036032228606AB0000A8CF1 /* SortDetailRoute.swift in Sources */,
 				FE4262972825A73F009CCA73 /* PopToBack.swift in Sources */,
 				70A5B3D0285B228400BEA445 /* HomeDetailViewModel.swift in Sources */,
 				70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */,

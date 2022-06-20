@@ -60,6 +60,7 @@ extension SortViewModel {
     func didSelectItemAt(indexPath: IndexPath) {
         let title = cellItems[indexPath.row].title
         print(title)
+        router.pushSortDetail()
     }
 }
 
