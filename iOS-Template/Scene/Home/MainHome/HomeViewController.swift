@@ -58,7 +58,10 @@ extension HomeViewController {
         navBarButton.tintColor = AppConstants.Style.Color.labelColor
         self.navigationItem.rightBarButtonItem = navBarButton
     }
-    
+}
+
+// MARK: - Actions
+extension HomeViewController {
     @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
         print("grid")
     }
