@@ -9,7 +9,10 @@ import UIKit
 import UIComponents
 import Utilities
 import MobilliumUserDefaults
+import PopMenu
 final class HomeViewController: BaseViewController<HomeViewModel> {
+    
+    private let popMenuManager = PopMenuManager.default
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -50,6 +53,7 @@ extension HomeViewController {
     private func configureContents() {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        configurePopMenu()
         addBarButton()
     }
     
@@ -58,12 +62,24 @@ extension HomeViewController {
         navBarButton.tintColor = AppConstants.Style.Color.labelColor
         self.navigationItem.rightBarButtonItem = navBarButton
     }
+    
+    private func configurePopMenu() {
+        let action1 = PopMenuDefaultAction(title: "Action Title 1", image: UIImage(systemName: "house"))
+        let action2 = PopMenuDefaultAction(title: "Action Title 2", image: UIImage(systemName: "pencil"))
+        let action3 = PopMenuDefaultAction(title: "Action 3", image: UIImage(systemName: "house")) { action in
+            print(action.title)
+        }
+        
+        popMenuManager.addAction(action1)
+        popMenuManager.addAction(action2)
+        popMenuManager.addAction(action3)
+    }
 }
 
 // MARK: - Actions
 extension HomeViewController {
     @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
-        print("grid")
+        popMenuManager.present()
     }
 }
 

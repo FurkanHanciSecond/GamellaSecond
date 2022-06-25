@@ -28,6 +28,7 @@
 		705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */; };
 		705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */; };
 		705BBB69283A1B2300F61E53 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB68283A1B2300F61E53 /* HomeRoute.swift */; };
+		70742CDD2867A8FF0023B9E7 /* PopMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 70742CDC2867A8FF0023B9E7 /* PopMenu */; };
 		7091F78D286068BF00788302 /* SortDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78A286068BF00788302 /* SortDetailRouter.swift */; };
 		7091F78E286068BF00788302 /* SortDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78B286068BF00788302 /* SortDetailViewController.swift */; };
 		7091F78F286068BF00788302 /* SortDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78C286068BF00788302 /* SortDetailViewModel.swift */; };
@@ -187,6 +188,7 @@
 				FE7347F527E715A60019DB4F /* DataProvider.framework in Frameworks */,
 				FE7347FC27E715AD0019DB4F /* Utilities.framework in Frameworks */,
 				C22789DFC32DF65F6311D431 /* Pods_Gamella.framework in Frameworks */,
+				70742CDD2867A8FF0023B9E7 /* PopMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +537,9 @@
 			dependencies = (
 			);
 			name = Gamella;
+			packageProductDependencies = (
+				70742CDC2867A8FF0023B9E7 /* PopMenu */,
+			);
 			productName = "iOS-Template";
 			productReference = FEBA463C27E648D0009A75F9 /* Gamella.app */;
 			productType = "com.apple.product-type.application";
@@ -564,6 +569,9 @@
 				Base,
 			);
 			mainGroup = FEBA463327E648D0009A75F9;
+			packageReferences = (
+				70742CDB2867A8FF0023B9E7 /* XCRemoteSwiftPackageReference "PopMenu" */,
+			);
 			productRefGroup = FEBA463D27E648D0009A75F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -918,6 +926,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70742CDB2867A8FF0023B9E7 /* XCRemoteSwiftPackageReference "PopMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CaliCastle/PopMenu";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70742CDC2867A8FF0023B9E7 /* PopMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70742CDB2867A8FF0023B9E7 /* XCRemoteSwiftPackageReference "PopMenu" */;
+			productName = PopMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FEBA464827E648D0009A75F9 /* iOS_Template.xcdatamodeld */ = {

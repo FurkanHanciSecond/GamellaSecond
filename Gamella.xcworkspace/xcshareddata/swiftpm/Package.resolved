@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "popmenu",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CaliCastle/PopMenu",
+      "state" : {
+        "branch" : "master",
+        "revision" : "60dd4c7a5cc3d0a4262485aa1224f6219be47344"
+      }
+    }
+  ],
+  "version" : 2
+}
