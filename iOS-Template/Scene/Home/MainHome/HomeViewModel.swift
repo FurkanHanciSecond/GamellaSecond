@@ -13,6 +13,7 @@ protocol HomeViewDataSource {
     
     func cellForItemAt(indexPath: IndexPath) -> HomeCellProtocol
     func didSelectItemAt(indexPath: IndexPath)
+    func didSelectPopItemAt(platform: String)
 }
 
 protocol HomeViewEventSource {
@@ -26,6 +27,10 @@ protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    func didSelectPopItemAt(platform: String) {
+        getUserList(platfrom: platform, type: "game", sortBy: "popluarity")
+    }
+    
     var backgroundColor: UIColor {
         return AppConstants.Style.Color.systemBackground
     }
@@ -84,7 +89,7 @@ extension HomeViewModel {
             switch data {
             case .failure(let error):
                 print(error.localizedDescription)
-                self.showLoading?()
+                EntryKitHelper.show("Error!", additionalMessage: "No active giveaways available at the moment, please try again later", type: .error, statusBar: .ignored)
                 
                 
             case .success(let response):
@@ -92,6 +97,7 @@ extension HomeViewModel {
                 self.hideLoading?()
             }
         })
+        
         self.reloadData?()
     }
 }
