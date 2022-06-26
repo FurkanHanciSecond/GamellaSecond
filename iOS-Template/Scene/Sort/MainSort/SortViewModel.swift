@@ -15,6 +15,7 @@ protocol SortViewDataSource {
     
     func cellForItemAt(indexPath: IndexPath) -> SortCellProtocol
     func didSelectItemAt(indexPath: IndexPath)
+    func didSelectPopItemAt(sortBy: String)
 }
 
 protocol SortViewEventSource {
@@ -32,6 +33,10 @@ final class SortViewModel: BaseViewModel<SortRouter>, SortViewProtocol {
     
     var numberOfItems: Int {
         return cellItems.count
+    }
+    
+    func didSelectPopItemAt(sortBy: String) {
+        getSortByData(platfrom: "pc", type: "game", sortBy: sortBy)
     }
     
     func didload() {

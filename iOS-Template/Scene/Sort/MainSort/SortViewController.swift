@@ -9,7 +9,7 @@ import UIKit
 import UIComponents
 import TinyConstraints
 final class SortViewController: BaseViewController<SortViewModel> {
-    
+        
     private lazy var sortTableView: UITableView = {
        let table = UITableView()
         table.delegate = self
