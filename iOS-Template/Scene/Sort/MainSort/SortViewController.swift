@@ -73,7 +73,34 @@ extension SortViewController {
 // MARK: - Actions
 extension SortViewController {
     @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
-        print("sort")
+        let alert = UIAlertController(title: "Sort", message: "Please select which type do you want to short", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Date", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(sortBy: "date")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Value", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(sortBy: "value")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Popularity", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(sortBy: "populairty")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Default (Price)", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(sortBy: "price")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+               print("User click Dismiss button")
+           }))
+        
+        //uncomment for iPad Support
+        //alert.popoverPresentationController?.sourceView = self.view
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
 }
 

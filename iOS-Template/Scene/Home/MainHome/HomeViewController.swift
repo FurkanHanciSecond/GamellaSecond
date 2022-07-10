@@ -64,7 +64,38 @@ extension HomeViewController {
 // MARK: - Actions
 extension HomeViewController {
     @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
-        print("grid")
+        let alert = UIAlertController(title: "Available Platforms", message: "Please Select a Platform", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Steam", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(platform: "steam")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Epic Games", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(platform: "epic-games-store")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Xbox", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(platform: "xbox-series-xs")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Itchio", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(platform: "itchio")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Default (PC)", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(platform: "pc")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+               print("User click Dismiss button")
+           }))
+        
+        //uncomment for iPad Support
+        //alert.popoverPresentationController?.sourceView = self.view
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
 }
 
