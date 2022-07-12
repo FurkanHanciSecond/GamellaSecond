@@ -13,9 +13,9 @@ enum BulletinDataSource {
     static func makeIntroPage() -> BLTNPageItem {
         
         let page = BLTNPageItem(title: "Hi \(DefaultsKey.userName.value ?? "")\nWelcome!")
-        page.image = #imageLiteral(resourceName: "locationPrompt")
+        page.image = UIImage(named: "introIcon")
         
-        page.descriptionText = "Discover curated images of the best pets in the world."
+        page.descriptionText = "Enjoy Gamella, which adds a new style to the game world."
         
         page.isDismissable = true
         page.shouldStartWithActivityIndicator = true
@@ -23,12 +23,11 @@ enum BulletinDataSource {
         page.dismissalHandler = { item in
             print("dismiss")
             DefaultsKey.isFirstBulletIn.value = false
-            print(DefaultsKey.isFirstBulletIn.value)
         }
         
         page.presentationHandler = { item in
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                 item.manager?.hideActivityIndicator()
             }
             
