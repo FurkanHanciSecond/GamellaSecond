@@ -9,8 +9,17 @@ import UIKit
 import UIComponents
 import Utilities
 import MobilliumUserDefaults
+import BLTNBoard
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
+    lazy var bulletinManager: BLTNItemManager = {
+        let page = BLTNPageItem(title: "Push Notifications")
+        page.image = UIImage(named: "notificationPrompt")
+        page.descriptionText = "Receive push notifications when new photos of pets are available."
+        page.actionButtonTitle = "Subscribe"
+        page.alternativeButtonTitle = "Not now"
+        return BLTNItemManager(rootItem: page)
+    }()
     
     private let refreshControl = UIRefreshControl()
     
@@ -28,6 +37,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         configureContents()
         subscribeViewModel()
         viewModel.viewDidLoad()
+        bulletinManager.showBulletin(above: self)
         view.backgroundColor = viewModel.backgroundColor
     }
 }
@@ -63,16 +73,25 @@ extension HomeViewController {
         navBarButton.tintColor = AppConstants.Style.Color.labelColor
         self.navigationItem.rightBarButtonItem = navBarButton
     }
+    
+    private func showBullentInBoard() {
+        let page = BLTNPageItem(title: "Push Notifications")
+        //page.image = UIImage(named: "...")
+
+        page.descriptionText = "Receive push notifications when new photos of pets are available."
+        page.actionButtonTitle = "Subscribe"
+        page.alternativeButtonTitle = "Not now"
+    }
 }
 
 // MARK: - Actions
 extension HomeViewController {
     
     @objc
-        private func pullToRefreshValueChanged() {
-            viewModel.cellItems.isEmpty ? viewModel.refreshData() : self.tableView.reloadData()
-            refreshControl.endRefreshing()
-        }
+    private func pullToRefreshValueChanged() {
+        viewModel.cellItems.isEmpty ? viewModel.refreshData() : self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
     
     @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Available Platforms", message: "Please Select a Platform", preferredStyle: .actionSheet)
@@ -98,8 +117,8 @@ extension HomeViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
-               print("User click Dismiss button")
-           }))
+            print("User click Dismiss button")
+        }))
         
         //uncomment for iPad Support
         //alert.popoverPresentationController?.sourceView = self.view
@@ -119,7 +138,7 @@ extension HomeViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-           
+            
         }
     }
 }

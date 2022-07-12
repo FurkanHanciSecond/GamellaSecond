@@ -30,6 +30,8 @@ target 'Gamella' do
 
   # UI
   pod 'SwiftEntryKit', '2.0.0'
+  pod 'BulletinBoard'
+
 
 end
 
