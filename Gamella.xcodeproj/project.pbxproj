@@ -25,6 +25,7 @@
 		701FFFD32843E7190018F3A6 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFD22843E7190018F3A6 /* SettingsRoute.swift */; };
 		7026CC5B2833EF2D00F72FA5 /* GetNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CC562833EF2D00F72FA5 /* GetNameVC.swift */; };
 		7036032228606AB0000A8CF1 /* SortDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036032128606AB0000A8CF1 /* SortDetailRoute.swift */; };
+		703BEE2D287DC7620080091B /* BulletinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703BEE2C287DC7620080091B /* BulletinDataSource.swift */; };
 		705BBB60283A1A0D00F61E53 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5D283A1A0D00F61E53 /* HomeRouter.swift */; };
 		705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */; };
 		705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */; };
@@ -117,6 +118,7 @@
 		701FFFD22843E7190018F3A6 /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
 		7026CC562833EF2D00F72FA5 /* GetNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNameVC.swift; sourceTree = "<group>"; };
 		7036032128606AB0000A8CF1 /* SortDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailRoute.swift; sourceTree = "<group>"; };
+		703BEE2C287DC7620080091B /* BulletinDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinDataSource.swift; sourceTree = "<group>"; };
 		705BBB5D283A1A0D00F61E53 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -246,6 +248,14 @@
 				701FFFD22843E7190018F3A6 /* SettingsRoute.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		703BEE2B287DC7540080091B /* BulletinHelper */ = {
+			isa = PBXGroup;
+			children = (
+				703BEE2C287DC7620080091B /* BulletinDataSource.swift */,
+			);
+			path = BulletinHelper;
 			sourceTree = "<group>";
 		};
 		705BBB5C283A19E600F61E53 /* Home */ = {
@@ -504,6 +514,7 @@
 		FEBA463E27E648D0009A75F9 /* iOS-Template */ = {
 			isa = PBXGroup;
 			children = (
+				703BEE2B287DC7540080091B /* BulletinHelper */,
 				70B2D963285F520E00810A9E /* EntryKitHelper */,
 				701FFFB22843E2EA0018F3A6 /* MainTabBar */,
 				FE42629D2825A7CE009CCA73 /* Scene */,
@@ -663,6 +674,7 @@
 				FE42628F2825A73F009CCA73 /* Router.swift in Sources */,
 				709C47E6285E555500D814BF /* OnboardRouter.swift in Sources */,
 				FE4262932825A73F009CCA73 /* Transition.swift in Sources */,
+				703BEE2D287DC7620080091B /* BulletinDataSource.swift in Sources */,
 				FE42628E2825A73F009CCA73 /* Animator.swift in Sources */,
 				FE4262942825A73F009CCA73 /* PushTransition.swift in Sources */,
 				705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */,

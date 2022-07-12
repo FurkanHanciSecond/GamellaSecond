@@ -14,6 +14,11 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let refreshControl = UIRefreshControl()
     
+    lazy var bulletinManager: BLTNItemManager = {
+        let introPage = BulletinDataSource.makeIntroPage()
+           return BLTNItemManager(rootItem: introPage)
+       }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -56,6 +61,7 @@ extension HomeViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.refreshControl = refreshControl
         addBarButton()
+        presentBulletIn()
     }
     
     private func addBarButton() {
@@ -64,13 +70,10 @@ extension HomeViewController {
         self.navigationItem.rightBarButtonItem = navBarButton
     }
     
-    private func showBullentInBoard() {
-        let page = BLTNPageItem(title: "Push Notifications")
-        //page.image = UIImage(named: "...")
-
-        page.descriptionText = "Receive push notifications when new photos of pets are available."
-        page.actionButtonTitle = "Subscribe"
-        page.alternativeButtonTitle = "Not now"
+    private func presentBulletIn() {
+        bulletinManager.backgroundViewStyle = .blurredDark
+        bulletinManager.edgeSpacing = .regular
+        bulletinManager.showBulletin(above: self)
     }
 }
 
