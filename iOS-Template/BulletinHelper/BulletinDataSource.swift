@@ -22,11 +22,11 @@ enum BulletinDataSource {
         page.shouldStartWithActivityIndicator = true
         
         page.dismissalHandler = { item in
-            DefaultsKey.isFirstBulletIn.value = true
+            print("dismiss")
         }
         
         page.actionHandler = { (item: BLTNActionItem) in
-            DefaultsKey.isFirstBulletIn.value = true
+            print("action button")
         }
         
         page.presentationHandler = { item in
