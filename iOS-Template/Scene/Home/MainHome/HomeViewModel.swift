@@ -24,9 +24,11 @@ protocol HomeViewEventSource {
 
 protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
     func viewDidLoad()
+    func refreshData()
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    
     func didSelectPopItemAt(platform: String) {
         getUserList(platfrom: platform, type: "game", sortBy: "popluarity")
     }
@@ -40,7 +42,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     }
     
     // Privates
-    private var cellItems: [HomeCellProtocol] = []
+     var cellItems: [HomeCellProtocol] = []
     
     // DataSource
     var numberOfItems: Int {
@@ -52,6 +54,10 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     
     func viewDidLoad() {
         getUserList(platfrom: "pc" , type: "game" , sortBy: "popularity")
+    }
+    
+    func refreshData() {
+        getUserList(platfrom: "pc", type: "game", sortBy: "popularity")
     }
 }
 

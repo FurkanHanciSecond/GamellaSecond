@@ -12,6 +12,8 @@ import MobilliumUserDefaults
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
     
+    private let refreshControl = UIRefreshControl()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -35,6 +37,7 @@ extension HomeViewController {
     
     private func addSubViews() {
         addTableView()
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     
     private func addTableView() {
@@ -51,6 +54,7 @@ extension HomeViewController {
     private func configureContents() {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.refreshControl = refreshControl
         addBarButton()
     }
     
@@ -63,6 +67,13 @@ extension HomeViewController {
 
 // MARK: - Actions
 extension HomeViewController {
+    
+    @objc
+        private func pullToRefreshValueChanged() {
+            viewModel.cellItems.isEmpty ? viewModel.refreshData() : self.tableView.reloadData()
+            refreshControl.endRefreshing()
+        }
+    
     @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Available Platforms", message: "Please Select a Platform", preferredStyle: .actionSheet)
         
