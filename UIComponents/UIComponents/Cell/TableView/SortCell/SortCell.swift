@@ -158,7 +158,7 @@ extension SortCell {
     private func configureContents() {
         let imageUrl = URL(string: viewModel?.image ?? "")
         let processor = DownsamplingImageProcessor(size: CGSize(width: 300, height: 300))
-                     |> RoundCornerImageProcessor(cornerRadius: 20)
+                     |> RoundCornerImageProcessor(cornerRadius: 5)
         gameImage.kf.indicatorType = .activity
         gameImage.kf.setImage(
             with: imageUrl,

@@ -25,11 +25,12 @@ protocol SortViewEventSource {
 }
 protocol SortViewProtocol: SortViewDataSource, SortViewEventSource {
     func didload()
+    func fetchData()
 }
 
 final class SortViewModel: BaseViewModel<SortRouter>, SortViewProtocol {
     
-    private var cellItems: [SortCellProtocol] = []
+     var cellItems: [SortCellProtocol] = []
     
     var numberOfItems: Int {
         return cellItems.count
@@ -41,6 +42,10 @@ final class SortViewModel: BaseViewModel<SortRouter>, SortViewProtocol {
     
     func didload() {
         getSortByData(platfrom: "pc" , type: "game" , sortBy: "price")
+    }
+    
+    func fetchData() {
+        getSortByData(platfrom: "pc", type: "game", sortBy: "price")
     }
     
     var reloadData: VoidClosure?

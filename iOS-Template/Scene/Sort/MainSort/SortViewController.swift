@@ -9,7 +9,9 @@ import UIKit
 import UIComponents
 import TinyConstraints
 final class SortViewController: BaseViewController<SortViewModel> {
-        
+    
+    private let refreshControl = UIRefreshControl()
+    
     private lazy var sortTableView: UITableView = {
        let table = UITableView()
         table.delegate = self
@@ -33,6 +35,7 @@ final class SortViewController: BaseViewController<SortViewModel> {
 extension SortViewController {
     private func addSubViews() {
         addTableView()
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     
     private func addTableView() {
@@ -60,6 +63,7 @@ extension SortViewController {
     private func configureContents() {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        sortTableView.refreshControl = refreshControl
         addBarButton()
     }
     
@@ -72,6 +76,13 @@ extension SortViewController {
 
 // MARK: - Actions
 extension SortViewController {
+    
+    @objc
+        private func pullToRefreshValueChanged() {
+            viewModel.cellItems.isEmpty ? viewModel.fetchData() : sortTableView.reloadData()
+            refreshControl.endRefreshing()
+        }
+    
     @objc private func gridButtonHandle(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Sort", message: "Please select which type do you want to short", preferredStyle: .actionSheet)
         
