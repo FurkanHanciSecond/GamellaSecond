@@ -12,15 +12,6 @@ import MobilliumUserDefaults
 import BLTNBoard
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
-    lazy var bulletinManager: BLTNItemManager = {
-        let page = BLTNPageItem(title: "Push Notifications")
-        page.image = UIImage(named: "notificationPrompt")
-        page.descriptionText = "Receive push notifications when new photos of pets are available."
-        page.actionButtonTitle = "Subscribe"
-        page.alternativeButtonTitle = "Not now"
-        return BLTNItemManager(rootItem: page)
-    }()
-    
     private let refreshControl = UIRefreshControl()
     
     private lazy var tableView: UITableView = {
@@ -37,7 +28,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         configureContents()
         subscribeViewModel()
         viewModel.viewDidLoad()
-        bulletinManager.showBulletin(above: self)
         view.backgroundColor = viewModel.backgroundColor
     }
 }

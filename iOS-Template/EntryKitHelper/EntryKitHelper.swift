@@ -54,6 +54,7 @@ final class EntryKitHelper {
             .size(.init(width: 24, height: 24))
             .build()
         
+        
         switch type {
         case .success:
             contentView.backgroundColor = .green
@@ -61,6 +62,7 @@ final class EntryKitHelper {
         case .error:
             contentView.backgroundColor = .black
             imageView.image = .remove
+            attributes.hapticFeedbackType = .error
         case .additional:
             contentView.backgroundColor = .blue
             imageView.tintColor = .black
