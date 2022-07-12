@@ -83,6 +83,7 @@ extension HomeViewController {
     private func presentBulletIn() {
         bulletinManager.backgroundViewStyle = .blurredDark
         bulletinManager.edgeSpacing = .regular
+        bulletinManager.cardCornerRadius = 36
         bulletinManager.showBulletin(above: self)
     }
 }
@@ -124,7 +125,11 @@ extension HomeViewController {
         }))
         
         //uncomment for iPad Support
-        //alert.popoverPresentationController?.sourceView = self.view
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
         
         self.present(alert, animated: true, completion: {
             print("completion block")
