@@ -35,6 +35,17 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         viewModel.viewDidLoad()
         view.backgroundColor = viewModel.backgroundColor
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let firstBullet = DefaultsKey.isFirstBulletIn.value {
+            if firstBullet {
+                presentBulletIn()
+            }
+        }
+        
+    }
+    
 }
 
 // MARK: - UILayout
@@ -61,7 +72,6 @@ extension HomeViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.refreshControl = refreshControl
         addBarButton()
-        presentBulletIn()
     }
     
     private func addBarButton() {

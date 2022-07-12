@@ -16,17 +16,14 @@ enum BulletinDataSource {
         page.image = #imageLiteral(resourceName: "locationPrompt")
         
         page.descriptionText = "Discover curated images of the best pets in the world."
-        page.actionButtonTitle = "Configure"
         
         page.isDismissable = true
         page.shouldStartWithActivityIndicator = true
         
         page.dismissalHandler = { item in
             print("dismiss")
-        }
-        
-        page.actionHandler = { (item: BLTNActionItem) in
-            print("action button")
+            DefaultsKey.isFirstBulletIn.value = false
+            print(DefaultsKey.isFirstBulletIn.value)
         }
         
         page.presentationHandler = { item in

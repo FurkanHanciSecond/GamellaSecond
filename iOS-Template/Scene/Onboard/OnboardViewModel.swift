@@ -48,6 +48,7 @@ extension OnboardViewModel {
             OnboardCellModel(description: "You can also see free games on all platfroms and all of features.", title: "Gamella", isLast: true)
         ]
         DefaultsKey.isFirstRun.value = true
+        DefaultsKey.isFirstBulletIn.value = true
     }
 }
 
