@@ -11,6 +11,7 @@ final class HomeDetailViewController: BaseViewController<HomeDetailViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
     }
     
 }

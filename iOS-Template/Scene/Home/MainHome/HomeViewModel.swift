@@ -25,6 +25,7 @@ protocol HomeViewEventSource {
 protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
     func viewDidLoad()
     func refreshData()
+    func pushDetail()
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
@@ -72,6 +73,10 @@ extension HomeViewModel {
         let title = cellItems[indexPath.row].title
         router.pushHomeDetail()
     }
+    
+    func pushDetail() {
+        router.pushHomeDetail()
+    }
 }
 
 // MARK: - DataSource
@@ -80,7 +85,7 @@ extension HomeViewModel {
     private func configutreCell(cellItem: [GameModel]) {
         let item = cellItem.map({ HomeCellModel(title: $0.title ?? "", priceLabel: $0.worth ?? "", statusLabel: $0.status?.rawValue ?? "Error", deadLineLabel: $0.endDate ?? "" , typeLabel: $0.type?.rawValue ?? "Error", imageData: $0.thumbnail ?? "") })
         cellItems = item
-        reloadData?()
+       // reloadData?()
     }
 }
 
@@ -101,9 +106,10 @@ extension HomeViewModel {
             case .success(let response):
                 self.configutreCell(cellItem: response)
                 self.hideLoading?()
+                self.reloadData?()
             }
         })
         
-        self.reloadData?()
+      
     }
 }

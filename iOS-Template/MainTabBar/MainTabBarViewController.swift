@@ -44,6 +44,7 @@ extension MainTabBarController {
         let router = HomeRouter()
         let viewModel = HomeViewModel(router: router)
         let homeViewController = HomeViewController(viewModel: viewModel)
+        router.viewController = homeViewController
         let homeTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.home, image: AppConstants.Style.Image.homeTabBar, tag: 0)
         homeViewController.tabBarItem = homeTabBarItem
         let navigationController = UINavigationController(rootViewController: homeViewController)
@@ -51,7 +52,10 @@ extension MainTabBarController {
     }
     
     private func sortVC() -> UINavigationController {
-        let sortViewController = SortViewController(viewModel: SortViewModel.init(router: SortRouter.init()))
+        let router = SortRouter()
+        let viewModel = SortViewModel(router: router)
+        let sortViewController = SortViewController(viewModel: viewModel)
+        router.viewController = sortViewController
         let sortTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.sort, image: AppConstants.Style.Image.sortTabBar, tag: 1)
         sortViewController.tabBarItem = sortTabBarItem
         return UINavigationController(rootViewController: sortViewController)

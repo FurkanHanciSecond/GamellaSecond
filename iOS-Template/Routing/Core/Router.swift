@@ -14,7 +14,6 @@ protocol RouterProtocol: AnyObject {
 }
 
 class Router: RouterProtocol {
-    
     weak var viewController: UIViewController?
     var openTransition: Transition?
 

@@ -15,7 +15,6 @@ extension HomeDetailRoute where Self: RouterProtocol {
         let router = HomeDetailRouter()
         let viewModel = HomeDetailViewModel(router: router)
         let viewController = HomeDetailViewController(viewModel: viewModel)
-        
         let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition

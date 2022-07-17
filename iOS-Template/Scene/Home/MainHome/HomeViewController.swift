@@ -19,20 +19,20 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
            return BLTNItemManager(rootItem: introPage)
        }()
     
-    private lazy var tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
+      
         tableView.register(HomeCell.self)
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         addSubViews()
         configureContents()
         subscribeViewModel()
-        viewModel.viewDidLoad()
+    
         view.backgroundColor = viewModel.backgroundColor
     }
     
@@ -60,7 +60,7 @@ extension HomeViewController {
         view.addSubview(tableView)
         tableView.pinToCorners(to: view)
         tableView.separatorStyle = .none
-        tableView.backgroundView = nil
+       // tableView.backgroundView = nil
     }
 }
 
@@ -71,6 +71,8 @@ extension HomeViewController {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.refreshControl = refreshControl
+        tableView.delegate = self
+        tableView.dataSource = self
         addBarButton()
     }
     
@@ -118,6 +120,7 @@ extension HomeViewController {
         
         alert.addAction(UIAlertAction(title: "Default (PC)", style: .default , handler:{ action in
             self.viewModel.didSelectPopItemAt(platform: "pc")
+            
         }))
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
