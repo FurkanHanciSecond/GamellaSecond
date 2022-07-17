@@ -13,7 +13,7 @@ extension HomeDetailRoute where Self: RouterProtocol {
     
     func pushHomeDetail(with indexPath: IndexPath) {
         let router = HomeDetailRouter()
-        let viewModel = HomeDetailViewModel(router: router)
+        let viewModel = HomeDetailViewModel(cellIndex: indexPath, router: router)
         let viewController = HomeDetailViewController(viewModel: viewModel)
         let transition = PushTransition()
         router.viewController = viewController

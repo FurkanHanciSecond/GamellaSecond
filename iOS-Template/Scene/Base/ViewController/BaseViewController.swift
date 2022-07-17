@@ -35,7 +35,6 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
         self.tabBarController?.tabBar.isTranslucent = true
         let backBarButtonItem = UIBarButtonItem(title: "Test", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationItem.rightBarButtonItem = backBarButtonItem
-        view.backgroundColor = .lightGray
     }
     
     @objc

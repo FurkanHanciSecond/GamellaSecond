@@ -11,6 +11,7 @@ final class SortDetailViewController: BaseViewController<SortDetailViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
     }
     
 }
