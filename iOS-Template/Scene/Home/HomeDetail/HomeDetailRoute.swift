@@ -6,12 +6,12 @@
 //
 
 protocol HomeDetailRoute {
-    func pushHomeDetail()
+    func pushHomeDetail(with indexPath: IndexPath)
 }
 
 extension HomeDetailRoute where Self: RouterProtocol {
     
-    func pushHomeDetail() {
+    func pushHomeDetail(with indexPath: IndexPath) {
         let router = HomeDetailRouter()
         let viewModel = HomeDetailViewModel(router: router)
         let viewController = HomeDetailViewController(viewModel: viewModel)

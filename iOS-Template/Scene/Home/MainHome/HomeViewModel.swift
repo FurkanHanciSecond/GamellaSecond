@@ -25,7 +25,6 @@ protocol HomeViewEventSource {
 protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
     func viewDidLoad()
     func refreshData()
-    func pushDetail()
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
@@ -70,12 +69,8 @@ extension HomeViewModel {
     }
     
     func didSelectItemAt(indexPath: IndexPath) {
-        let title = cellItems[indexPath.row].title
-        router.pushHomeDetail()
-    }
-    
-    func pushDetail() {
-        router.pushHomeDetail()
+        let index = cellItems[indexPath.row].title
+        router.pushHomeDetail(with: indexPath)
     }
 }
 
