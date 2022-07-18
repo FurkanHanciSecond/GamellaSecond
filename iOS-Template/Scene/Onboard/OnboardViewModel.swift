@@ -45,7 +45,7 @@ extension OnboardViewModel {
             OnboardCellModel(description: "See the all free giveaway games!", title: "Gamella"),
             OnboardCellModel(description: "Get more detail about Game!", title: "Gamella"),
             OnboardCellModel(description: "Sort games by date, value and popularity", title: "Gamella"),
-            OnboardCellModel(description: "You can also see free games on all platfroms and all of features.", title: "Gamella", isLast: true)
+            OnboardCellModel(description: "You can also see free games on all platfroms.", title: "Gamella", isLast: true)
         ]
         DefaultsKey.isFirstRun.value = true
         DefaultsKey.isFirstBulletIn.value = true

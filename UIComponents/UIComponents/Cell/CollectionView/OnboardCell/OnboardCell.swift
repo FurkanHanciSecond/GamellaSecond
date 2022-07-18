@@ -25,7 +25,7 @@ public class OnboardCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let descriptionLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 20, weight: .regular))
+        .font(.systemFont(ofSize: 20, weight: .medium))
         .textColor(.label)
         .numberOfLines(1)
         .adjustsFontSizeToFitWidth(true)
@@ -33,7 +33,7 @@ public class OnboardCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let continueButton = UIButtonBuilder()
-        .cornerRadius(20)
+        .cornerRadius(15)
         .title(AppConstants.Texts.Button.onboardButtonText)
         .titleFont(.systemFont(ofSize: 20))
         .backgroundColor(AppConstants.Style.Color.indigo!)
