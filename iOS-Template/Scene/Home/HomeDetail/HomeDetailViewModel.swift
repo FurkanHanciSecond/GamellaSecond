@@ -9,7 +9,7 @@ import Foundation
 import DataProvider
 
 protocol HomeDetailViewDataSource {
-    
+    var model : GameModel { get }
 }
 
 protocol HomeDetailViewEventSource {
@@ -18,10 +18,10 @@ protocol HomeDetailViewEventSource {
 protocol HomeDetailViewProtocol: HomeDetailViewDataSource, HomeDetailViewEventSource {}
 
 final class HomeDetailViewModel: BaseViewModel<HomeDetailRouter>, HomeDetailViewProtocol {
-    private let cellIndex: IndexPath
-
-    init(cellIndex: IndexPath , router: HomeDetailRouter) {
-        self.cellIndex = cellIndex
+    var model: GameModel
+    public init(model: GameModel , router: HomeDetailRouter) {
+        self.model = model
         super.init(router: router)
     }
+    
 }

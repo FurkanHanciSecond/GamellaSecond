@@ -5,15 +5,17 @@
 //  Created by Furkan Hanci on 6/16/22.
 //
 
+import DataProvider
+
 protocol HomeDetailRoute {
-    func pushHomeDetail(with indexPath: IndexPath)
+    func pushHomeDetail(model: GameModel)
 }
 
 extension HomeDetailRoute where Self: RouterProtocol {
     
-    func pushHomeDetail(with indexPath: IndexPath) {
+    func pushHomeDetail(model: GameModel) {
         let router = HomeDetailRouter()
-        let viewModel = HomeDetailViewModel(cellIndex: indexPath, router: router)
+        let viewModel = HomeDetailViewModel(model: model, router: router)
         let viewController = HomeDetailViewController(viewModel: viewModel)
         let transition = PushTransition()
         router.viewController = viewController

@@ -42,6 +42,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     }
     
     // Privates
+     var model : [GameModel] = []
      var cellItems: [HomeCellProtocol] = []
     
     // DataSource
@@ -70,7 +71,7 @@ extension HomeViewModel {
     
     func didSelectItemAt(indexPath: IndexPath) {
         let index = cellItems[indexPath.row].title
-        router.pushHomeDetail(with: indexPath)
+        router.pushHomeDetail(model: model[indexPath.row])
     }
 }
 
@@ -99,6 +100,7 @@ extension HomeViewModel {
                 
                 
             case .success(let response):
+                self.model = response
                 self.configutreCell(cellItem: response)
                 self.hideLoading?()
                 self.reloadData?()
