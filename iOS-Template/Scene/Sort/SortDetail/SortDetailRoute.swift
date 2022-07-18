@@ -5,15 +5,17 @@
 //  Created by Furkan Hanci on 6/20/22.
 //
 
+import DataProvider
+
 protocol SortDetailRoute {
-    func pushSortDetail()
+    func pushSortDetail(model: GameModel)
 }
 
 extension SortDetailRoute where Self: RouterProtocol {
     
-    func pushSortDetail() {
+    func pushSortDetail(model: GameModel) {
         let router = SortDetailRouter()
-        let viewModel = SortDetailViewModel(router: router)
+        let viewModel = SortDetailViewModel(model: model, router: router)
         let viewController = SortDetailViewController(viewModel: viewModel)
         
         let transition = PushTransition()

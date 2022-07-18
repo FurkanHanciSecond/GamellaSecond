@@ -30,6 +30,7 @@ protocol SortViewProtocol: SortViewDataSource, SortViewEventSource {
 
 final class SortViewModel: BaseViewModel<SortRouter>, SortViewProtocol {
     
+    var model : [GameModel] = []
      var cellItems: [SortCellProtocol] = []
     
     var numberOfItems: Int {
@@ -70,7 +71,7 @@ extension SortViewModel {
     func didSelectItemAt(indexPath: IndexPath) {
         let title = cellItems[indexPath.row].title
         print(title)
-        router.pushSortDetail()
+        router.pushSortDetail(model: model[indexPath.row])
     }
 }
 
@@ -97,6 +98,7 @@ extension SortViewModel {
 
 
             case .success(let response):
+                self.model = response
                 self.configureCellItems(cellItem: response)
                 self.hideLoading?()
             }
