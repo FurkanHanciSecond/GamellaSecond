@@ -8,7 +8,7 @@
 import UIKit
 import UIComponents
 import TinyConstraints
-
+import MobilliumBuilders
 final class OnboardViewController: BaseViewController<OnboardViewModel> {
     
     private lazy var collectionView: UICollectionView = {
@@ -23,6 +23,12 @@ final class OnboardViewController: BaseViewController<OnboardViewModel> {
         return collectionView
     }()
     
+    private lazy var pageControl = UIPageControlBuilder()
+        .currentPageIndicatorTintColor(AppConstants.Style.Color.orange)
+        .pageIndicatorTintColor(AppConstants.Style.Color.gray)
+        .numberOfPages(4)
+        .build()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.didLoad()
@@ -36,6 +42,23 @@ extension OnboardViewController {
     private func addSubViews() {
         view.addSubview(collectionView)
         collectionView.edgesToSuperview()
+        addPageControl()
+    }
+    
+    private func addPageControl() {
+        view.addSubview(pageControl)
+        pageControl.bottomToSuperview()
+        pageControl.centerXToSuperview()
+    }
+}
+
+
+// MARK: - UICollectionViewDelegate
+extension OnboardViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if pageControl.currentPage == indexPath.row {
+            pageControl.currentPage = collectionView.indexPath(for: collectionView.visibleCells.first!)!.row
+        }
     }
 }
 
