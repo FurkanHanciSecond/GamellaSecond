@@ -74,6 +74,7 @@ extension OnboardCell {
     private func addDescriptionLabel() {
         contentView.addSubview(descriptionLabel)
         descriptionLabel.topToBottom(of: titleLabel , offset: 8)
+        descriptionLabel.width(300)
         descriptionLabel.centerXToSuperview()
     }
     
