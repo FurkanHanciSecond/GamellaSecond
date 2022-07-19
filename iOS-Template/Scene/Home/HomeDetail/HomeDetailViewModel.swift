@@ -8,6 +8,10 @@
 import Foundation
 import DataProvider
 
+protocol HomeDetailViewModelDelegate {
+    func shareButtonTapped()
+}
+
 protocol HomeDetailViewDataSource {
     var model : GameModel { get }
 }
@@ -17,11 +21,19 @@ protocol HomeDetailViewEventSource {
 
 protocol HomeDetailViewProtocol: HomeDetailViewDataSource, HomeDetailViewEventSource {}
 
-final class HomeDetailViewModel: BaseViewModel<HomeDetailRouter>, HomeDetailViewProtocol {
+final class HomeDetailViewModel: BaseViewModel<HomeDetailRouter>, HomeDetailViewProtocol , HomeDetailViewModelDelegate {
     var model: GameModel
+    
+    
     public init(model: GameModel , router: HomeDetailRouter) {
         self.model = model
         super.init(router: router)
     }
-    
+}
+
+// MARK: - Actions
+extension HomeDetailViewModel {
+    func shareButtonTapped() {
+       // router.presentShareSheet(items: [textToShare])
+    }
 }

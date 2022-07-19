@@ -58,6 +58,7 @@ public struct AppConstants {
         }
         
         public enum Image {
+            public static let upload = UIImage(systemName: "square.and.arrow.up")
             public static let grid = UIImage(systemName: "square.grid.3x3")
             public static let homeTabBar = UIImage(systemName: "house.fill")
             public static let sortTabBar = UIImage(systemName: "arrow.up.arrow.down")
