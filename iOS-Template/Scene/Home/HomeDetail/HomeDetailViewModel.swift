@@ -34,6 +34,7 @@ final class HomeDetailViewModel: BaseViewModel<HomeDetailRouter>, HomeDetailView
 // MARK: - Actions
 extension HomeDetailViewModel {
     func shareButtonTapped() {
-       // router.presentShareSheet(items: [textToShare])
+        let text = "Hey you should see this game giveaway now! \(model.gamerpowerURL ?? "")" as Any
+        router.presentShareSheet(items: [text])
     }
 }
