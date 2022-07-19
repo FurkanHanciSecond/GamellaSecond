@@ -21,6 +21,12 @@ final class HomeDetailViewController: BaseViewController<HomeDetailViewModel> {
         .cornerRadius(15)
         .build()
     
+    private let detailUIViewText = UILabelBuilder()
+        .numberOfLines(0)
+        .textAlignment(.center)
+        .textColor(.black)
+        .build()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,7 @@ extension HomeDetailViewController {
        addDetailImage()
         addDetailImage()
         addDetailView()
+        configureDetailViewElements()
     }
     
     private func addDetailImage() {
@@ -47,13 +54,14 @@ extension HomeDetailViewController {
     
     private func addDetailView() {
         view.addSubview(detailUIView)
-        detailUIView.addBorder()
         detailUIView.topToBottom(of: detailImage , offset: 32)
-        detailUIView.size(CGSize(width: UIScreen.main.bounds.size.width, height: 150))
+        detailUIView.centerXToSuperview()
+        detailUIView.size(CGSize(width: UIScreen.main.bounds.size.width / 1.2, height: 170))
     }
     
     private func configureDetailViewElements() {
-        
+        detailUIView.addSubview(detailUIViewText)
+        detailUIViewText.edgesToSuperview()
     }
     
 }
@@ -74,6 +82,7 @@ extension HomeDetailViewController {
     private func configureDetailElements() {
         let imageUrl = URL(string: viewModel.model.image ?? "")
         detailImage.kf.setImage(with: imageUrl  ,options: [.scaleFactor(UIScreen.main.scale), .transition(.fade(1))])
+        detailUIViewText.text = viewModel.model.welcomeDescription
         
     }
 }

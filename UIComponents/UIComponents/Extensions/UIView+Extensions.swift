@@ -74,11 +74,6 @@ public extension UIView {
         self.isUserInteractionEnabled = true
     }
     
-    func addBorder() {
-        layer.borderWidth = 0.5
-        layer.borderColor = AppConstants.Style.Color.gray.cgColor
-    }
-    
     func addBackground(image: UIImage, opacity: Float, addBlurEffect: Bool) {
         
         let width = UIScreen.main.bounds.width
