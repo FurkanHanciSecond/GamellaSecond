@@ -40,7 +40,7 @@ extension HomeDetailViewModel {
     }
     
     func presentSafariButtonTapped() {
-        let url = URL(string: model.gamerpowerURL ?? "")
+        let url = URL(string: model.openGiveaway ?? "")
         router.presentInSafari(with: url!)
     }
 }

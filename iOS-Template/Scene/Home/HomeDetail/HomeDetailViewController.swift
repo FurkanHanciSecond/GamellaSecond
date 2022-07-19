@@ -65,7 +65,7 @@ extension HomeDetailViewController {
         view.addSubview(detailUIView)
         detailUIView.topToBottom(of: detailImage , offset: 32)
         detailUIView.centerXToSuperview()
-        detailUIView.size(CGSize(width: UIScreen.main.bounds.size.width / 1.2, height: 170))
+        detailUIView.size(CGSize(width: UIScreen.main.bounds.size.width / 1.3, height: 170))
     }
     
     private func addDetailButton() {
