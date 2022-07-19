@@ -16,6 +16,12 @@ final class HomeDetailViewController: BaseViewController<HomeDetailViewModel> {
         .cornerRadius(35)
         .build()
     
+    private let detailUIView = UIViewBuilder()
+        .backgroundColor(AppConstants.Style.Color.orange!)
+        .cornerRadius(15)
+        .build()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -31,11 +37,23 @@ extension HomeDetailViewController {
     private func addSubViews() {
        addDetailImage()
         addDetailImage()
+        addDetailView()
     }
     
     private func addDetailImage() {
         view.addSubview(detailImage)
-        detailImage.topToSuperview(view.readableContentGuide.topAnchor , offset: -32)
+        detailImage.topToSuperview(view.safeAreaLayoutGuide.topAnchor , offset: -32)
+    }
+    
+    private func addDetailView() {
+        view.addSubview(detailUIView)
+        detailUIView.addBorder()
+        detailUIView.topToBottom(of: detailImage , offset: 32)
+        detailUIView.size(CGSize(width: UIScreen.main.bounds.size.width, height: 150))
+    }
+    
+    private func configureDetailViewElements() {
+        
     }
     
 }
