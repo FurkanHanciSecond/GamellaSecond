@@ -10,6 +10,7 @@ import DataProvider
 
 protocol HomeDetailViewModelDelegate {
     func shareButtonTapped()
+    func presentSafariButtonTapped()
 }
 
 protocol HomeDetailViewDataSource {
@@ -36,5 +37,10 @@ extension HomeDetailViewModel {
     func shareButtonTapped() {
         let text = "Hey you should see this game giveaway now! \(model.gamerpowerURL ?? "")" as Any
         router.presentShareSheet(items: [text])
+    }
+    
+    func presentSafariButtonTapped() {
+        let url = URL(string: model.gamerpowerURL ?? "")
+        router.presentInSafari(with: url!)
     }
 }

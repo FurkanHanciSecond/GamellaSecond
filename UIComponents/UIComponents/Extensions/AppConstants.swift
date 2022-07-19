@@ -27,6 +27,7 @@ public struct AppConstants {
         public enum Button {
             public  static let onboardButtonText = "Lets get start 🚀"
             public static let next = "Next"
+            public static let getLink = "Get Link Here!"
         }
         
         public enum Error {
@@ -53,6 +54,7 @@ public struct AppConstants {
             public static let orange = UIColor(named: "GameOrange")
             public static let lightOrange = UIColor(named: "GameLightOrange")
             public  static let lightPurple = UIColor(named: "GameLightPurple")
+            public static let purple = UIColor(named: "GamePurple")
             public static let clear = UIColor.clear
             public static let darkWhite = UIColor(named: "DarkWhite")
         }

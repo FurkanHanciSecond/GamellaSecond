@@ -6,5 +6,5 @@
 //
 
 final class HomeDetailRouter: Router , HomeDetailRouter.Routes {
-    typealias Routes = ShareSheetRoute
+    typealias Routes = ShareSheetRoute & PresentSafariRoute
 }

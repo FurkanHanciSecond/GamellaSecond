@@ -7,7 +7,7 @@
 
 import SafariServices
 
-extension UIViewController {
+public extension UIViewController {
     func presentInSafari(with url: URL) {
         let safariVC = SFSafariViewController(url: url)
         safariVC.preferredControlTintColor = AppConstants.Style.Color.lightOrange
