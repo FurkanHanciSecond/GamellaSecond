@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7054C2E02886DE1900867CE5 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054C2DF2886DE1900867CE5 /* UIViewController+Ext.swift */; };
 		705BBB66283A1A6600F61E53 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB64283A1A6600F61E53 /* HomeCell.swift */; };
 		705BBB67283A1A6600F61E53 /* HomeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB65283A1A6600F61E53 /* HomeCellModel.swift */; };
 		709C47ED285E557E00D814BF /* OnboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47EB285E557E00D814BF /* OnboardCell.swift */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		017205D27D9379550173DA92 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		63FFBDCF860852E97C663915 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
-		7054C2DF2886DE1900867CE5 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		705BBB64283A1A6600F61E53 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		705BBB65283A1A6600F61E53 /* HomeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModel.swift; sourceTree = "<group>"; };
 		709C47EB285E557E00D814BF /* OnboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCell.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				FE73480027E716130019DB4F /* UICollectionView+Extensions.swift */,
 				FE73480227E716130019DB4F /* UITableView+Extensions.swift */,
 				FE73480127E716130019DB4F /* UIView+Extensions.swift */,
-				7054C2DF2886DE1900867CE5 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,7 +297,6 @@
 			files = (
 				70BD6A7C28318CC700E5D179 /* ExampleCellModel.swift in Sources */,
 				70AA1202285F566E00C3320B /* SortCell.swift in Sources */,
-				7054C2E02886DE1900867CE5 /* UIViewController+Ext.swift in Sources */,
 				70BD6A7B28318CC700E5D179 /* ExampleCell.swift in Sources */,
 				70AA1203285F566E00C3320B /* SortCellModel.swift in Sources */,
 				705BBB66283A1A6600F61E53 /* HomeCell.swift in Sources */,

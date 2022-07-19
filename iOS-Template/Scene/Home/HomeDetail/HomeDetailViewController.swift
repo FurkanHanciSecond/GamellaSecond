@@ -73,6 +73,7 @@ extension HomeDetailViewController {
         detailButton.topToBottom(of: detailUIView , offset: 24)
         detailButton.centerXToSuperview()
         detailButton.width(200)
+        detailButton.height(50)
     }
     
     private func configureDetailViewElements() {
