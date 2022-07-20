@@ -65,7 +65,7 @@ extension SettingsViewController: UITableViewDataSource {
             return cell
         } else if indexPath.row == 1 {
             let cell2: SettingsSecondCell = self.tableView.dequeueReusableCell(withIdentifier: SettingsSecondCell.reuseIdentifier, for: indexPath) as! SettingsSecondCell
-            cell2.backgroundColor = .green
+            cell2.backgroundColor = .clear
             return cell2
         } else if indexPath.row == 2 {
             let cell3: SettingsThirdCell =  self.tableView.dequeueReusableCell(withIdentifier: SettingsThirdCell.reuseIdentifier, for: indexPath) as! SettingsThirdCell

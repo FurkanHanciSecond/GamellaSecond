@@ -12,35 +12,24 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
     
     weak var viewModel: SettingsSecondCellProtocol?
     
-    private let feedBackButton = UIButtonBuilder()
-        .cornerRadius(15)
-        .title(AppConstants.Texts.Button.feedBack)
-        .titleFont(.systemFont(ofSize: 25, weight: .medium))
-        .backgroundColor(AppConstants.Style.Color.orange!)
-        .titleColor(AppConstants.Style.Color.white, for: .normal)
+    private let premiumCardView = UIViewBuilder()
+        .backgroundColor(AppConstants.Style.Color.gameGray!)
+        .cornerRadius(20)
+        .shadowRadius(15)
         .build()
     
-    private let shareButton = UIButtonBuilder()
-        .cornerRadius(15)
-        .title(AppConstants.Texts.Button.share)
-        .titleFont(.systemFont(ofSize: 25, weight: .medium))
-        .backgroundColor(AppConstants.Style.Color.black)
-        .titleColor(AppConstants.Style.Color.white, for: .normal)
-        .build()
-    
-    private let rateButton = UIButtonBuilder()
-        .cornerRadius(15)
-        .title(AppConstants.Texts.Button.rate)
-        .titleFont(.systemFont(ofSize: 25, weight: .medium))
-        .backgroundColor(AppConstants.Style.Color.indigo!)
-        .titleColor(AppConstants.Style.Color.white, for: .normal)
+    private let premiumAppLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 25, weight: .medium))
+        .textColor(.white)
+        .textAlignment(.center)
+        .text(AppConstants.appName)
         .build()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         configureContents()
-        //addSubViews()
+        addSubViews()
     }
     
     required init?(coder: NSCoder) {
@@ -58,31 +47,20 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
 // MARK: -  UILayout
 extension SettingsSecondCell {
     private func addSubViews() {
-        addFeedBackButton()
-        addShareButton()
-        addRateButton()
+        addPremiumCardView()
+        addPremiumAppLabel()
     }
     
-    private func addFeedBackButton() {
-        contentView.addSubview(feedBackButton)
-        feedBackButton.edgesToSuperview()
-        feedBackButton.width(345)
-        feedBackButton.height(50)
+    private func addPremiumCardView() {
+        contentView.addSubview(premiumCardView)
+        premiumCardView.edgesToSuperview()
     }
     
-    private func addShareButton() {
-        contentView.addSubview(shareButton)
-        shareButton.topToBottom(of: feedBackButton , offset: 4)
-        shareButton.width(345)
-        shareButton.height(50)
+    private func addPremiumAppLabel() {
+        premiumCardView.addSubview(premiumAppLabel)
+        premiumAppLabel.edges(to: premiumCardView, excluding: [.bottom], insets: .vertical(12))
     }
     
-    private func addRateButton() {
-        contentView.addSubview(rateButton)
-        rateButton.topToBottom(of: shareButton , offset: 4)
-        rateButton.width(345)
-        rateButton.height(50)
-    }
 }
 
 // MARK: - Configgure
