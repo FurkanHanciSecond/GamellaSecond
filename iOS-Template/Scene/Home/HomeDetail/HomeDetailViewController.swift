@@ -13,7 +13,8 @@ final class HomeDetailViewController: BaseViewController<HomeDetailViewModel> {
     
     private let detailImage = UIImageViewBuilder()
         .size(CGSize(width: UIScreen.main.bounds.size.width, height: 210))
-        .cornerRadius(35)
+        .cornerRadius(20)
+        .clipsToBounds(true)
         .build()
     
     private let detailUIView = UIViewBuilder()
