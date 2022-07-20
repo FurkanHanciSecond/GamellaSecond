@@ -11,7 +11,7 @@ final class SettingsViewController: BaseViewController<SettingsViewModel> {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-      
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(SettingsCell.self)
         tableView.register(SettingsSecondCell.self)
         tableView.register(SettingsThirdCell.self)
@@ -76,7 +76,7 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 200
     }
 }
 

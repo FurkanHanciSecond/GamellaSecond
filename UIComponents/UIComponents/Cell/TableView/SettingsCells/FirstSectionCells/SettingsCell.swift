@@ -42,8 +42,7 @@ public class SettingsCell: UITableViewCell, ReusableView {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureContents()
         selectionStyle = .none
-        //addSubViews()
-        //contentView.backgroundColor = .red
+        addSubViews()
     }
     
     required init?(coder: NSCoder) {
@@ -68,7 +67,7 @@ extension SettingsCell {
     
     private func addFeedBackButton() {
         contentView.addSubview(feedBackButton)
-        feedBackButton.edgesToSuperview()
+        feedBackButton.edgesToSuperview(excluding: [.top , .bottom])
         feedBackButton.width(345)
         feedBackButton.height(50)
     }
