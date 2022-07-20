@@ -15,7 +15,7 @@ extension ShareSheetRoute where Self: RouterProtocol {
     
     func presentInSafari(with url: URL) {
         let safariVC = SFSafariViewController(url: url)
-        safariVC.preferredControlTintColor = AppConstants.Style.Color.lightPurple
+        safariVC.preferredControlTintColor = AppConstants.Style.Color.gameBlue
         let transition = ModalTransition()
         
         open(safariVC, transition: transition)
