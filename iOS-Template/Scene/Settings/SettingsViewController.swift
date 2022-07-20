@@ -53,19 +53,7 @@ extension SettingsViewController {
 // MARK: - UITableViewDataSource
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-           return 1
-            
-        case 1:
-            return 1
-            
-        case 2:
-            return 1
-            
-        default:
-            return 3
-        }
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,14 +63,20 @@ extension SettingsViewController: UITableViewDataSource {
             return cell
         } else if indexPath.row == 1 {
             let cell2: SettingsSecondCell = self.tableView.dequeueReusableCell(withIdentifier: SettingsSecondCell.reuseIdentifier, for: indexPath) as! SettingsSecondCell
+            cell2.backgroundColor = .green
             return cell2
         } else if indexPath.row == 2 {
             let cell3: SettingsThirdCell =  self.tableView.dequeueReusableCell(withIdentifier: SettingsThirdCell.reuseIdentifier, for: indexPath) as! SettingsThirdCell
+            cell3.backgroundColor = .blue
             return cell3
         }
         
         return UITableViewCell()
 
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
     }
 }
 

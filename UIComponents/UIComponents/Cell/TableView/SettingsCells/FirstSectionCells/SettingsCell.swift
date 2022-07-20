@@ -11,6 +11,8 @@ import TinyConstraints
 public class SettingsCell: UITableViewCell, ReusableView {
     
     weak var viewModel: SettingsCellProtocol?
+    private let verticalPadding: CGFloat = 10
+    private let horizontalPadding : CGFloat = 20
     
     private let feedBackButton = UIButtonBuilder()
         .cornerRadius(15)
@@ -39,7 +41,9 @@ public class SettingsCell: UITableViewCell, ReusableView {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureContents()
-        addSubViews()
+        selectionStyle = .none
+        //addSubViews()
+        //contentView.backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {
