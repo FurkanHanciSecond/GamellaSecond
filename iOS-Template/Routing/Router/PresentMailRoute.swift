@@ -53,7 +53,7 @@ extension PresentMailRoute where Self: RouterProtocol {
             return sparkUrl
         }
         
-        return gmailUrl
+        return defaultUrl
     }
 }
 
