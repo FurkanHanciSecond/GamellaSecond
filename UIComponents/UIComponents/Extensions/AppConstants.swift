@@ -28,6 +28,9 @@ public struct AppConstants {
             public  static let onboardButtonText = "Lets get start 🚀"
             public static let next = "Next"
             public static let getLink = "Get Link Here!"
+            public static let feedBack = "Feedback Us"
+            public static let share = "Share Gamella"
+            public static let rate = "Rate Gamella"
         }
         
         public enum Error {
