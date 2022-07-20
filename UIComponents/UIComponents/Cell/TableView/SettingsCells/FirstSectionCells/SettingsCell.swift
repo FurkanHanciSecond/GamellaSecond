@@ -8,9 +8,17 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
+
+public protocol SettingsCellDelegate: AnyObject {
+    func feedBackButtonTapped()
+    func shareButtonTapped()
+    func rateButtonTapped()
+}
+
 public class SettingsCell: UITableViewCell, ReusableView {
     
     weak var viewModel: SettingsCellProtocol?
+    public weak var delegate: SettingsCellDelegate?
     private let verticalPadding: CGFloat = 10
     private let horizontalPadding : CGFloat = 20
     
@@ -74,14 +82,16 @@ extension SettingsCell {
     
     private func addShareButton() {
         contentView.addSubview(shareButton)
-        shareButton.topToBottom(of: feedBackButton , offset: 4)
+        shareButton.edgesToSuperview(excluding: [.top , .bottom])
+        shareButton.topToBottom(of: feedBackButton , offset: 16)
         shareButton.width(345)
         shareButton.height(50)
     }
     
     private func addRateButton() {
         contentView.addSubview(rateButton)
-        rateButton.topToBottom(of: shareButton , offset: 4)
+        rateButton.edgesToSuperview(excluding: [.top , .bottom])
+        rateButton.topToBottom(of: shareButton , offset: 16)
         rateButton.width(345)
         rateButton.height(50)
     }
@@ -90,7 +100,25 @@ extension SettingsCell {
 // MARK: - Configgure
 extension SettingsCell {
     private func configureContents() {
-        
+        feedBackButton.addTarget(self, action: #selector(feedBackButtonTapped) , for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+        rateButton.addTarget(self, action: #selector(rateButtonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: -  Actions
+extension SettingsCell {
+    
+   @objc private func feedBackButtonTapped() {
+       delegate?.feedBackButtonTapped()
+    }
+    
+    @objc private func shareButtonTapped() {
+        delegate?.shareButtonTapped()
+    }
+    
+    @objc private func rateButtonTapped() {
+        delegate?.rateButtonTapped()
     }
 }
 

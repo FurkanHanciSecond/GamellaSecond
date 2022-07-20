@@ -7,6 +7,7 @@
 
 import UIKit
 import UIComponents
+import StoreKit
 final class SettingsViewController: BaseViewController<SettingsViewModel> {
     
     private let tableView: UITableView = {
@@ -59,7 +60,8 @@ extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell: SettingsCell = self.tableView.dequeueReusableCell(withIdentifier: SettingsCell.reuseIdentifier, for: indexPath) as! SettingsCell
-            cell.backgroundColor = .red
+            cell.delegate = self
+            cell.backgroundColor = .clear
             return cell
         } else if indexPath.row == 1 {
             let cell2: SettingsSecondCell = self.tableView.dequeueReusableCell(withIdentifier: SettingsSecondCell.reuseIdentifier, for: indexPath) as! SettingsSecondCell
@@ -72,7 +74,7 @@ extension SettingsViewController: UITableViewDataSource {
         }
         
         return UITableViewCell()
-
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -82,6 +84,33 @@ extension SettingsViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension SettingsViewController: UITableViewDelegate {
+    
+}
+
+// MARK: - SettingsCellDelegate
+extension SettingsViewController: SettingsCellDelegate {
+    func feedBackButtonTapped() {
+        viewModel.feedBackButtonTapped()
+    }
+    
+    func shareButtonTapped() {
+        viewModel.shareButtonTapped()
+    }
+    
+    func rateButtonTapped() {
+        guard let scene = view.window?.windowScene else {
+            print("scene is not found")
+            return
+        }
+        
+        if #available(iOS 14, *) {
+            SKStoreReviewController.requestReview(in: scene)
+            
+        } else {
+            SKStoreReviewController.requestReview()
+        }
+    }
+    
     
 }
 

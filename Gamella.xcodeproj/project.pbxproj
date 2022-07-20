@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5CEB78BBE974C04DE5CA5787 /* Pods_Gamella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DBE0D39DCBA66FEE893186 /* Pods_Gamella.framework */; };
+		700EAF3B2888340B00BABE31 /* PresentMailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700EAF3A2888340B00BABE31 /* PresentMailRoute.swift */; };
 		701FFFB62843E3020018F3A6 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */; };
 		701FFFB72843E3020018F3A6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */; };
 		701FFFB82843E3020018F3A6 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */; };
@@ -103,6 +104,7 @@
 
 /* Begin PBXFileReference section */
 		59DBE0D39DCBA66FEE893186 /* Pods_Gamella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gamella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		700EAF3A2888340B00BABE31 /* PresentMailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMailRoute.swift; sourceTree = "<group>"; };
 		701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
 		701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				FE42628C2825A73F009CCA73 /* DismissableRoute.swift */,
 				FE42628D2825A73F009CCA73 /* PopToRoute.swift */,
 				705A47182887301B0024AACD /* PresentSafariRoute.swift */,
+				700EAF3A2888340B00BABE31 /* PresentMailRoute.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				709C47F0285E58CA00D814BF /* OnboardRoute.swift in Sources */,
 				7026CC5B2833EF2D00F72FA5 /* GetNameVC.swift in Sources */,
 				7054C2E42886E32C00867CE5 /* ShreSheetRoute.swift in Sources */,
+				700EAF3B2888340B00BABE31 /* PresentMailRoute.swift in Sources */,
 				701FFFB62843E3020018F3A6 /* MainTabBarRouter.swift in Sources */,
 				701FFFB72843E3020018F3A6 /* MainTabBarViewController.swift in Sources */,
 				FE4262B22825A87B009CCA73 /* ModalNavigationController.swift in Sources */,
