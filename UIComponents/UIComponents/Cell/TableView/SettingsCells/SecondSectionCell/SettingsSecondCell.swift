@@ -18,11 +18,18 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
         .shadowRadius(15)
         .build()
     
-    private let premiumAppLabel = UILabelBuilder()
+    private let appLabel = UILabelBuilder()
         .font(.systemFont(ofSize: 25, weight: .medium))
         .textColor(.white)
         .textAlignment(.center)
         .text(AppConstants.appName)
+        .build()
+    
+    private let premiumLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 25, weight: .medium))
+        .textColor(.white)
+        .textAlignment(.center)
+        .text("Premium")
         .build()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -49,6 +56,7 @@ extension SettingsSecondCell {
     private func addSubViews() {
         addPremiumCardView()
         addPremiumAppLabel()
+        addPremiumLabel()
     }
     
     private func addPremiumCardView() {
@@ -57,8 +65,16 @@ extension SettingsSecondCell {
     }
     
     private func addPremiumAppLabel() {
-        premiumCardView.addSubview(premiumAppLabel)
-        premiumAppLabel.edges(to: premiumCardView, excluding: [.bottom], insets: .vertical(12))
+        premiumCardView.addSubview(appLabel)
+        appLabel.edgesToSuperview(excluding: [.bottom, .trailing, .leading], insets: .top(12))
+        appLabel.centerXToSuperview()
+    }
+    
+    private func addPremiumLabel() {
+        premiumCardView.addSubview(premiumLabel)
+        premiumLabel.edgesToSuperview(excluding: [.bottom, .leading, .trailing])
+        premiumLabel.leadingToTrailing(of: appLabel)
+        premiumLabel.centerY(to: appLabel)
     }
     
 }
