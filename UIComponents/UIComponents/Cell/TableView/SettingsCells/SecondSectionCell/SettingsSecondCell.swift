@@ -25,6 +25,24 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
         .text(AppConstants.appName)
         .build()
     
+    private let firstTriangleImage = UIImageViewBuilder()
+        .tintColor(AppConstants.Style.Color.labelColor)
+        .size(.init(width: 25, height: 25))
+        .image(UIImage(systemName: "triangle")!)
+        .build()
+    
+    private let secondTriangleImage = UIImageViewBuilder()
+        .tintColor(AppConstants.Style.Color.labelColor)
+        .size(.init(width: 25, height: 25))
+        .image(UIImage(systemName: "triangle")!)
+        .build()
+    
+    private let thirdTriangleImage = UIImageViewBuilder()
+        .tintColor(AppConstants.Style.Color.labelColor)
+        .size(.init(width: 25, height: 25))
+        .image(UIImage(systemName: "triangle")!)
+        .build()
+    
     private let premiumLabel = UILabelBuilder()
         .font(.systemFont(ofSize: 25, weight: .light))
         .textColor(AppConstants.Style.Color.gameLinOrange!)
@@ -57,6 +75,8 @@ extension SettingsSecondCell {
         addPremiumCardView()
         addPremiumAppLabel()
         addPremiumLabel()
+       // addFirstTriangle()
+        addSecondTriangle()
     }
     
     private func addPremiumCardView() {
@@ -75,6 +95,20 @@ extension SettingsSecondCell {
         premiumLabel.edgesToSuperview(excluding: [.bottom, .leading, .trailing])
         premiumLabel.leadingToTrailing(of: appLabel , offset: 8)
         premiumLabel.centerY(to: appLabel)
+    }
+    
+    private func addFirstTriangle() {
+        premiumCardView.addSubview(firstTriangleImage)
+        firstTriangleImage.edgesToSuperview(excluding: [.trailing , .top], insets: .horizontal(16) + .vertical(64))
+    }
+    
+    private func addSecondTriangle() {
+        let views = [firstTriangleImage , secondTriangleImage , thirdTriangleImage]
+        //premiumCardView.addSubviews(views)
+        premiumCardView.stack(views, axis: .vertical, width: 10, height: 10, spacing: 0)
+//        premiumCardView.addSubview(secondTriangleImage)
+//        secondTriangleImage.edgesToSuperview(excluding: [.trailing , .top], insets: .horizontal(16))
+//        secondTriangleImage.topToBottom(of: firstTriangleImage)
     }
     
 }
