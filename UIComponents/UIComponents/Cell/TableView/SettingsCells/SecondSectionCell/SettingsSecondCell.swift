@@ -26,7 +26,7 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
         .build()
     
     private let premiumLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 25, weight: .medium))
+        .font(.systemFont(ofSize: 25, weight: .light))
         .textColor(AppConstants.Style.Color.gameLinOrange!)
         .textAlignment(.center)
         .text("Premium")
@@ -67,13 +67,13 @@ extension SettingsSecondCell {
     private func addPremiumAppLabel() {
         premiumCardView.addSubview(appLabel)
         appLabel.edgesToSuperview(excluding: [.bottom, .trailing, .leading], insets: .top(12))
-        appLabel.centerXToSuperview()
+        appLabel.centerXToSuperview(offset: -48)
     }
     
     private func addPremiumLabel() {
         premiumCardView.addSubview(premiumLabel)
         premiumLabel.edgesToSuperview(excluding: [.bottom, .leading, .trailing])
-        premiumLabel.leadingToTrailing(of: appLabel , offset: 4)
+        premiumLabel.leadingToTrailing(of: appLabel , offset: 8)
         premiumLabel.centerY(to: appLabel)
     }
     
