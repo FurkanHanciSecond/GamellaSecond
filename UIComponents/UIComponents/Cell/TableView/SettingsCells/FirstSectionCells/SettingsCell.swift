@@ -92,7 +92,6 @@ extension SettingsCell {
         contentView.addSubview(rateButton)
         rateButton.edgesToSuperview(excluding: [.top , .bottom])
         rateButton.topToBottom(of: shareButton , offset: 16)
-        contentView.trailing(to: rateButton)
         rateButton.width(345)
         rateButton.height(50)
     }

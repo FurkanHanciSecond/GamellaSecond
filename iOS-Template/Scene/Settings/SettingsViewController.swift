@@ -23,6 +23,7 @@ final class SettingsViewController: BaseViewController<SettingsViewModel> {
         super.viewDidLoad()
         addSubViews()
         configureContents()
+        viewModel.didLoad()
     }
     
 }
@@ -54,7 +55,7 @@ extension SettingsViewController {
 // MARK: - UITableViewDataSource
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,10 +65,6 @@ extension SettingsViewController: UITableViewDataSource {
             cell.backgroundColor = .clear
             return cell
         } else if indexPath.row == 1 {
-            let cell2: SettingsSecondCell = self.tableView.dequeueReusableCell(withIdentifier: SettingsSecondCell.reuseIdentifier, for: indexPath) as! SettingsSecondCell
-            cell2.backgroundColor = .clear
-            return cell2
-        } else if indexPath.row == 2 {
             let cell3: SettingsThirdCell =  self.tableView.dequeueReusableCell(withIdentifier: SettingsThirdCell.reuseIdentifier, for: indexPath) as! SettingsThirdCell
             cell3.backgroundColor = .blue
             return cell3

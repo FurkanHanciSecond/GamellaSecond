@@ -21,6 +21,7 @@
 		5740044527E7225500B36934 /* APIDecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740044227E7225500B36934 /* APIDecodableResponseRequest.swift */; };
 		5740044827E7229900B36934 /* UserCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740044727E7229900B36934 /* UserCacheHelper.swift */; };
 		700B55D72857284D00F3CC7A /* GameDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700B55D62857284D00F3CC7A /* GameDataRequest.swift */; };
+		7022F5192889DE4C0019245B /* GiveAwayDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022F5182889DE4C0019245B /* GiveAwayDataRequest.swift */; };
 		705595D5284D3D9400B1FDAD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705595D4284D3D9400B1FDAD /* GameModel.swift */; };
 		70B6DE1F285F5E92008A2026 /* SortDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6DE1E285F5E92008A2026 /* SortDataRequest.swift */; };
 		FE4262B92825A93C009CCA73 /* MultiPartFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262B82825A93C009CCA73 /* MultiPartFileData.swift */; };
@@ -44,6 +45,7 @@
 		5740044227E7225500B36934 /* APIDecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDecodableResponseRequest.swift; sourceTree = "<group>"; };
 		5740044727E7229900B36934 /* UserCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCacheHelper.swift; sourceTree = "<group>"; };
 		700B55D62857284D00F3CC7A /* GameDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataRequest.swift; sourceTree = "<group>"; };
+		7022F5182889DE4C0019245B /* GiveAwayDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveAwayDataRequest.swift; sourceTree = "<group>"; };
 		705595D4284D3D9400B1FDAD /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		70B6DE1E285F5E92008A2026 /* SortDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDataRequest.swift; sourceTree = "<group>"; };
 		8C80EA5F9125D8732530DD42 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				700B55D62857284D00F3CC7A /* GameDataRequest.swift */,
 				70B6DE1E285F5E92008A2026 /* SortDataRequest.swift */,
+				7022F5182889DE4C0019245B /* GiveAwayDataRequest.swift */,
 			);
 			path = FetchData;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				5740043A27E7224100B36934 /* Typealias.swift in Sources */,
 				5740044527E7225500B36934 /* APIDecodableResponseRequest.swift in Sources */,
 				5740043E27E7224100B36934 /* DataProviderProtocol.swift in Sources */,
+				7022F5192889DE4C0019245B /* GiveAwayDataRequest.swift in Sources */,
 				70B6DE1F285F5E92008A2026 /* SortDataRequest.swift in Sources */,
 				FE4262BE2825A991009CCA73 /* NetworkError.swift in Sources */,
 				5740044427E7225500B36934 /* APIRequestAdapter.swift in Sources */,

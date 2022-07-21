@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import MobilliumBuilders
 
 public class SettingsThirdCell: UITableViewCell, ReusableView {
     
-    weak var viewModel: SettingsThirdCellCellProtocol?
+    weak var viewModel: SettingsThirdCellProtocol?
+    
+    private let activeGiveawayLabel = UILabelBuilder()
+        .textColor(.label)
+        .build()
+    
+    private let totalWorthLabel = UILabelBuilder()
+        .textColor(.label)
+        .build()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,13 +31,17 @@ public class SettingsThirdCell: UITableViewCell, ReusableView {
         configureContents()
     }
     
-    private func configureContents() {
-        
-    }
-    
-    public func set(viewModel: SettingsThirdCellCellProtocol) {
+    public func set(viewModel: SettingsThirdCellProtocol) {
         self.viewModel = viewModel
         
     }
     
+}
+
+// MARK: - Configure
+extension SettingsThirdCell {
+    
+    private func configureContents() {
+        
+    }
 }

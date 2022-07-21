@@ -47,3 +47,14 @@ public enum TypeEnum: String, Codable {
     case other = "Other"
 }
 
+public struct GiveAwayModel: Decodable {
+   public let activeGiveawaysNumber: Int
+    public let worthEstimationUsd: String
+    
+    enum CodingKeys: String, CodingKey {
+        case activeGiveawaysNumber = "active_giveaways_number"
+        case worthEstimationUsd = "worth_estimation_usd"
+    }
+}
+
+
