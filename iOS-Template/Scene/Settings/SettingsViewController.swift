@@ -24,6 +24,7 @@ final class SettingsViewController: BaseViewController<SettingsViewModel> {
         addSubViews()
         configureContents()
         viewModel.didLoad()
+        subscribeViewModel()
     }
     
 }
@@ -52,6 +53,20 @@ extension SettingsViewController {
     }
 }
 
+// MARK: -  SubscribeViewModel
+extension SettingsViewController {
+    
+    private func subscribeViewModel() {
+        viewModel.reloadData = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,8 +80,12 @@ extension SettingsViewController: UITableViewDataSource {
             cell.backgroundColor = .clear
             return cell
         } else if indexPath.row == 1 {
-            let cell3: SettingsThirdCell =  self.tableView.dequeueReusableCell(withIdentifier: SettingsThirdCell.reuseIdentifier, for: indexPath) as! SettingsThirdCell
+            let cell3: SettingsThirdCell = self.tableView.dequeueReusableCell(for: indexPath)
             cell3.backgroundColor = .blue
+            cell3.set(viewModel:  viewModel.cellItemDeneme() )
+            
+           // cell3.set(viewModel: viewModel.cellForItemAt(indexPath: indexPath))
+            //let cell3: SettingsThirdCell =  self.tableView.dequeueReusableCell(withIdentifier: SettingsThirdCell.reuseIdentifier, for: indexPath) as! SettingsThirdCell
             return cell3
         }
         

@@ -7,6 +7,7 @@
 
 import Foundation
 import StoreKit
+import Utilities
 protocol SettingsViewModelDelegate {
     func feedBackButtonTapped()
     func shareButtonTapped()
@@ -14,60 +15,61 @@ protocol SettingsViewModelDelegate {
 }
 
 protocol SettingsViewDataSource {
-    var numberOfItems: Int { get }
-    func cellForItemAt(indexPath: IndexPath) -> SettingsThirdCellProtocol
+
 }
 
 protocol SettingsViewEventSource {
     var title: String { get }
+    var setViewModel: VoidClosure? { get set }
 }
 
 protocol SettingsViewProtocol: SettingsViewDataSource, SettingsViewEventSource {
     func didLoad()
+    func cellItemDeneme() -> SettingsThirdCellProtocol?
 }
 
 final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtocol , SettingsViewModelDelegate {
+    func cellItemDeneme() -> SettingsThirdCellProtocol? {
+        return cellItems
+    }
+    
+    var cellItems: SettingsThirdCellProtocol?
+    
     
     var title: String {
         return "Settings"
     }
     
-    // Privates
-     var model : GiveAwayModel?
-     var cellItems: SettingsThirdCellProtocol?
     
-    // DataSource
-    var numberOfItems: Int {
-        return 0
-    }
+    
+    // Privates
+     //var model : GiveAwayModel?
+    
     
     // EventSource
     var reloadData: VoidClosure?
+    var setViewModel: VoidClosure?
     
     func didLoad() {
         getGiveawayDatas()
     }
     
     
+    
 }
 
 // MARK: - DataSource
 extension SettingsViewModel {
     
-    func cellForItemAt(indexPath: IndexPath) -> SettingsThirdCellProtocol {
-        return cellItems!
-    }
 }
 
 // MARK: - DataSource
 extension SettingsViewModel {
     
     private func configureCell(cellItem: GiveAwayModel) {
-//        let item = cellItem.map({ SettingsThirdCellModel(activeGiveAways: $0.activeGiveawaysNumber, totalGiveAwaysWorth: $0.worthEstimationUsd) })
-        //let item = [cellItem]
+
         let model = SettingsThirdCellModel(activeGiveAways: cellItem.activeGiveawaysNumber, totalGiveAwaysWorth: cellItem.worthEstimationUsd)
         cellItems = model
-       // reloadData?()
     }
 }
 
@@ -85,7 +87,6 @@ extension SettingsViewModel {
                 
                 
             case .success(let response):
-                self.model = response
                 self.configureCell(cellItem: response)
                 self.hideLoading?()
                 self.reloadData?()

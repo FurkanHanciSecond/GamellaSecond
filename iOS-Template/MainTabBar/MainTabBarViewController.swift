@@ -70,7 +70,10 @@ extension MainTabBarController {
     }
     
     private func settingsVC() -> UINavigationController {
-        let settingsViewController = SettingsViewController(viewModel: SettingsViewModel.init(router: SettingsRouter.init()))
+        let router = SettingsRouter()
+        let viewModel = SettingsViewModel(router: router)
+        let settingsViewController = SettingsViewController(viewModel: viewModel)
+        router.viewController = settingsViewController
         let settingsTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.settings, image: AppConstants.Style.Image.settingsTabBar, tag: 3)
         settingsViewController.tabBarItem = settingsTabBarItem
         return UINavigationController(rootViewController: settingsViewController)
