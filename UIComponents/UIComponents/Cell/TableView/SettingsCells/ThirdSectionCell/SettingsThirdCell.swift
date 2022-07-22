@@ -13,14 +13,14 @@ public class SettingsThirdCell: UITableViewCell, ReusableView {
     weak var viewModel: SettingsThirdCellProtocol?
     
     private let activeGiveawayLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 15, weight: .regular))
-        .textColor(AppConstants.Style.Color.white)
+        .font(.systemFont(ofSize: 20, weight: .regular))
+        .textColor(AppConstants.Style.Color.labelColor)
         .numberOfLines(0)
         .build()
     
     private let totalWorthLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 15, weight: .regular))
-        .textColor(AppConstants.Style.Color.white)
+        .font(.systemFont(ofSize: 20, weight: .semibold))
+        .textColor(AppConstants.Style.Color.labelColor)
         .numberOfLines(0)
         .build()
     
@@ -53,12 +53,12 @@ extension SettingsThirdCell {
     
     private func addTotalWorthLabel() {
         contentView.addSubview(totalWorthLabel)
-        totalWorthLabel.edgesToSuperview()
+        totalWorthLabel.edgesToSuperview(excluding: .bottom, insets: .top(24))
     }
     
     private func addActiveGiveAwayLabel() {
         contentView.addSubview(activeGiveawayLabel)
-        //activeGiveawayLabel.topToBottom(of: totalWorthLabel , offset: 4)
+        activeGiveawayLabel.topToBottom(of: totalWorthLabel , offset: 4)
     }
 }
 
@@ -66,7 +66,7 @@ extension SettingsThirdCell {
 extension SettingsThirdCell {
     
     private func configureContents() {
-        totalWorthLabel.text = viewModel?.totalGiveAwaysWorth
-        activeGiveawayLabel.text = String(describing: viewModel?.activeGiveAways)
+        totalWorthLabel.text = "Worth Estimation (USD): " + (viewModel?.totalGiveAwaysWorth ?? "")
+        activeGiveawayLabel.text = "Total Giveaways = \(viewModel?.activeGiveAways ?? 0)"
     }
 }

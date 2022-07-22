@@ -40,12 +40,6 @@ final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtoc
         return "Settings"
     }
     
-    
-    
-    // Privates
-     //var model : GiveAwayModel?
-    
-    
     // EventSource
     var reloadData: VoidClosure?
     var setViewModel: VoidClosure?
@@ -53,9 +47,6 @@ final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtoc
     func didLoad() {
         getGiveawayDatas()
     }
-    
-    
-    
 }
 
 // MARK: - DataSource
