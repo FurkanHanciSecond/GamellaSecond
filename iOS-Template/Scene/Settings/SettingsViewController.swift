@@ -82,10 +82,7 @@ extension SettingsViewController: UITableViewDataSource {
         } else if indexPath.row == 1 {
             let cell3: SettingsThirdCell = self.tableView.dequeueReusableCell(for: indexPath)
             cell3.backgroundColor = .blue
-            cell3.set(viewModel:  viewModel.cellItemDeneme() )
-            
-           // cell3.set(viewModel: viewModel.cellForItemAt(indexPath: indexPath))
-            //let cell3: SettingsThirdCell =  self.tableView.dequeueReusableCell(withIdentifier: SettingsThirdCell.reuseIdentifier, for: indexPath) as! SettingsThirdCell
+            cell3.set(viewModel: viewModel.cellItemDeneme())
             return cell3
         }
         

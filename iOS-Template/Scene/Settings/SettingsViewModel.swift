@@ -25,11 +25,11 @@ protocol SettingsViewEventSource {
 
 protocol SettingsViewProtocol: SettingsViewDataSource, SettingsViewEventSource {
     func didLoad()
-    func cellItemDeneme() -> SettingsThirdCellProtocol?
+    func configureCellItem() -> SettingsThirdCellProtocol?
 }
 
 final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtocol , SettingsViewModelDelegate {
-    func cellItemDeneme() -> SettingsThirdCellProtocol? {
+    func configureCellItem() -> SettingsThirdCellProtocol? {
         return cellItems
     }
     
