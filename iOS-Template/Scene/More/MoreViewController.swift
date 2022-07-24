@@ -44,6 +44,7 @@ extension MoreViewController {
     
     private func addTableView() {
         view.addSubview(tableView)
+        tableView.separatorStyle = .none
         self.tableView.pinToCorners(to: view)
     }
 }
@@ -65,7 +66,16 @@ extension MoreViewController {
 
 // MARK: - UITableViewDelegate
 extension MoreViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 0, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0.5
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 2.0
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
