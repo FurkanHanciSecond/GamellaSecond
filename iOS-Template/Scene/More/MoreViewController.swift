@@ -17,6 +17,7 @@ final class MoreViewController: BaseViewController<MoreViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         configureContents()
         addSubViews()
     }
@@ -41,6 +42,7 @@ extension MoreViewController {
     }
     
     private func addTableView() {
+        view.addSubview(tableView)
         self.tableView.pinToCorners(to: view)
     }
 }
@@ -54,10 +56,17 @@ extension MoreViewController: UITableViewDelegate {
 // MARK: - UITableViewDelegate
 extension MoreViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell: MoreCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.set(viewModel: viewModel.cellForItemAt(indexPath: indexPath))
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        if viewModel.numberOfItems == 0 {
+            tableView.setEmptyView(message: "No Data!", image: UIImage(systemName: "exclamationmark.triangle.fill")!)
+        } else {
+            tableView.restoreTableView()
+        }
+        return viewModel.numberOfItems
     }
 }

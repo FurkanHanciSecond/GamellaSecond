@@ -17,11 +17,10 @@ protocol MoreViewEventSource {
 }
 
 protocol MoreViewProtocol: MoreViewDataSource, MoreViewEventSource {
-    func didLoad()
+    func viewDidLoad()
 }
 
 final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
-    
     var title: String {
         return "More"
     }
@@ -38,8 +37,8 @@ final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
     // EventSource
     var reloadData: VoidClosure?
     
-    func didLoad() {
-        
+    func viewDidLoad() {
+        getPremiumRequest(type: "beta")
     }
     
     
