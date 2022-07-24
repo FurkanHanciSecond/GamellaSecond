@@ -94,4 +94,8 @@ extension MoreViewController: UITableViewDataSource {
         }
         return viewModel.numberOfItems
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(indexPath: indexPath)
+    }
 }

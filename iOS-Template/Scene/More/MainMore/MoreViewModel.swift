@@ -10,6 +10,7 @@ import Foundation
 protocol MoreViewDataSource {
     var numberOfItems: Int { get }
     func cellForItemAt(indexPath: IndexPath) -> MoreCellProtocol
+    func didSelectItemAt(indexPath: IndexPath)
 }
 
 protocol MoreViewEventSource {
@@ -26,8 +27,8 @@ final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
     }
     
     // Privates
-     var model : [GameModel] = []
-     var cellItems: [MoreCellProtocol] = []
+    var model : [GameModel] = []
+    var cellItems: [MoreCellProtocol] = []
     
     // DataSource
     var numberOfItems: Int {
@@ -50,6 +51,11 @@ extension MoreViewModel {
         return cellItems[indexPath.row]
     }
     
+    func didSelectItemAt(indexPath: IndexPath) {
+        let index = cellItems[indexPath.row].title
+        router.pushMoreDetail(model: model[indexPath.row])
+    }
+    
 }
 
 // MARK: - DataSource
@@ -63,7 +69,7 @@ extension MoreViewModel {
 
 // MARK: - Requests
 extension MoreViewModel {
-
+    
     private func getPremiumRequest(type: String) {
         showLoading?()
         let premiumRequest = PremiumDataRequest(type: type)

@@ -12,6 +12,7 @@
 		701D2F8F288D712F005A56B7 /* MoreDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F8C288D712F005A56B7 /* MoreDetailRouter.swift */; };
 		701D2F90288D712F005A56B7 /* MoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F8D288D712F005A56B7 /* MoreDetailViewController.swift */; };
 		701D2F91288D712F005A56B7 /* MoreDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F8E288D712F005A56B7 /* MoreDetailViewModel.swift */; };
+		701D2F93288D72B7005A56B7 /* MoreDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F92288D72B7005A56B7 /* MoreDetailRoute.swift */; };
 		701FFFB62843E3020018F3A6 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */; };
 		701FFFB72843E3020018F3A6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */; };
 		701FFFB82843E3020018F3A6 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */; };
@@ -114,6 +115,7 @@
 		701D2F8C288D712F005A56B7 /* MoreDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailRouter.swift; sourceTree = "<group>"; };
 		701D2F8D288D712F005A56B7 /* MoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailViewController.swift; sourceTree = "<group>"; };
 		701D2F8E288D712F005A56B7 /* MoreDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailViewModel.swift; sourceTree = "<group>"; };
+		701D2F92288D72B7005A56B7 /* MoreDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailRoute.swift; sourceTree = "<group>"; };
 		701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
 		701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				701D2F8C288D712F005A56B7 /* MoreDetailRouter.swift */,
+				701D2F92288D72B7005A56B7 /* MoreDetailRoute.swift */,
 				701D2F8D288D712F005A56B7 /* MoreDetailViewController.swift */,
 				701D2F8E288D712F005A56B7 /* MoreDetailViewModel.swift */,
 			);
@@ -719,6 +722,7 @@
 				705A47192887301B0024AACD /* PresentSafariRoute.swift in Sources */,
 				709C47E8285E555500D814BF /* OnboardViewModel.swift in Sources */,
 				70D818362838BC570088E2C0 /* GetNameRouter.swift in Sources */,
+				701D2F93288D72B7005A56B7 /* MoreDetailRoute.swift in Sources */,
 				701D2F90288D712F005A56B7 /* MoreDetailViewController.swift in Sources */,
 				FE4262732825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				701FFFCC2843E6F80018F3A6 /* SettingsRouter.swift in Sources */,

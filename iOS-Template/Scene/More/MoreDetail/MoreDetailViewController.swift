@@ -11,6 +11,7 @@ final class MoreDetailViewController: BaseViewController<MoreDetailViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
     }
     
 }
