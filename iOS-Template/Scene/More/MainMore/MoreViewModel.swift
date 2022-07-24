@@ -19,6 +19,7 @@ protocol MoreViewEventSource {
 
 protocol MoreViewProtocol: MoreViewDataSource, MoreViewEventSource {
     func viewDidLoad()
+    func refreshData()
 }
 
 final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
@@ -41,6 +42,11 @@ final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
     func viewDidLoad() {
         getPremiumRequest(type: "beta")
     }
+    
+    func refreshData() {
+        getPremiumRequest(type: "beta")
+    }
+    
     
     
 }

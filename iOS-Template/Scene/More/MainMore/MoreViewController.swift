@@ -9,6 +9,8 @@ import UIKit
 
 final class MoreViewController: BaseViewController<MoreViewModel> {
     
+    private let refreshControl = UIRefreshControl()
+    
     private let tableView: UITableView = {
        let table = UITableView()
         table.register(MoreCell.self)
@@ -31,6 +33,7 @@ extension MoreViewController {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
+        tableView.refreshControl = refreshControl
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -40,6 +43,7 @@ extension MoreViewController {
 extension MoreViewController {
     private func addSubViews() {
         addTableView()
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     
     private func addTableView() {
@@ -63,6 +67,14 @@ extension MoreViewController {
     }
 }
 
+// MARK: - Actions
+extension MoreViewController {
+    @objc
+    private func pullToRefreshValueChanged() {
+        viewModel.cellItems.isEmpty ? viewModel.refreshData() : self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+}
 
 // MARK: - UITableViewDelegate
 extension MoreViewController: UITableViewDelegate {
