@@ -63,7 +63,10 @@ extension MainTabBarController {
     
     
     private func moreVC() -> UINavigationController {
-        let moreViewController = MoreViewController(viewModel: MoreViewModel.init(router: MoreRouter.init()))
+        let router = MoreRouter()
+        let viewModel = MoreViewModel(router: router)
+        let moreViewController = MoreViewController(viewModel: viewModel)
+        router.viewController = moreViewController
         let moreTabBarItem = UITabBarItem(title: AppConstants.Texts.Bar.more, image: AppConstants.Style.Image.moreTabBar, tag: 2)
         moreViewController.tabBarItem = moreTabBarItem
         return UINavigationController(rootViewController: moreViewController)
