@@ -9,10 +9,16 @@ import Foundation
 
 protocol MoreViewDataSource {}
 
-protocol MoreViewEventSource {}
+protocol MoreViewEventSource {
+    var title: String { get }
+}
 
 protocol MoreViewProtocol: MoreViewDataSource, MoreViewEventSource {}
 
 final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
+    var title: String {
+        return "More"
+    }
+    
     
 }

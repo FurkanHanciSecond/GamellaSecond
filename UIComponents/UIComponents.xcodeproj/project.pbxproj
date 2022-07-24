@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701D2F86288D5CC9005A56B7 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F84288D5CC9005A56B7 /* MoreCell.swift */; };
+		701D2F87288D5CC9005A56B7 /* MoreCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F85288D5CC9005A56B7 /* MoreCellModel.swift */; };
 		7027BA9F28880A180047997B /* SettingsSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027BA9D28880A180047997B /* SettingsSecondCell.swift */; };
 		7027BAA028880A180047997B /* SettingsSecondCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027BA9E28880A180047997B /* SettingsSecondCellModel.swift */; };
 		7027BAA828880A610047997B /* SettingsThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027BAA628880A610047997B /* SettingsThirdCell.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		017205D27D9379550173DA92 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		63FFBDCF860852E97C663915 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		701D2F84288D5CC9005A56B7 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
+		701D2F85288D5CC9005A56B7 /* MoreCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCellModel.swift; sourceTree = "<group>"; };
 		7027BA9D28880A180047997B /* SettingsSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSecondCell.swift; sourceTree = "<group>"; };
 		7027BA9E28880A180047997B /* SettingsSecondCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSecondCellModel.swift; sourceTree = "<group>"; };
 		7027BAA628880A610047997B /* SettingsThirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsThirdCell.swift; sourceTree = "<group>"; };
@@ -79,6 +83,15 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		701D2F83288D5CBD005A56B7 /* MoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				701D2F84288D5CC9005A56B7 /* MoreCell.swift */,
+				701D2F85288D5CC9005A56B7 /* MoreCellModel.swift */,
+			);
+			path = MoreCell;
 			sourceTree = "<group>";
 		};
 		7027BA9C288809F80047997B /* SecondSectionCell */ = {
@@ -165,6 +178,7 @@
 		70BD6A7628318CA600E5D179 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				701D2F83288D5CBD005A56B7 /* MoreCell */,
 				706A9E68288801C400CE08E9 /* SettingsCells */,
 				70AA11FF285F565C00C3320B /* SortCell */,
 				705BBB63283A1A4800F61E53 /* HomeCell */,
@@ -349,6 +363,7 @@
 				70AA1202285F566E00C3320B /* SortCell.swift in Sources */,
 				7027BAA028880A180047997B /* SettingsSecondCellModel.swift in Sources */,
 				70BD6A7B28318CC700E5D179 /* ExampleCell.swift in Sources */,
+				701D2F87288D5CC9005A56B7 /* MoreCellModel.swift in Sources */,
 				70AA1203285F566E00C3320B /* SortCellModel.swift in Sources */,
 				706A9E6C2888024900CE08E9 /* SettingsCellModel.swift in Sources */,
 				7027BA9F28880A180047997B /* SettingsSecondCell.swift in Sources */,
@@ -359,6 +374,7 @@
 				FE73480927E7164A0019DB4F /* ReusableView.swift in Sources */,
 				7027BAA928880A610047997B /* SettingsThirdCellModel.swift in Sources */,
 				705BBB67283A1A6600F61E53 /* HomeCellModel.swift in Sources */,
+				701D2F86288D5CC9005A56B7 /* MoreCell.swift in Sources */,
 				709C47EE285E557E00D814BF /* OnboardCellModel.swift in Sources */,
 				FE73480427E716130019DB4F /* UICollectionView+Extensions.swift in Sources */,
 				FE73480327E716130019DB4F /* NSMutableAttributedString+Extension.swift in Sources */,
