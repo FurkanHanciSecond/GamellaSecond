@@ -59,7 +59,7 @@ public class MoreCell: UITableViewCell, ReusableView {
     
     private lazy var containerView = UIViewBuilder()
         .backgroundColor(AppConstants.Style.Color.indigo ?? .blue)
-         .shadowColor(AppConstants.Style.Color.lightOrange!.cgColor)
+        .shadowColor(AppConstants.Style.Color.gameGray!.cgColor)
         .shadowRadius(20)
         .shadowOpacity(0.6)
         .shadowOffset(CGSize(width: 0, height: 3))
