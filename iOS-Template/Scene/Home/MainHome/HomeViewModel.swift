@@ -30,7 +30,7 @@ protocol HomeViewProtocol: HomeViewDataSource , HomeViewEventSource {
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     
     func didSelectPopItemAt(platform: String) {
-        getUserList(platfrom: platform, type: "game", sortBy: "popluarity")
+        getGameData(platfrom: platform, type: "game", sortBy: "popluarity")
     }
     
     var backgroundColor: UIColor {
@@ -54,11 +54,11 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var reloadData: VoidClosure?
     
     func viewDidLoad() {
-        getUserList(platfrom: "pc" , type: "game" , sortBy: "popularity")
+        getGameData(platfrom: "pc" , type: "game" , sortBy: "popularity")
     }
     
     func refreshData() {
-        getUserList(platfrom: "pc", type: "game", sortBy: "popularity")
+        getGameData(platfrom: "pc", type: "game", sortBy: "popularity")
     }
 }
 
@@ -88,7 +88,7 @@ extension HomeViewModel {
 // MARK: -  Requests
 extension HomeViewModel {
     
-    private func getUserList(platfrom: String , type: String , sortBy : String) {
+    private func getGameData(platfrom: String , type: String , sortBy : String) {
         showLoading?()
         let request = GameDataRequest(platform: platfrom , type: type , sortBy: sortBy)
         dataProvider?.request(for: request, result: { [weak self] data in
