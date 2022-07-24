@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5CEB78BBE974C04DE5CA5787 /* Pods_Gamella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DBE0D39DCBA66FEE893186 /* Pods_Gamella.framework */; };
 		700EAF3B2888340B00BABE31 /* PresentMailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700EAF3A2888340B00BABE31 /* PresentMailRoute.swift */; };
+		701D2F8F288D712F005A56B7 /* MoreDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F8C288D712F005A56B7 /* MoreDetailRouter.swift */; };
+		701D2F90288D712F005A56B7 /* MoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F8D288D712F005A56B7 /* MoreDetailViewController.swift */; };
+		701D2F91288D712F005A56B7 /* MoreDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D2F8E288D712F005A56B7 /* MoreDetailViewModel.swift */; };
 		701FFFB62843E3020018F3A6 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */; };
 		701FFFB72843E3020018F3A6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */; };
 		701FFFB82843E3020018F3A6 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */; };
@@ -108,6 +111,9 @@
 /* Begin PBXFileReference section */
 		59DBE0D39DCBA66FEE893186 /* Pods_Gamella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gamella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700EAF3A2888340B00BABE31 /* PresentMailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMailRoute.swift; sourceTree = "<group>"; };
+		701D2F8C288D712F005A56B7 /* MoreDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailRouter.swift; sourceTree = "<group>"; };
+		701D2F8D288D712F005A56B7 /* MoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailViewController.swift; sourceTree = "<group>"; };
+		701D2F8E288D712F005A56B7 /* MoreDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailViewModel.swift; sourceTree = "<group>"; };
 		701FFFB32843E3020018F3A6 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
 		701FFFB42843E3020018F3A6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		701FFFB52843E3020018F3A6 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
@@ -220,6 +226,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		701D2F8A288D7105005A56B7 /* MainMore */ = {
+			isa = PBXGroup;
+			children = (
+				701FFFC32843E6DF0018F3A6 /* MoreRouter.swift */,
+				701FFFC42843E6DF0018F3A6 /* MoreViewController.swift */,
+				701FFFC52843E6DF0018F3A6 /* MoreViewModel.swift */,
+				701FFFCF2843E7020018F3A6 /* MoreRoute.swift */,
+			);
+			path = MainMore;
+			sourceTree = "<group>";
+		};
+		701D2F8B288D7117005A56B7 /* MoreDetail */ = {
+			isa = PBXGroup;
+			children = (
+				701D2F8C288D712F005A56B7 /* MoreDetailRouter.swift */,
+				701D2F8D288D712F005A56B7 /* MoreDetailViewController.swift */,
+				701D2F8E288D712F005A56B7 /* MoreDetailViewModel.swift */,
+			);
+			path = MoreDetail;
+			sourceTree = "<group>";
+		};
 		701FFFB22843E2EA0018F3A6 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,10 +270,8 @@
 		701FFFC22843E6D10018F3A6 /* More */ = {
 			isa = PBXGroup;
 			children = (
-				701FFFC32843E6DF0018F3A6 /* MoreRouter.swift */,
-				701FFFC42843E6DF0018F3A6 /* MoreViewController.swift */,
-				701FFFC52843E6DF0018F3A6 /* MoreViewModel.swift */,
-				701FFFCF2843E7020018F3A6 /* MoreRoute.swift */,
+				701D2F8A288D7105005A56B7 /* MainMore */,
+				701D2F8B288D7117005A56B7 /* MoreDetail */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -694,6 +719,7 @@
 				705A47192887301B0024AACD /* PresentSafariRoute.swift in Sources */,
 				709C47E8285E555500D814BF /* OnboardViewModel.swift in Sources */,
 				70D818362838BC570088E2C0 /* GetNameRouter.swift in Sources */,
+				701D2F90288D712F005A56B7 /* MoreDetailViewController.swift in Sources */,
 				FE4262732825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				701FFFCC2843E6F80018F3A6 /* SettingsRouter.swift in Sources */,
 				701FFFBD2843E6AD0018F3A6 /* SortViewController.swift in Sources */,
@@ -709,6 +735,7 @@
 				705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */,
 				FE4262A32825A7EA009CCA73 /* ExampleViewController.swift in Sources */,
 				70A9037028897B150074814A /* PaywallViewController.swift in Sources */,
+				701D2F8F288D712F005A56B7 /* MoreDetailRouter.swift in Sources */,
 				701FFFC62843E6DF0018F3A6 /* MoreRouter.swift in Sources */,
 				701FFFD02843E7020018F3A6 /* MoreRoute.swift in Sources */,
 				FE4262A22825A7EA009CCA73 /* ExampleRouter.swift in Sources */,
@@ -739,6 +766,7 @@
 				70A9037128897B150074814A /* PaywallViewModel.swift in Sources */,
 				70A9036F28897B150074814A /* PaywallRouter.swift in Sources */,
 				FEBA464A27E648D0009A75F9 /* iOS_Template.xcdatamodeld in Sources */,
+				701D2F91288D712F005A56B7 /* MoreDetailViewModel.swift in Sources */,
 				FE4262B62825A87B009CCA73 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
