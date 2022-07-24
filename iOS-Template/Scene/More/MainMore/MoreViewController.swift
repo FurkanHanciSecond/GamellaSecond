@@ -40,10 +40,10 @@ extension MoreViewController {
     }
     
     private func addBarButtons() {
-        let firstBarButton = UIBarButtonItem(image: AppConstants.Style.Image.grid, style: .plain, target: self, action: #selector(firstBarButtonHandle(_:)))
-        firstBarButton.tintColor = AppConstants.Style.Color.labelColor
+        let secondBarButton = UIBarButtonItem(image: AppConstants.Style.Image.grid, style: .plain, target: self, action: #selector(firstBarButtonHandle(_:)))
+        secondBarButton.tintColor = AppConstants.Style.Color.labelColor
         
-        let secondBarButton = UIBarButtonItem(image: AppConstants.Style.Image.swirlCircle, style: .plain, target: self, action: #selector(secondBarButtonHandle(_:)))
+        let firstBarButton = UIBarButtonItem(image: AppConstants.Style.Image.swirlCircle, style: .plain, target: self, action: #selector(secondBarButtonHandle(_:)))
         
         self.navigationItem.rightBarButtonItems = [firstBarButton , secondBarButton]
     }
@@ -86,7 +86,34 @@ extension MoreViewController {
     }
     
     @objc private func firstBarButtonHandle(_ sender: UIBarButtonItem) {
-        print("first")
+        let alert = UIAlertController(title: "Available Types", message: "Please Select any Type", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Loot", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(type: "loot")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Game", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(type: "game")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Default (Beta)", style: .default , handler:{ action in
+            self.viewModel.didSelectPopItemAt(type: "beta")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+        
+        //uncomment for iPad Support
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
     
     @objc private func secondBarButtonHandle(_ sender: UIBarButtonItem) {

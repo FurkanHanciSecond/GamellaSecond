@@ -11,6 +11,7 @@ protocol MoreViewDataSource {
     var numberOfItems: Int { get }
     func cellForItemAt(indexPath: IndexPath) -> MoreCellProtocol
     func didSelectItemAt(indexPath: IndexPath)
+    func didSelectPopItemAt(type: String)
 }
 
 protocol MoreViewEventSource {
@@ -38,6 +39,10 @@ final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
     
     // EventSource
     var reloadData: VoidClosure?
+    
+    func didSelectPopItemAt(type: String) {
+        getPremiumRequest(type: type)
+    }
     
     func viewDidLoad() {
         getPremiumRequest(type: "beta")
