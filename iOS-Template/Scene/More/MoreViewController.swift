@@ -18,6 +18,7 @@ final class MoreViewController: BaseViewController<MoreViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        subscribeViewModel()
         configureContents()
         addSubViews()
     }
@@ -44,6 +45,20 @@ extension MoreViewController {
     private func addTableView() {
         view.addSubview(tableView)
         self.tableView.pinToCorners(to: view)
+    }
+}
+
+// MARK: -  SubscribeViewModel
+extension MoreViewController {
+    
+    private func subscribeViewModel() {
+        viewModel.reloadData = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }
     }
 }
 

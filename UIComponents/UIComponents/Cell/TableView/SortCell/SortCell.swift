@@ -53,7 +53,7 @@ public class SortCell: UITableViewCell, ReusableView {
         .build()
     
     private let arrowRightImage = UIImageViewBuilder()
-        .tintColor(AppConstants.Style.Color.labelColor)
+        .tintColor(AppConstants.Style.Color.black)
         .size(.init(width: 30, height: 30))
         .image(UIImage(systemName: "chevron.forward")!)
         .build()
