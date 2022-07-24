@@ -117,7 +117,26 @@ extension MoreViewController {
     }
     
     @objc private func secondBarButtonHandle(_ sender: UIBarButtonItem) {
-        print("second")
+        let alert = UIAlertController(title: "Get All Giveaways", message: "Get All Giveaways Beta, Loot etc... 🚀", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Get All Giveaways", style: .default , handler:{ action in
+            self.viewModel.didSelectAllPopItem()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+        
+        //uncomment for iPad Support
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
 }
 

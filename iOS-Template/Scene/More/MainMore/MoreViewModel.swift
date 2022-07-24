@@ -12,6 +12,7 @@ protocol MoreViewDataSource {
     func cellForItemAt(indexPath: IndexPath) -> MoreCellProtocol
     func didSelectItemAt(indexPath: IndexPath)
     func didSelectPopItemAt(type: String)
+    func didSelectAllPopItem()
 }
 
 protocol MoreViewEventSource {
@@ -51,6 +52,11 @@ final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
     func refreshData() {
         getPremiumRequest(type: "beta")
     }
+    
+    func didSelectAllPopItem() {
+        getAllGiveAway()
+    }
+    
     
     
     
@@ -100,5 +106,24 @@ extension MoreViewModel {
             }
         })
         
+    }
+    
+    private func getAllGiveAway() {
+        let allDataRequest = AllGiveawayRequest()
+        dataProvider?.request(for: allDataRequest, result: { [weak self] data in
+            guard let self = self else { return }
+            switch data {
+            case .failure(let error):
+                print(error.localizedDescription)
+                EntryKitHelper.show("Error!", additionalMessage: "No active giveaways available at the moment, please try again later", type: .error, statusBar: .ignored)
+                
+                
+            case .success(let response):
+                self.model = response
+                self.configureCell(cellItem: response)
+                self.hideLoading?()
+                self.reloadData?()
+            }
+        })
     }
 }

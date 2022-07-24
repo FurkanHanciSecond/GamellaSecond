@@ -18,21 +18,21 @@ final class MoreDetailViewController: BaseViewController<MoreDetailViewModel> {
         .build()
     
     private let detailUIView = UIViewBuilder()
-        .backgroundColor(AppConstants.Style.Color.orange!)
+        .backgroundColor(AppConstants.Style.Color.gameLinOrange!)
         .cornerRadius(15)
         .build()
     
     private let detailUIViewText = UILabelBuilder()
         .numberOfLines(0)
         .textAlignment(.center)
-        .textColor(.black)
+        .textColor(.white)
         .build()
     
     private let detailButton = UIButtonBuilder()
         .cornerRadius(15)
         .title(AppConstants.Texts.Button.getLink)
         .titleFont(.systemFont(ofSize: 20, weight: .bold))
-        .backgroundColor(AppConstants.Style.Color.purple!)
+        .backgroundColor(AppConstants.Style.Color.gameDarkBlue!)
         .titleColor(AppConstants.Style.Color.white, for: .normal)
         .build()
     
