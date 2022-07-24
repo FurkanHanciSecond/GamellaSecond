@@ -36,6 +36,16 @@ extension MoreViewController {
         tableView.refreshControl = refreshControl
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        addBarButtons()
+    }
+    
+    private func addBarButtons() {
+        let firstBarButton = UIBarButtonItem(image: AppConstants.Style.Image.grid, style: .plain, target: self, action: #selector(firstBarButtonHandle(_:)))
+        firstBarButton.tintColor = AppConstants.Style.Color.labelColor
+        
+        let secondBarButton = UIBarButtonItem(image: AppConstants.Style.Image.swirlCircle, style: .plain, target: self, action: #selector(secondBarButtonHandle(_:)))
+        
+        self.navigationItem.rightBarButtonItems = [firstBarButton , secondBarButton]
     }
 }
 
@@ -73,6 +83,14 @@ extension MoreViewController {
     private func pullToRefreshValueChanged() {
         viewModel.cellItems.isEmpty ? viewModel.refreshData() : self.tableView.reloadData()
         refreshControl.endRefreshing()
+    }
+    
+    @objc private func firstBarButtonHandle(_ sender: UIBarButtonItem) {
+        print("first")
+    }
+    
+    @objc private func secondBarButtonHandle(_ sender: UIBarButtonItem) {
+        print("second")
     }
 }
 
