@@ -9,7 +9,14 @@ import UIKit
 import MobilliumBuilders
 import TinyConstraints
 import Kingfisher
+import BLTNBoard
 final class HomeDetailViewController: BaseViewController<HomeDetailViewModel> {
+    
+    lazy var bulletinManager: BLTNItemManager = {
+        let introPage = BulletinDataSource.makePremiumDeal()
+           return BLTNItemManager(rootItem: introPage)
+       }()
+    
     
     private let detailImage = UIImageViewBuilder()
         .size(CGSize(width: UIScreen.main.bounds.size.width, height: 210))
@@ -39,9 +46,9 @@ final class HomeDetailViewController: BaseViewController<HomeDetailViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         configureContents()
         addSubViews()
+        viewModel.presentPaywall()
         
     }
 }
@@ -87,6 +94,7 @@ extension HomeDetailViewController {
 // MARK: - ConfigureContents
 extension HomeDetailViewController {
     private func configureContents() {
+        view.backgroundColor = .systemBackground
         addBarButton()
         configureDetailElements()
     }

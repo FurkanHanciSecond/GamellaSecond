@@ -8,7 +8,8 @@
 import UIKit
 import BLTNBoard
 import MobilliumUserDefaults
-enum BulletinDataSource {
+
+final class BulletinDataSource {
     
     static func makeIntroPage() -> BLTNPageItem {
         
@@ -36,5 +37,22 @@ enum BulletinDataSource {
         
         return page
         
+    }
+    
+    static func makePremiumDeal() -> BLTNPageItem {
+        let page = BLTNPageItem(title: "Hey!")
+        page.image = UIImage(named: "introIcon")
+        page.actionButtonTitle = "Let's dive in 🚀"
+        
+        page.descriptionText = "Have you tried Premium Version? It has so perfect features 🤩"
+        
+        page.isDismissable = true
+        page.shouldStartWithActivityIndicator = false
+        
+        page.dismissalHandler = { item in
+            print("dismiss")
+        }
+        
+        return page
     }
 }

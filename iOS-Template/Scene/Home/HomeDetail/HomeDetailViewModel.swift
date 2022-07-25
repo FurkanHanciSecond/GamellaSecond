@@ -7,7 +7,7 @@
 
 import Foundation
 import DataProvider
-
+import UIKit
 protocol HomeDetailViewModelDelegate {
     func shareButtonTapped()
     func presentSafariButtonTapped()
@@ -18,13 +18,23 @@ protocol HomeDetailViewDataSource {
 }
 
 protocol HomeDetailViewEventSource {
+    var backgroundColor : UIColor { get }
 }
 
-protocol HomeDetailViewProtocol: HomeDetailViewDataSource, HomeDetailViewEventSource {}
+protocol HomeDetailViewProtocol: HomeDetailViewDataSource, HomeDetailViewEventSource {
+    func presentPaywall()
+}
 
 final class HomeDetailViewModel: BaseViewModel<HomeDetailRouter>, HomeDetailViewProtocol , HomeDetailViewModelDelegate {
     var model: GameModel
     
+    var backgroundColor: UIColor {
+        return AppConstants.Style.Color.systemBackground
+    }
+    
+    func presentPaywall() {
+        router.presentPaywall()
+    }
     
     public init(model: GameModel , router: HomeDetailRouter) {
         self.model = model

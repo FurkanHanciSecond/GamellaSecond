@@ -14,5 +14,7 @@ protocol PaywallViewEventSource {}
 protocol PaywallViewProtocol: PaywallViewDataSource, PaywallViewEventSource {}
 
 final class PaywallViewModel: BaseViewModel<PaywallRouter>, PaywallViewProtocol {
-    
+    func dismissButtonTapped() {
+        router.close()
+    }
 }
