@@ -12,6 +12,7 @@ protocol SettingsViewModelDelegate {
     func feedBackButtonTapped()
     func shareButtonTapped()
     func rateButtonTapped()
+    func premiumTapped()
 }
 
 protocol SettingsViewDataSource {
@@ -104,5 +105,9 @@ extension SettingsViewModel {
     
     func rateButtonTapped() {
       //Empty
+    }
+    
+    func premiumTapped() {
+        router.presentPaywall()
     }
 }

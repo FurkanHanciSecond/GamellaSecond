@@ -8,9 +8,15 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
+
+public protocol SettingsSecondCellDelegate: AnyObject {
+    func premiumTapped()
+}
+
 public class SettingsSecondCell: UITableViewCell, ReusableView {
     
     weak var viewModel: SettingsSecondCellProtocol?
+    public weak var delegate: SettingsSecondCellDelegate?
     
     private let premiumCardView = UIViewBuilder()
         .backgroundColor(AppConstants.Style.Color.gameGray!)
@@ -25,9 +31,13 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
         .text("Premium")
         .build()
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
+        let premiumGesture = UITapGestureRecognizer(target: self, action: #selector(premiumTapped(_:)))
+        
+        premiumCardView.addGestureRecognizer(premiumGesture)
         configureContents()
         addSubViews()
     }
@@ -58,6 +68,7 @@ extension SettingsSecondCell {
     
     private func addPremiumAppLabel() {
         premiumCardView.addSubview(premiumLabel)
+        premiumCardView.isUserInteractionEnabled = true
         premiumLabel.edgesToSuperview(excluding: [.bottom, .trailing, .leading], insets: .top(12))
         premiumLabel.centerXToSuperview()
     }
@@ -68,5 +79,13 @@ extension SettingsSecondCell {
 extension SettingsSecondCell {
     private func configureContents() {
         
+    }
+}
+
+// MARK: -  Actions
+extension SettingsSecondCell {
+    
+    @objc private func premiumTapped(_ sender: UITapGestureRecognizer) {
+        delegate?.premiumTapped()
     }
 }

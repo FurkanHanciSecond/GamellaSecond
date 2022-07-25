@@ -60,7 +60,7 @@ extension SettingsViewController {
     }
     
     private func presentBulletIn() {
-        bulletinManager.backgroundViewStyle = .blurredDark
+        bulletinManager.backgroundViewStyle = .blurredLight
         bulletinManager.edgeSpacing = .regular
         bulletinManager.cardCornerRadius = 36
         bulletinManager.showBulletin(above: self)
@@ -95,6 +95,7 @@ extension SettingsViewController: UITableViewDataSource {
             return cell
         } else if indexPath.row == 1 {
             let cell2: SettingsSecondCell = self.tableView.dequeueReusableCell(for: indexPath)
+            cell2.delegate = self
             return cell2
         } else if indexPath.row == 2 {
             let cell3: SettingsThirdCell = self.tableView.dequeueReusableCell(for: indexPath)
@@ -114,6 +115,13 @@ extension SettingsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension SettingsViewController: UITableViewDelegate {
     
+}
+
+// MARK: - SettingsSecondCellDelegate
+extension SettingsViewController: SettingsSecondCellDelegate {
+    func premiumTapped() {
+        viewModel.presentPaywall()
+    }
 }
 
 // MARK: - SettingsCellDelegate
