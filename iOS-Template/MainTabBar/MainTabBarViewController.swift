@@ -16,6 +16,19 @@ final class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         setTabBar()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animationWithIndex(0)
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        for (k,v) in (tabBar.items?.enumerated())! {
+            if v == item {
+                animationWithIndex(k)
+            }
+        }
+    }
 }
 
 
@@ -27,8 +40,9 @@ extension MainTabBarController {
     }
     
     private func configureTabBar() {
-        tabBar.tintColor = AppConstants.Style.Color.black
+        tabBar.tintColor = AppConstants.Style.Color.gameTurquoise
         tabBar.unselectedItemTintColor = AppConstants.Style.Color.orange
+        delegate = self
     }
     
     private func setTabs() {
@@ -38,6 +52,40 @@ extension MainTabBarController {
             moreVC(),
             settingsVC()
         ]
+    }
+    
+   private func animationWithIndex(_ index:Int){
+        
+        var tabbarbuttonArray: [Any] = [Any]()
+        
+        for tabBarBtn in self.tabBar.subviews {
+            if tabBarBtn.isKind(of: NSClassFromString("UITabBarButton")!) {
+                tabbarbuttonArray.append(tabBarBtn)
+            }
+        }
+        
+        // define animation
+        let pulse = CABasicAnimation(keyPath: "transform.scale")
+        pulse.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        pulse.duration = 0.08
+        pulse.repeatCount = 1
+        pulse.autoreverses = false
+        pulse.fillMode = CAMediaTimingFillMode.forwards
+        pulse.isRemovedOnCompletion = false
+        pulse.fromValue = 0.7
+        pulse.toValue = 1.1
+        
+        // add animation
+        let tabBarLayer = (tabbarbuttonArray[index] as AnyObject).layer
+        tabBarLayer?.add(pulse, forKey: "transform.scale")
+        
+        // remove other animation
+        for i in 0...3{
+            if i != index{
+                let otherTabBarLayer = (tabbarbuttonArray[i] as AnyObject).layer
+                otherTabBarLayer?.removeAllAnimations()
+            }
+        }
     }
     
     private func homeVC() -> UINavigationController {
@@ -83,4 +131,18 @@ extension MainTabBarController {
     }
     
     
+}
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        guard let fromView = selectedViewController?.view, let toView = viewController.view else {
+            return false
+        }
+        
+        if fromView != toView {
+            UIView.transition(from: fromView, to: toView, duration: 0.2, options: [.transitionCrossDissolve], completion: nil)
+        }
+        
+        return true
+    }
 }
