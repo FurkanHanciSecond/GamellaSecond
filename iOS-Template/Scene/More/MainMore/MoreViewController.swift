@@ -143,7 +143,7 @@ extension MoreViewController {
 // MARK: - UITableViewDelegate
 extension MoreViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 0, 0)
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -800, 0, 0)
         cell.layer.transform = rotationTransform
         cell.alpha = 0.5
         

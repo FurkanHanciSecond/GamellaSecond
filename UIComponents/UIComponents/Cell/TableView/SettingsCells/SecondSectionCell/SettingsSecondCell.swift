@@ -25,12 +25,32 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
         .build()
     
     private let premiumLabel = UILabelBuilder()
-        .font(.systemFont(ofSize: 25, weight: .medium))
-        .textColor(AppConstants.Style.Color.fuschia!)
+        .font(.systemFont(ofSize: 30, weight: .bold))
+        .textColor(AppConstants.Style.Color.white)
         .textAlignment(.center)
         .text("Premium")
         .build()
     
+    private let widgetLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 25, weight: .light))
+        .textColor(AppConstants.Style.Color.white)
+        .textAlignment(.center)
+        .text("🚀 Widgets")
+        .build()
+    
+    private let closeAdsLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 25, weight: .light))
+        .textColor(AppConstants.Style.Color.white)
+        .textAlignment(.center)
+        .text("🎉 Close Ads")
+        .build()
+    
+    private let soMuchMoreLabel = UILabelBuilder()
+        .font(.systemFont(ofSize: 25, weight: .light))
+        .textColor(AppConstants.Style.Color.white)
+        .textAlignment(.center)
+        .text("😎 So Much More!")
+        .build()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -59,6 +79,9 @@ extension SettingsSecondCell {
     private func addSubViews() {
         addPremiumCardView()
         addPremiumAppLabel()
+        addWidgetLabel()
+        addCloseAdsLabel()
+        addSoMuchMoreLabel()
     }
     
     private func addPremiumCardView() {
@@ -68,8 +91,26 @@ extension SettingsSecondCell {
     
     private func addPremiumAppLabel() {
         premiumCardView.addSubview(premiumLabel)
-        premiumLabel.edgesToSuperview(excluding: [.bottom, .trailing, .leading], insets: .top(12))
+        premiumLabel.edgesToSuperview(excluding: [.bottom], insets: .top(12))
         premiumLabel.centerXToSuperview()
+    }
+    
+    private func addWidgetLabel() {
+        contentView.addSubview(widgetLabel)
+        widgetLabel.edgesToSuperview(excluding: [.top , .bottom], insets: .left(12))
+        widgetLabel.centerYToSuperview()
+    }
+    
+    private func addCloseAdsLabel() {
+        contentView.addSubview(closeAdsLabel)
+        closeAdsLabel.edgesToSuperview(excluding: [.bottom , .top], insets: .horizontal(12))
+        closeAdsLabel.topToBottom(of: widgetLabel , offset: 8)
+    }
+    
+    private func addSoMuchMoreLabel() {
+        contentView.addSubview(soMuchMoreLabel)
+        soMuchMoreLabel.edgesToSuperview(excluding: [.bottom , .top], insets: .horizontal(12))
+        soMuchMoreLabel.topToBottom(of: closeAdsLabel, offset: 8)
     }
     
 }

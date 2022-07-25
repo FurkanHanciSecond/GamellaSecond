@@ -9,7 +9,7 @@ import UIKit
 import BLTNBoard
 import MobilliumUserDefaults
 
-final class BulletinDataSource {
+enum BulletinDataSource {
     
     static func makeIntroPage() -> BLTNPageItem {
         
