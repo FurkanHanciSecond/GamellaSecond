@@ -40,10 +40,8 @@ final class BulletinDataSource {
     }
     
     static func makePremiumDeal() -> BLTNPageItem {
-        let page = BLTNPageItem(title: "Hey!")
-        page.image = UIImage(named: "introIcon")
-        page.actionButtonTitle = "Let's dive in 🚀"
-        
+        let page = BLTNPageItem(title: "Hey! \(DefaultsKey.userName.value ?? "")")
+        page.image = UIImage(named: "introIcon")        
         page.descriptionText = "Have you tried Premium Version? It has so perfect features 🤩"
         
         page.isDismissable = true

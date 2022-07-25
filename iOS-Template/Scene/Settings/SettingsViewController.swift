@@ -8,7 +8,13 @@
 import UIKit
 import UIComponents
 import StoreKit
+import BLTNBoard
 final class SettingsViewController: BaseViewController<SettingsViewModel> {
+    
+    private lazy var bulletinManager: BLTNItemManager = {
+        let introPage = BulletinDataSource.makePremiumDeal()
+        return BLTNItemManager(rootItem: introPage)
+    }()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -46,10 +52,18 @@ extension SettingsViewController {
 // MARK: - Configure
 extension SettingsViewController {
     private func configureContents() {
+        presentBulletIn()
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func presentBulletIn() {
+        bulletinManager.backgroundViewStyle = .blurredDark
+        bulletinManager.edgeSpacing = .regular
+        bulletinManager.cardCornerRadius = 36
+        bulletinManager.showBulletin(above: self)
     }
 }
 
