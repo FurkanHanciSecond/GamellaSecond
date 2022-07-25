@@ -14,7 +14,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let refreshControl = UIRefreshControl()
     
-    lazy var bulletinManager: BLTNItemManager = {
+    private lazy var bulletinManager: BLTNItemManager = {
         let introPage = BulletinDataSource.makeIntroPage()
            return BLTNItemManager(rootItem: introPage)
        }()

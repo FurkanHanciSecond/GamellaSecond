@@ -15,7 +15,7 @@ protocol SettingsViewModelDelegate {
 }
 
 protocol SettingsViewDataSource {
-
+    func configureCellItem() -> SettingsThirdCellProtocol?
 }
 
 protocol SettingsViewEventSource {
@@ -25,7 +25,7 @@ protocol SettingsViewEventSource {
 
 protocol SettingsViewProtocol: SettingsViewDataSource, SettingsViewEventSource {
     func didLoad()
-    func configureCellItem() -> SettingsThirdCellProtocol?
+    func presentPaywall()
 }
 
 final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtocol , SettingsViewModelDelegate {
@@ -46,6 +46,10 @@ final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtoc
     
     func didLoad() {
         getGiveawayDatas()
+    }
+    
+    func presentPaywall() {
+        router.presentPaywall()
     }
 }
 

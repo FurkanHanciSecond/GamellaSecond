@@ -6,5 +6,5 @@
 //
 
 final class SettingsRouter: Router , SettingsRouter.Routes {
-    typealias Routes = ShareSheetRoute & PresentMailRoute
+    typealias Routes = ShareSheetRoute & PresentMailRoute & PaywallRoute
 }
