@@ -48,6 +48,7 @@ public struct AppConstants {
     
     public struct Style {
         public enum Color {
+            public static let fuschia = UIColor(named: "Fuschia")
             public static let yellow = UIColor.yellow
             public static let gameTurquoise = UIColor(named: "GameTurquoise")
             public static let gameGray = UIColor(named: "GameGray")

@@ -26,7 +26,7 @@ public class SettingsSecondCell: UITableViewCell, ReusableView {
     
     private let premiumLabel = UILabelBuilder()
         .font(.systemFont(ofSize: 25, weight: .medium))
-        .textColor(AppConstants.Style.Color.yellow)
+        .textColor(AppConstants.Style.Color.fuschia!)
         .textAlignment(.center)
         .text("Premium")
         .build()
@@ -68,7 +68,6 @@ extension SettingsSecondCell {
     
     private func addPremiumAppLabel() {
         premiumCardView.addSubview(premiumLabel)
-        premiumCardView.isUserInteractionEnabled = true
         premiumLabel.edgesToSuperview(excluding: [.bottom, .trailing, .leading], insets: .top(12))
         premiumLabel.centerXToSuperview()
     }
@@ -78,7 +77,7 @@ extension SettingsSecondCell {
 // MARK: - Configgure
 extension SettingsSecondCell {
     private func configureContents() {
-        
+        premiumCardView.isUserInteractionEnabled = true
     }
 }
 
