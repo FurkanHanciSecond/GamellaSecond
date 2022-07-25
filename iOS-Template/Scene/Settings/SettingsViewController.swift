@@ -46,17 +46,10 @@ extension SettingsViewController {
 // MARK: - Configure
 extension SettingsViewController {
     private func configureContents() {
-        presentPaywall()
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    private func presentPaywall() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.viewModel.presentPaywall()
-        }
     }
 }
 
