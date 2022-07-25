@@ -9,7 +9,6 @@ import Foundation
 import DataProvider
 
 protocol MoreDetailViewModelDelegate {
-    func shareButtonTapped()
     func presentSafariButtonTapped()
 }
 
@@ -34,10 +33,6 @@ final class MoreDetailViewModel: BaseViewModel<MoreDetailRouter>, MoreDetailView
 
 // MARK: - Actions
 extension MoreDetailViewModel {
-    func shareButtonTapped() {
-        let text = "Hey you should see this game giveaway now! \(model.gamerpowerURL ?? "")" as Any
-        router.presentShareSheet(items: [text])
-    }
     
     func presentSafariButtonTapped() {
         let url = URL(string: model.openGiveaway ?? "")

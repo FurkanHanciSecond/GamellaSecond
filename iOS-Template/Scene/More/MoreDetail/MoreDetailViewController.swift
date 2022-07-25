@@ -88,16 +88,8 @@ extension MoreDetailViewController {
 // MARK: - ConfigureContents
 extension MoreDetailViewController {
     private func configureContents() {
-        addBarButton()
         configureDetailElements()
     }
-    
-    private func addBarButton() {
-        let navBarButton = UIBarButtonItem(image: AppConstants.Style.Image.upload, style: .plain, target: self, action: #selector(shareButtonHandle(_:)))
-        navBarButton.tintColor = AppConstants.Style.Color.labelColor
-        self.navigationItem.rightBarButtonItem = navBarButton
-    }
-    
     private func configureDetailElements() {
         let imageUrl = URL(string: viewModel.model.image ?? "")
         detailImage.kf.setImage(with: imageUrl  ,options: [.scaleFactor(UIScreen.main.scale), .transition(.fade(1))])
@@ -108,10 +100,6 @@ extension MoreDetailViewController {
 
 // MARK: - Actions
 extension MoreDetailViewController {
-    @objc private func shareButtonHandle(_ sender: UIBarButtonItem) {
-        viewModel.shareButtonTapped()
-    }
-    
     @objc private func getLinkButtonHandle(_ sender: UIButton) {
         viewModel.presentSafariButtonTapped()
     }
