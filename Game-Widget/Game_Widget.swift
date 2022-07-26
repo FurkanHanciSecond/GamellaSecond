@@ -16,21 +16,32 @@ struct WidgetModel : TimelineEntry {
 }
 
 struct Game_WidgetEntryView : View {
-    internal let data : WidgetModel
-    
+     let data : WidgetModel
+    @State var range: Range<Int> = 0..<4
     var body: some View {
+        ZStack {
+            LinearGradient(colors: [.red , .green , .blue], startPoint: .leading, endPoint: .trailing)
         VStack {
-            ForEach(data.widgetData , id: \.self) { gameData in
+            ForEach(range , id: \.self) { gameData in
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .frame(width: UIScreen.main.bounds.size.width / 1.25 , height: 75)
                         .foregroundColor(.white)
-                    Text(gameData.title ?? "")
-                        .foregroundColor(.black)
+                    HStack {
+                        Image(systemName: "pencil")
+                            .foregroundColor(.black)
+                        
+                        Text(data.widgetData[gameData].title ?? "")
+                            .font(.system(size: 15))
+                            .foregroundColor(.black)
+                    }.frame(width: 200)
+                    
                 }
             }
         }
     }
+        
+}
     
 }
 
@@ -42,7 +53,7 @@ struct Game_Widget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { data in
             Game_WidgetEntryView(data: data)
         }
-        .supportedFamilies([.systemMedium , .systemLarge])
+        .supportedFamilies([.systemLarge])
         .configurationDisplayName("Gamella Widget 🚀")
         .description("Power Widgets")
     }
