@@ -88,8 +88,7 @@ struct Provider: TimelineProvider {
             let date = Date()
             let data = WidgetModel(date: date, widgetData: data)
             
-            // Update widget datas 10 minutes.
-            let update = Calendar.current.date(byAdding: .minute, value: 10  , to:  date)
+            let update = Calendar.current.date(byAdding: .hour, value: 1  , to:  date)
             
             let timeline = Timeline(entries: [data], policy: .after(update!))
             
