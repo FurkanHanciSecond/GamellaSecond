@@ -8,39 +8,28 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
-    }
+struct WidgetModel : TimelineEntry {
     
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
-        completion(entry)
-    }
+    var date: Date
+    var widgetData : [GameWidgetModel]
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-        
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-        
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-    }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
 }
 
 struct Game_WidgetEntryView : View {
+    internal let data : WidgetModel
+    
     var body: some View {
-        Text("Hi This Is Widget!")
+        VStack {
+            ForEach(data.widgetData , id: \.self) { gameData in
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: UIScreen.main.bounds.size.width / 1.25 , height: 75)
+                        .foregroundColor(.white)
+                    Text(gameData.title ?? "")
+                        .foregroundColor(.black)
+                }
+            }
+        }
     }
     
 }
@@ -50,17 +39,37 @@ struct Game_Widget: Widget {
     let kind: String = "Game_Widget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            Game_WidgetEntryView()
+        StaticConfiguration(kind: kind, provider: Provider()) { data in
+            Game_WidgetEntryView(data: data)
         }
+        .supportedFamilies([.systemMedium , .systemLarge])
         .configurationDisplayName("Gamella Widget 🚀")
         .description("Power Widgets")
     }
 }
 
-struct Game_Widget_Previews: PreviewProvider {
-    static var previews: some View {
-        Game_WidgetEntryView()
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+struct Provider: TimelineProvider {
+    func placeholder(in context: Context) -> WidgetModel {
+        let loadingData = WidgetModel(date: Date(), widgetData: Array(repeating: GameWidgetModel(id: 0, title: "", worth: "", thumbnail: "", image: "", welcomeDescription: "", instructions: "", openGiveawayURL: "", publishedDate: "", type: .other, platforms: "", endDate: "", users: 0, status: .none, gamerpowerURL: "", openGiveaway: ""), count: 2))
+        return loadingData
+    }
+    
+    func getSnapshot(in context: Context, completion: @escaping (WidgetModel) -> ()) {
+        let loadingData = WidgetModel(date: Date(), widgetData: Array(repeating: GameWidgetModel(id: 0, title: "", worth: "", thumbnail: "", image: "", welcomeDescription: "", instructions: "", openGiveawayURL: "", publishedDate: "", type: .other, platforms: "", endDate: "", users: 0, status: .none, gamerpowerURL: "", openGiveaway: ""), count: 2))
+        completion(loadingData)
+    }
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        FetchWidgetData.shared.getWidgetData { (data) in
+            let date = Date()
+            let data = WidgetModel(date: date, widgetData: data)
+            
+            // Update widget datas 10 minutes.
+            let update = Calendar.current.date(byAdding: .minute, value: 10  , to:  date)
+            
+            let timeline = Timeline(entries: [data], policy: .after(update!))
+            
+            completion(timeline)
+        }
     }
 }

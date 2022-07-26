@@ -46,6 +46,8 @@
 		7099E70C28904FCC002AB593 /* Game_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099E70B28904FCC002AB593 /* Game_Widget.swift */; };
 		7099E70E28904FCD002AB593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7099E70D28904FCD002AB593 /* Assets.xcassets */; };
 		7099E71228904FCD002AB593 /* Game-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7099E70528904FCC002AB593 /* Game-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7099E71828905975002AB593 /* WidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099E71728905975002AB593 /* WidgetModel.swift */; };
+		7099E71A289059FB002AB593 /* FetchWidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099E719289059FB002AB593 /* FetchWidgetData.swift */; };
 		709C47E1285E535600D814BF /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E0285E535600D814BF /* MainTabBarRoute.swift */; };
 		709C47E6285E555500D814BF /* OnboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E3285E555500D814BF /* OnboardRouter.swift */; };
 		709C47E7285E555500D814BF /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E4285E555500D814BF /* OnboardViewController.swift */; };
@@ -177,6 +179,8 @@
 		7099E70B28904FCC002AB593 /* Game_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Widget.swift; sourceTree = "<group>"; };
 		7099E70D28904FCD002AB593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7099E70F28904FCD002AB593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7099E71728905975002AB593 /* WidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModel.swift; sourceTree = "<group>"; };
+		7099E719289059FB002AB593 /* FetchWidgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWidgetData.swift; sourceTree = "<group>"; };
 		709C47E0285E535600D814BF /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
 		709C47E3285E555500D814BF /* OnboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardRouter.swift; sourceTree = "<group>"; };
 		709C47E4285E555500D814BF /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 				7099E70B28904FCC002AB593 /* Game_Widget.swift */,
 				7099E70D28904FCD002AB593 /* Assets.xcassets */,
 				7099E70F28904FCD002AB593 /* Info.plist */,
+				7099E71728905975002AB593 /* WidgetModel.swift */,
+				7099E719289059FB002AB593 /* FetchWidgetData.swift */,
 			);
 			path = "Game-Widget";
 			sourceTree = "<group>";
@@ -787,6 +793,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7099E70C28904FCC002AB593 /* Game_Widget.swift in Sources */,
+				7099E71A289059FB002AB593 /* FetchWidgetData.swift in Sources */,
+				7099E71828905975002AB593 /* WidgetModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
