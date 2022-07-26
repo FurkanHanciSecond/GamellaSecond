@@ -38,6 +38,8 @@
 		705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */; };
 		705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */; };
 		705BBB69283A1B2300F61E53 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BBB68283A1B2300F61E53 /* HomeRoute.swift */; };
+		706E313728906FBB0098ADB8 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E313628906FBB0098ADB8 /* ImageDownloader.swift */; };
+		706E3138289074F50098ADB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBA464B27E648D1009A75F9 /* Assets.xcassets */; };
 		7091F78D286068BF00788302 /* SortDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78A286068BF00788302 /* SortDetailRouter.swift */; };
 		7091F78E286068BF00788302 /* SortDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78B286068BF00788302 /* SortDetailViewController.swift */; };
 		7091F78F286068BF00788302 /* SortDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78C286068BF00788302 /* SortDetailViewModel.swift */; };
@@ -170,6 +172,7 @@
 		705BBB5E283A1A0D00F61E53 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		705BBB68283A1B2300F61E53 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
+		706E313628906FBB0098ADB8 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		7091F78A286068BF00788302 /* SortDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailRouter.swift; sourceTree = "<group>"; };
 		7091F78B286068BF00788302 /* SortDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewController.swift; sourceTree = "<group>"; };
 		7091F78C286068BF00788302 /* SortDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewModel.swift; sourceTree = "<group>"; };
@@ -386,6 +389,7 @@
 				7099E70F28904FCD002AB593 /* Info.plist */,
 				7099E71728905975002AB593 /* WidgetModel.swift */,
 				7099E719289059FB002AB593 /* FetchWidgetData.swift */,
+				706E313628906FBB0098ADB8 /* ImageDownloader.swift */,
 			);
 			path = "Game-Widget";
 			sourceTree = "<group>";
@@ -730,6 +734,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				706E3138289074F50098ADB8 /* Assets.xcassets in Resources */,
 				7099E70E28904FCD002AB593 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +799,7 @@
 			files = (
 				7099E70C28904FCC002AB593 /* Game_Widget.swift in Sources */,
 				7099E71A289059FB002AB593 /* FetchWidgetData.swift in Sources */,
+				706E313728906FBB0098ADB8 /* ImageDownloader.swift in Sources */,
 				7099E71828905975002AB593 /* WidgetModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

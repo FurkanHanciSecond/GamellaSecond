@@ -21,6 +21,7 @@ target 'Gamella' do
   pod 'Alamofire', '~> 5.4'
   shared_pods
 
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher', :branch => 'version6-xcode13'
   # Lint
   pod 'SwiftLint', '~> 0.43'
 
