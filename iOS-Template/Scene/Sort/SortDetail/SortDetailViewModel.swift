@@ -21,10 +21,16 @@ protocol SortDetailViewEventSource {
     
 }
 
-protocol SortDetailViewProtocol: SortDetailViewDataSource, SortDetailViewEventSource {}
+protocol SortDetailViewProtocol: SortDetailViewDataSource, SortDetailViewEventSource {
+    func presentPaywall()
+}
 
 final class SortDetailViewModel: BaseViewModel<SortDetailRouter>, SortDetailViewProtocol , SortDetailViewModelDelegate {
     var model: GameModel
+    
+    func presentPaywall() {
+        router.presentPaywall()
+    }
     
    public init(model: GameModel , router: SortDetailRouter) {
        self.model = model

@@ -6,5 +6,5 @@
 //
 
 final class SortDetailRouter: Router , SortDetailRouter.Routes {
-    typealias Routes = ShareSheetRoute & PresentSafariRoute
+    typealias Routes = ShareSheetRoute & PresentSafariRoute & PaywallRoute
 }

@@ -40,6 +40,7 @@ final class SortDetailViewController: BaseViewController<SortDetailViewModel> {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureContents()
+        viewModel.presentPaywall()
         addSubViews()
         
     }
