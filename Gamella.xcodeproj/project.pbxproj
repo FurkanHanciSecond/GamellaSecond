@@ -41,6 +41,11 @@
 		7091F78D286068BF00788302 /* SortDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78A286068BF00788302 /* SortDetailRouter.swift */; };
 		7091F78E286068BF00788302 /* SortDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78B286068BF00788302 /* SortDetailViewController.swift */; };
 		7091F78F286068BF00788302 /* SortDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091F78C286068BF00788302 /* SortDetailViewModel.swift */; };
+		7099E70728904FCC002AB593 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7099E70628904FCC002AB593 /* WidgetKit.framework */; };
+		7099E70928904FCC002AB593 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7099E70828904FCC002AB593 /* SwiftUI.framework */; };
+		7099E70C28904FCC002AB593 /* Game_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7099E70B28904FCC002AB593 /* Game_Widget.swift */; };
+		7099E70E28904FCD002AB593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7099E70D28904FCD002AB593 /* Assets.xcassets */; };
+		7099E71228904FCD002AB593 /* Game-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7099E70528904FCC002AB593 /* Game-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		709C47E1285E535600D814BF /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E0285E535600D814BF /* MainTabBarRoute.swift */; };
 		709C47E6285E555500D814BF /* OnboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E3285E555500D814BF /* OnboardRouter.swift */; };
 		709C47E7285E555500D814BF /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C47E4285E555500D814BF /* OnboardViewController.swift */; };
@@ -94,7 +99,28 @@
 		FEBA464F27E648D1009A75F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBA464D27E648D1009A75F9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7099E71028904FCD002AB593 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEBA463427E648D0009A75F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7099E70428904FCC002AB593;
+			remoteInfo = "Game-WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		7099E71328904FCD002AB593 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7099E71228904FCD002AB593 /* Game-WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE7347F727E715A60019DB4F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +171,12 @@
 		7091F78A286068BF00788302 /* SortDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailRouter.swift; sourceTree = "<group>"; };
 		7091F78B286068BF00788302 /* SortDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewController.swift; sourceTree = "<group>"; };
 		7091F78C286068BF00788302 /* SortDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewModel.swift; sourceTree = "<group>"; };
+		7099E70528904FCC002AB593 /* Game-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Game-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7099E70628904FCC002AB593 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		7099E70828904FCC002AB593 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7099E70B28904FCC002AB593 /* Game_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Widget.swift; sourceTree = "<group>"; };
+		7099E70D28904FCD002AB593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7099E70F28904FCD002AB593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		709C47E0285E535600D814BF /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
 		709C47E3285E555500D814BF /* OnboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardRouter.swift; sourceTree = "<group>"; };
 		709C47E4285E555500D814BF /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +235,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7099E70228904FCC002AB593 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7099E70928904FCC002AB593 /* SwiftUI.framework in Frameworks */,
+				7099E70728904FCC002AB593 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FEBA463927E648D0009A75F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +267,8 @@
 				FE7347A127E714CA0019DB4F /* DataProvider.framework */,
 				FE73479D27E714C40019DB4F /* UIComponents.framework */,
 				59DBE0D39DCBA66FEE893186 /* Pods_Gamella.framework */,
+				7099E70628904FCC002AB593 /* WidgetKit.framework */,
+				7099E70828904FCC002AB593 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -329,6 +372,16 @@
 				7036032128606AB0000A8CF1 /* SortDetailRoute.swift */,
 			);
 			path = SortDetail;
+			sourceTree = "<group>";
+		};
+		7099E70A28904FCC002AB593 /* Game-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				7099E70B28904FCC002AB593 /* Game_Widget.swift */,
+				7099E70D28904FCD002AB593 /* Assets.xcassets */,
+				7099E70F28904FCD002AB593 /* Info.plist */,
+			);
+			path = "Game-Widget";
 			sourceTree = "<group>";
 		};
 		709C47E2285E552D00D814BF /* Onboard */ = {
@@ -554,6 +607,7 @@
 			isa = PBXGroup;
 			children = (
 				FEBA463E27E648D0009A75F9 /* iOS-Template */,
+				7099E70A28904FCC002AB593 /* Game-Widget */,
 				FEBA463D27E648D0009A75F9 /* Products */,
 				F2ECFF5F2502586978FE9DC5 /* Pods */,
 				61CCB6795EDA5FF348F38BD1 /* Frameworks */,
@@ -564,6 +618,7 @@
 			isa = PBXGroup;
 			children = (
 				FEBA463C27E648D0009A75F9 /* Gamella.app */,
+				7099E70528904FCC002AB593 /* Game-WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -587,6 +642,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7099E70428904FCC002AB593 /* Game-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7099E71628904FCD002AB593 /* Build configuration list for PBXNativeTarget "Game-WidgetExtension" */;
+			buildPhases = (
+				7099E70128904FCC002AB593 /* Sources */,
+				7099E70228904FCC002AB593 /* Frameworks */,
+				7099E70328904FCC002AB593 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Game-WidgetExtension";
+			productName = "Game-WidgetExtension";
+			productReference = 7099E70528904FCC002AB593 /* Game-WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FEBA463B27E648D0009A75F9 /* Gamella */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEBA465327E648D1009A75F9 /* Build configuration list for PBXNativeTarget "Gamella" */;
@@ -597,10 +669,12 @@
 				FEBA463A27E648D0009A75F9 /* Resources */,
 				FE7347F727E715A60019DB4F /* Embed Frameworks */,
 				8F2A2E7D50A76B2E5728A461 /* [CP] Embed Pods Frameworks */,
+				7099E71328904FCD002AB593 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7099E71128904FCD002AB593 /* PBXTargetDependency */,
 			);
 			name = Gamella;
 			productName = "iOS-Template";
@@ -614,9 +688,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					7099E70428904FCC002AB593 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					FEBA463B27E648D0009A75F9 = {
 						CreatedOnToolsVersion = 13.1;
 						LastSwiftMigration = 1330;
@@ -637,11 +714,20 @@
 			projectRoot = "";
 			targets = (
 				FEBA463B27E648D0009A75F9 /* Gamella */,
+				7099E70428904FCC002AB593 /* Game-WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7099E70328904FCC002AB593 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7099E70E28904FCD002AB593 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FEBA463A27E648D0009A75F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,6 +782,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7099E70128904FCC002AB593 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7099E70C28904FCC002AB593 /* Game_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FEBA463827E648D0009A75F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -781,6 +875,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7099E71128904FCD002AB593 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7099E70428904FCC002AB593 /* Game-WidgetExtension */;
+			targetProxy = 7099E71028904FCD002AB593 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FEBA464D27E648D1009A75F9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -793,6 +895,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7099E71428904FCD002AB593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C7UJQJ2BAR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Game-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.furkanhanci.Gamella.Game-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7099E71528904FCD002AB593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C7UJQJ2BAR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Game-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.furkanhanci.Gamella.Game-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FEBA465127E648D1009A75F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -915,6 +1073,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF2D2F5FDF93A22CC994E8B0 /* Pods-Gamella.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -948,6 +1107,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF06355FD907A62B8EE06C44 /* Pods-Gamella.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -979,6 +1139,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7099E71628904FCD002AB593 /* Build configuration list for PBXNativeTarget "Game-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7099E71428904FCD002AB593 /* Debug */,
+				7099E71528904FCD002AB593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FEBA463727E648D0009A75F9 /* Build configuration list for PBXProject "Gamella" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
