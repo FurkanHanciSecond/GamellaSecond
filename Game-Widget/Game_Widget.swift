@@ -18,6 +18,7 @@ struct WidgetModel : TimelineEntry {
 struct Game_WidgetEntryView : View {
      let data : WidgetModel
     @State var range: Range<Int> = 0..<3
+    let randomInt = Int.random(in: 0..<10)
     var body: some View {
         ZStack {
             LinearGradient(colors: [Color("GameOrange") , Color("GameIndigo") , Color("GamePurple")], startPoint: .bottomLeading, endPoint: .topTrailing)
@@ -30,18 +31,17 @@ struct Game_WidgetEntryView : View {
                     HStack {
                        Image(systemName: "gamecontroller")
                             .foregroundColor(.black)
-
                         VStack {
-                            Text(data.widgetData[gameData].title ?? "")
+                            Text(data.widgetData[gameData + randomInt].title ?? "")
                                 .font(.system(size: 15))
                                 .foregroundColor(.black)
                                 .lineLimit(2)
                             
-                            Text("Price: \(data.widgetData[gameData].worth ?? "")")
+                            Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
                                 .font(.system(size: 15))
                                 .foregroundColor(.green)
                             
-                            Text("Status: \(data.widgetData[gameData].status?.rawValue ?? "")")
+                            Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
                                 .font(.system(size: 15))
                                 .fontWeight(.light)
                                 .foregroundColor(.black)
@@ -52,7 +52,7 @@ struct Game_WidgetEntryView : View {
                 }
             }
         }
-    }
+        }
         
 }
 }
@@ -87,7 +87,7 @@ struct Provider: TimelineProvider {
             let date = Date()
             let data = WidgetModel(date: date, widgetData: data)
             
-            let update = Calendar.current.date(byAdding: .second, value: 1  , to:  date)
+            let update = Calendar.current.date(byAdding: .hour, value: 8  , to:  date)
             
             let timeline = Timeline(entries: [data], policy: .after(update!))
             completion(timeline)
