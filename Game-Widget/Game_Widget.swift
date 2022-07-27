@@ -16,45 +16,57 @@ struct WidgetModel : TimelineEntry {
 }
 
 struct Game_WidgetEntryView : View {
-     let data : WidgetModel
-    @State var range: Range<Int> = 0..<3
+    let data : WidgetModel
+    @State var range: Range<Int> = 0..<2
     let randomInt = Int.random(in: 0..<10)
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color("GameOrange") , Color("GameIndigo") , Color("GamePurple")], startPoint: .bottomLeading, endPoint: .topTrailing)
-        VStack {
-            ForEach(range , id: \.self) { gameData in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: UIScreen.main.bounds.size.width / 1.25 , height: 100)
-                        .foregroundColor(.white)
-                    HStack {
-                       Image(systemName: "gamecontroller")
-                            .foregroundColor(.black)
-                        VStack {
-                            Text(data.widgetData[gameData + randomInt].title ?? "")
-                                .font(.system(size: 15))
+            LinearGradient(colors: [Color("GamePurple") , Color("GameIndigo") , Color("GameOrange")], startPoint: .bottomLeading, endPoint: .topTrailing)
+            VStack {
+                Text("Some of Games 👾 🎮")
+                    .font(.system(size: 25))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.top , 20)
+                Spacer()
+                ForEach(range , id: \.self) { gameData in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: UIScreen.main.bounds.size.width / 1.25 , height: 100)
+                            .foregroundColor(.white)
+                        HStack {
+                            Image(systemName: "gamecontroller")
                                 .foregroundColor(.black)
-                                .lineLimit(2)
+                            VStack {
+                                Text(data.widgetData[gameData + randomInt].title ?? "")
+                                    .font(.system(size: 15))
+                                    .foregroundColor(.black)
+                                    .lineLimit(2)
+                                
+                                Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
+                                    .font(.system(size: 15))
+                                    .foregroundColor(.green)
+                                
+                                Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
+                                    .font(.system(size: 15))
+                                    .fontWeight(.light)
+                                    .foregroundColor(.black)
+                                
+                                Text("Published Date: \(data.widgetData[gameData + randomInt].publishedDate ?? "")")
+                                    .font(.system(size: 10))
+                                    .fontWeight(.light)
+                                    .foregroundColor(Color("GameIndigo"))
+                                    .lineLimit(2)
+                            }
                             
-                            Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
-                                .font(.system(size: 15))
-                                .foregroundColor(.green)
-                            
-                            Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
-                                .font(.system(size: 15))
-                                .fontWeight(.light)
-                                .foregroundColor(.black)
-                        }
+                        }.frame(width: 200)
                         
-                    }.frame(width: 200)
-                    
+                    }
                 }
-            }
-        }
+            }.padding(.bottom , 30)
         }
         
-}
+    }
 }
 
 @main
