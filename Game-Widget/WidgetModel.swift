@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public struct GameWidgetModel: Decodable , Identifiable , Hashable {
     public let id: Int?
     public let title, worth: String?
@@ -55,6 +54,4 @@ public struct GiveAwayModel: Decodable {
         case worthEstimationUsd = "worth_estimation_usd"
     }
 }
-
-
 

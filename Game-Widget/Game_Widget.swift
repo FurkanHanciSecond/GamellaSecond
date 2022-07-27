@@ -55,7 +55,6 @@ struct Game_WidgetEntryView : View {
     }
         
 }
-    
 }
 
 @main
@@ -68,7 +67,7 @@ struct Game_Widget: Widget {
         }
         .supportedFamilies([.systemLarge])
         .configurationDisplayName("Gamella Widget 🚀")
-        .description("This Widgets shows you some data from Gamella on your home screen ☺️")
+        .description("This Widgets shows you some data from Gamella on your home screen.")
     }
 }
 
@@ -83,15 +82,14 @@ struct Provider: TimelineProvider {
         completion(loadingData)
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetModel>) -> ()) {
         FetchWidgetData.shared.getWidgetData { (data) in
             let date = Date()
             let data = WidgetModel(date: date, widgetData: data)
             
-            let update = Calendar.current.date(byAdding: .hour, value: 1  , to:  date)
+            let update = Calendar.current.date(byAdding: .second, value: 1  , to:  date)
             
             let timeline = Timeline(entries: [data], policy: .after(update!))
-            
             completion(timeline)
         }
     }

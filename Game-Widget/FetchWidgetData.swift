@@ -18,7 +18,6 @@ final class FetchWidgetData : ObservableObject {
     
     
     func getWidgetData(completion: @escaping ([GameWidgetModel]) -> Void) {
-        // We are set default price as a 20 dollars / euro etc...
         guard let url = URL(string: "https://www.gamerpower.com/api/giveaways?type=game") else {
             return
         }
