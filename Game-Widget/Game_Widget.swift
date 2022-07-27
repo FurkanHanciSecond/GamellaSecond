@@ -39,10 +39,10 @@ struct Game_WidgetEntryView : View {
     @ViewBuilder
     func mediumSizeWidget() -> some View {
         ZStack {
-            LinearGradient(colors: [Color("GamePurple"), Color("GameDarkBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [Color("GamePurple"), Color("Fuschia")], startPoint: .topLeading, endPoint: .bottomTrailing)
             
             VStack {
-                Text("Magic Game 🤐 🕹")
+                Text("Magic Game 🤐 🕹👇")
                     .font(.system(size: 15))
                     .fontWeight(.bold)
                     .padding(.top , 20)
@@ -122,7 +122,7 @@ struct Game_WidgetEntryView : View {
                                         
                                         Text("Published Date: \(data.widgetData[gameData + randomInt].publishedDate ?? "")")
                                             .font(.system(size: 10))
-                                            .fontWeight(.light)
+                                            .fontWeight(.regular)
                                             .foregroundColor(Color("GameIndigo"))
                                             .lineLimit(2)
                                     }
