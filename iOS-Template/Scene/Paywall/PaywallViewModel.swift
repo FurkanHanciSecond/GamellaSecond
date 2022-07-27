@@ -5,15 +5,22 @@
 //  Created by Furkan Hanci on 7/21/22.
 //
 
-import Foundation
+import UIKit
 
 protocol PaywallViewDataSource {}
 
-protocol PaywallViewEventSource {}
+protocol PaywallViewEventSource {
+    var backgroundColor: UIColor { get }
+}
 
 protocol PaywallViewProtocol: PaywallViewDataSource, PaywallViewEventSource {}
 
 final class PaywallViewModel: BaseViewModel<PaywallRouter>, PaywallViewProtocol {
+    
+    var backgroundColor: UIColor {
+        return .systemBackground
+    }
+    
     func dismissButtonTapped() {
         router.close()
     }

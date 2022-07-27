@@ -26,24 +26,35 @@ final class PaywallViewController: BaseViewController<PaywallViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        view.addSubviews(premiumTestLabel , detailButton)
-        //premiumTestLabel.centerInSuperview()
-        detailButton.centerInSuperview()
-        
+        configureContents()
+        addNavBar()
+    }
+}
+
+// MARK: - UILayout
+extension PaywallViewController {
+    private func addNavBar() {
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: UIScreen.main.bounds.minY + 15, width: view.frame.size.width, height: 44))
         view.addSubview(navBar)
 
-        let navItem = UINavigationItem(title: "AASFKBDV")
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(handel))
-        navItem.rightBarButtonItem = doneItem
+        let navItem = UINavigationItem(title: "Gamella Premium 😎")
+        let navBarButton = UIBarButtonItem(image: AppConstants.Style.Image.xMark, style: .plain, target: self, action: #selector(handel))
+        navItem.rightBarButtonItem = navBarButton
 
         navBar.setItems([navItem], animated: true)
-        
-        detailButton.addTarget(self, action: #selector(handel), for: .touchUpInside)
     }
+}
+
+// MARK: - Configure
+extension PaywallViewController {
+    private func configureContents() {
+        view.backgroundColor = viewModel.backgroundColor
+    }
+}
+
+// MARK: - Actions
+extension PaywallViewController {
     @objc private func handel() {
         viewModel.dismissButtonTapped()
     }
-    
 }
