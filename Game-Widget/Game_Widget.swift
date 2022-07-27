@@ -28,7 +28,10 @@ struct Game_WidgetEntryView : View {
             largeSizeWidget()
             
         case .systemMedium:
-           mediumSizeWidget()
+            mediumSizeWidget()
+            
+        case .systemExtraLarge:
+            Text("Extra")
             
         default:
             Text("Some other WidgetFamily in the future.")
@@ -38,7 +41,8 @@ struct Game_WidgetEntryView : View {
     
     @ViewBuilder
     func mediumSizeWidget() -> some View {
-        ZStack {
+        GeometryReader { geo in
+            ZStack {
             LinearGradient(colors: [Color("GamePurple"), Color("Fuschia")], startPoint: .topLeading, endPoint: .bottomTrailing)
             
             VStack {
@@ -51,7 +55,7 @@ struct Game_WidgetEntryView : View {
                 ForEach(mediumRange , id: \.self) { gameData in
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)
-                            .frame(width: UIScreen.main.bounds.size.width / 1.25 , height: 75)
+                            .frame(width: geo.size.width / 1.05 , height: 75)
                             .foregroundColor(.white)
                         HStack {
                             Image(systemName: "gamecontroller")
@@ -78,63 +82,70 @@ struct Game_WidgetEntryView : View {
                                     .lineLimit(2)
                             }
                             
-                        }.frame(width: 200)
+                        }
+                        .frame(width: 200)
                         
-                    }
+                    }.padding(.bottom , 5)
                 }
             }
+        }
+            
         }
     }
     
     @ViewBuilder
     func largeSizeWidget() -> some View {
-        ZStack {
-            LinearGradient(colors: [Color("GamePurple") , Color("GameIndigo") , Color("GameOrange")], startPoint: .bottomLeading, endPoint: .topTrailing)
-                    VStack {
-                        Text("Some of Games 👾 🎮")
-                            .font(.system(size: 25))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding(.top , 20)
-                        Spacer()
-                        ForEach(range , id: \.self) { gameData in
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .frame(width: UIScreen.main.bounds.size.width / 1.25 , height: 100)
-                                    .foregroundColor(.white)
-                                HStack {
-                                    Image(systemName: "gamecontroller")
+        GeometryReader { geo in
+            
+            ZStack {
+                LinearGradient(colors: [Color("GamePurple") , Color("GameIndigo") , Color("GameOrange")], startPoint: .bottomLeading, endPoint: .topTrailing)
+                VStack {
+                    Text("Some of Games 👾 🎮")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.top , 20)
+                    Spacer()
+                    ForEach(range , id: \.self) { gameData in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: geo.size.width / 1.10 , height: 100)
+                                .foregroundColor(.white)
+                            HStack {
+                                Image(systemName: "gamecontroller")
+                                    .foregroundColor(.black)
+                                VStack {
+                                    Text(data.widgetData[gameData + randomInt].title ?? "")
+                                        .font(.system(size: 15))
                                         .foregroundColor(.black)
-                                    VStack {
-                                        Text(data.widgetData[gameData + randomInt].title ?? "")
-                                            .font(.system(size: 15))
-                                            .foregroundColor(.black)
-                                            .lineLimit(2)
-                                        
-                                        Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
-                                            .font(.system(size: 15))
-                                            .foregroundColor(.green)
-                                        
-                                        Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
-                                            .font(.system(size: 15))
-                                            .fontWeight(.light)
-                                            .foregroundColor(.black)
-                                        
-                                        Text("Published Date: \(data.widgetData[gameData + randomInt].publishedDate ?? "")")
-                                            .font(.system(size: 10))
-                                            .fontWeight(.regular)
-                                            .foregroundColor(Color("GameIndigo"))
-                                            .lineLimit(2)
-                                    }
+                                        .lineLimit(2)
                                     
-                                }.frame(width: 200)
+                                    Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(.green)
+                                    
+                                    Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
+                                        .font(.system(size: 15))
+                                        .fontWeight(.light)
+                                        .foregroundColor(.black)
+                                    
+                                    Text("Published Date: \(data.widgetData[gameData + randomInt].publishedDate ?? "")")
+                                        .font(.system(size: 10))
+                                        .fontWeight(.regular)
+                                        .foregroundColor(Color("GameIndigo"))
+                                        .lineLimit(2)
+                                }
                                 
-                            }
+                            }.frame(width: 200)
+                            
                         }
-                    }.padding(.bottom , 30)
-                }
+                    }
+                }.padding(.bottom , 30)
+            }
         }
+        
     }
+}
 
 @main
 struct Game_Widget: Widget {
