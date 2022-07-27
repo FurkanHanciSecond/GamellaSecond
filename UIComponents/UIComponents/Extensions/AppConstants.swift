@@ -70,6 +70,7 @@ public struct AppConstants {
         }
         
         public enum Image {
+            public static let xMark = UIImage(systemName: "xmark")
             public static let swirlCircle = UIImage(systemName: "line.3.crossed.swirl.circle")
             public static let upload = UIImage(systemName: "square.and.arrow.up")
             public static let grid = UIImage(systemName: "square.grid.3x3")

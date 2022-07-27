@@ -26,10 +26,19 @@ final class PaywallViewController: BaseViewController<PaywallViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemBackground
         view.addSubviews(premiumTestLabel , detailButton)
         //premiumTestLabel.centerInSuperview()
         detailButton.centerInSuperview()
+        
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: UIScreen.main.bounds.minY + 15, width: view.frame.size.width, height: 44))
+        view.addSubview(navBar)
+
+        let navItem = UINavigationItem(title: "AASFKBDV")
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(handel))
+        navItem.rightBarButtonItem = doneItem
+
+        navBar.setItems([navItem], animated: true)
         
         detailButton.addTarget(self, action: #selector(handel), for: .touchUpInside)
     }
