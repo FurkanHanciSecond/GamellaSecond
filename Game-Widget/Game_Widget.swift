@@ -30,9 +30,6 @@ struct Game_WidgetEntryView : View {
         case .systemMedium:
             mediumSizeWidget()
             
-        case .systemExtraLarge:
-            Text("Extra")
-            
         default:
             Text("Some other WidgetFamily in the future.")
         }
