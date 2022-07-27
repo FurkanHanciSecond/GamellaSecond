@@ -16,7 +16,7 @@ extension NotPremiumRoute where Self: RouterProtocol {
         let viewModel = NotPremiumViewModel(router: router)
         let viewController = NotPremiumViewController(viewModel: viewModel)
         
-        let transition = ModalTransition()
+        let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
         

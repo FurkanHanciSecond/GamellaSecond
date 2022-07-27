@@ -21,7 +21,7 @@ final class NotPremiumViewController: BaseViewController<NotPremiumViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-        title = "Not premium"
+        self.navigationItem.setHidesBackButton(true, animated: true)
         view.addSubview(continueButton)
         continueButton.edgesToSuperview(insets: .horizontal(16) + .vertical(16))
         continueButton.addTarget(self, action: #selector(handle), for: .touchUpInside)
