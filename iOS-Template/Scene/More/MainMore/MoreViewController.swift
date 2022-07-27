@@ -27,7 +27,7 @@ final class MoreViewController: BaseViewController<MoreViewModel> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.willAppear()
+        viewModel.checkPremium()
     }
     
 }

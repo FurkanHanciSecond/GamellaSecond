@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import MobilliumUserDefaults
 protocol NotPremiumViewDataSource {}
 
 protocol NotPremiumViewEventSource {}
@@ -15,4 +15,11 @@ protocol NotPremiumViewProtocol: NotPremiumViewDataSource, NotPremiumViewEventSo
 
 final class NotPremiumViewModel: BaseViewModel<NotPremiumRouter>, NotPremiumViewProtocol {
     
+    func checkPremium() {
+        if let isPremium = DefaultsKey.isPremium.value {
+            if isPremium {
+                router.close()
+            }
+        }
+    }
 }

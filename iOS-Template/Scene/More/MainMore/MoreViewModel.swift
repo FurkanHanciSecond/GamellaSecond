@@ -21,7 +21,7 @@ protocol MoreViewEventSource {
 
 protocol MoreViewProtocol: MoreViewDataSource, MoreViewEventSource {
     func viewDidLoad()
-    func willAppear()
+    func checkPremium()
     func refreshData()
 }
 
@@ -50,10 +50,11 @@ final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
         getPremiumRequest(type: "beta")
     }
     
-    func willAppear() {
-        if let isFirst = DefaultsKey.isFirstRun.value {
-            if isFirst {
+    func checkPremium() {
+        if let isPremium = DefaultsKey.isPremium.value {
+            if isPremium == false {
                 router.presentNotPremium()
+                print(DefaultsKey.isPremium.value)
             }
         }
     }

@@ -8,6 +8,7 @@
 import UIKit
 import MobilliumBuilders
 import TinyConstraints
+import MobilliumUserDefaults
 final class PaywallViewController: BaseViewController<PaywallViewModel> {
     
     private let premiumTestLabel = UILabelBuilder()
@@ -18,7 +19,7 @@ final class PaywallViewController: BaseViewController<PaywallViewModel> {
     
     private let detailButton = UIButtonBuilder()
         .cornerRadius(15)
-        .title(AppConstants.Texts.Button.getLink)
+        .title("Become Premium")
         .titleFont(.systemFont(ofSize: 20, weight: .bold))
         .backgroundColor(AppConstants.Style.Color.purple!)
         .titleColor(AppConstants.Style.Color.white, for: .normal)
@@ -27,12 +28,31 @@ final class PaywallViewController: BaseViewController<PaywallViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
+        addSubViews()
         addNavBar()
+        
+        detailButton.addTarget(self, action: #selector(becomePremium), for: .touchUpInside)
+    }
+    
+    @objc private func becomePremium() {
+        DefaultsKey.isPremium.value = true
+        print(DefaultsKey.isPremium.value)
+        viewModel.router.close()
     }
 }
 
 // MARK: - UILayout
 extension PaywallViewController {
+    
+    private func addSubViews() {
+        addDetailButton()
+    }
+    
+    private func addDetailButton() {
+        view.addSubview(detailButton)
+        detailButton.edgesToSuperview(insets: .horizontal(12) + .vertical(12))
+    }
+    
     private func addNavBar() {
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: UIScreen.main.bounds.minY + 15, width: view.frame.size.width, height: 44))
         view.addSubview(navBar)

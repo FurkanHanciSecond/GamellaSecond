@@ -49,6 +49,7 @@ extension OnboardViewModel {
         ]
         DefaultsKey.isFirstRun.value = true
         DefaultsKey.isFirstBulletIn.value = true
+        DefaultsKey.isPremium.value = false
     }
 }
 
