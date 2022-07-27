@@ -25,6 +25,11 @@ final class MoreViewController: BaseViewController<MoreViewModel> {
         addSubViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.willAppear()
+    }
+    
 }
 
 // MARK: - Configure

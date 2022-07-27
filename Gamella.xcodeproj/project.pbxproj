@@ -66,6 +66,10 @@
 		70D818362838BC570088E2C0 /* GetNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818352838BC570088E2C0 /* GetNameRouter.swift */; };
 		70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818372838BC610088E2C0 /* GetNameViewModel.swift */; };
 		70D8183A2838BC690088E2C0 /* GetNameRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D818392838BC690088E2C0 /* GetNameRoute.swift */; };
+		70FDE9AF2891C4960096BE8E /* NotPremiumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FDE9AC2891C4960096BE8E /* NotPremiumRouter.swift */; };
+		70FDE9B02891C4960096BE8E /* NotPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FDE9AD2891C4960096BE8E /* NotPremiumViewController.swift */; };
+		70FDE9B12891C4960096BE8E /* NotPremiumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FDE9AE2891C4960096BE8E /* NotPremiumViewModel.swift */; };
+		70FDE9B32891C5EA0096BE8E /* NotPremiumRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FDE9B22891C5EA0096BE8E /* NotPremiumRoute.swift */; };
 		FE4262722825A6A8009CCA73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42626E2825A6A8009CCA73 /* AppDelegate.swift */; };
 		FE4262732825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42626F2825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift */; };
 		FE4262782825A6D9009CCA73 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4262752825A6D9009CCA73 /* DataProvider.swift */; };
@@ -200,6 +204,10 @@
 		70D818352838BC570088E2C0 /* GetNameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRouter.swift; sourceTree = "<group>"; };
 		70D818372838BC610088E2C0 /* GetNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewModel.swift; sourceTree = "<group>"; };
 		70D818392838BC690088E2C0 /* GetNameRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameRoute.swift; sourceTree = "<group>"; };
+		70FDE9AC2891C4960096BE8E /* NotPremiumRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotPremiumRouter.swift; sourceTree = "<group>"; };
+		70FDE9AD2891C4960096BE8E /* NotPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotPremiumViewController.swift; sourceTree = "<group>"; };
+		70FDE9AE2891C4960096BE8E /* NotPremiumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotPremiumViewModel.swift; sourceTree = "<group>"; };
+		70FDE9B22891C5EA0096BE8E /* NotPremiumRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotPremiumRoute.swift; sourceTree = "<group>"; };
 		BF06355FD907A62B8EE06C44 /* Pods-Gamella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamella.release.xcconfig"; path = "Target Support Files/Pods-Gamella/Pods-Gamella.release.xcconfig"; sourceTree = "<group>"; };
 		EF2D2F5FDF93A22CC994E8B0 /* Pods-Gamella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamella.debug.xcconfig"; path = "Target Support Files/Pods-Gamella/Pods-Gamella.debug.xcconfig"; sourceTree = "<group>"; };
 		FE42626E2825A6A8009CCA73 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -325,6 +333,7 @@
 		701FFFC22843E6D10018F3A6 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				70FDE9AB2891C4350096BE8E /* NotPremium */,
 				701D2F8A288D7105005A56B7 /* MainMore */,
 				701D2F8B288D7117005A56B7 /* MoreDetail */,
 			);
@@ -456,6 +465,17 @@
 				70D818392838BC690088E2C0 /* GetNameRoute.swift */,
 			);
 			path = GetName;
+			sourceTree = "<group>";
+		};
+		70FDE9AB2891C4350096BE8E /* NotPremium */ = {
+			isa = PBXGroup;
+			children = (
+				70FDE9AC2891C4960096BE8E /* NotPremiumRouter.swift */,
+				70FDE9AD2891C4960096BE8E /* NotPremiumViewController.swift */,
+				70FDE9AE2891C4960096BE8E /* NotPremiumViewModel.swift */,
+				70FDE9B22891C5EA0096BE8E /* NotPremiumRoute.swift */,
+			);
+			path = NotPremium;
 			sourceTree = "<group>";
 		};
 		F2ECFF5F2502586978FE9DC5 /* Pods */ = {
@@ -839,6 +859,7 @@
 				FE4262732825A6A8009CCA73 /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				701FFFCC2843E6F80018F3A6 /* SettingsRouter.swift in Sources */,
 				701FFFBD2843E6AD0018F3A6 /* SortViewController.swift in Sources */,
+				70FDE9B32891C5EA0096BE8E /* NotPremiumRoute.swift in Sources */,
 				701FFFCD2843E6F80018F3A6 /* SettingsViewController.swift in Sources */,
 				7091F78D286068BF00788302 /* SortDetailRouter.swift in Sources */,
 				709C47E1285E535600D814BF /* MainTabBarRoute.swift in Sources */,
@@ -846,6 +867,7 @@
 				709C47E6285E555500D814BF /* OnboardRouter.swift in Sources */,
 				FE4262932825A73F009CCA73 /* Transition.swift in Sources */,
 				703BEE2D287DC7620080091B /* BulletinDataSource.swift in Sources */,
+				70FDE9B02891C4960096BE8E /* NotPremiumViewController.swift in Sources */,
 				FE42628E2825A73F009CCA73 /* Animator.swift in Sources */,
 				FE4262942825A73F009CCA73 /* PushTransition.swift in Sources */,
 				705BBB61283A1A0D00F61E53 /* HomeViewController.swift in Sources */,
@@ -860,6 +882,7 @@
 				FE4262B32825A87B009CCA73 /* CleanNavigationController.swift in Sources */,
 				FE4262992825A73F009CCA73 /* PopToViewController.swift in Sources */,
 				701FFFCE2843E6F80018F3A6 /* SettingsViewModel.swift in Sources */,
+				70FDE9AF2891C4960096BE8E /* NotPremiumRouter.swift in Sources */,
 				701FFFC72843E6DF0018F3A6 /* MoreViewController.swift in Sources */,
 				701FFFC12843E6C70018F3A6 /* SortRoute.swift in Sources */,
 				FE4262782825A6D9009CCA73 /* DataProvider.swift in Sources */,
@@ -877,6 +900,7 @@
 				705BBB62283A1A0D00F61E53 /* HomeViewModel.swift in Sources */,
 				7036032228606AB0000A8CF1 /* SortDetailRoute.swift in Sources */,
 				FE4262972825A73F009CCA73 /* PopToBack.swift in Sources */,
+				70FDE9B12891C4960096BE8E /* NotPremiumViewModel.swift in Sources */,
 				70A5B3D0285B228400BEA445 /* HomeDetailViewModel.swift in Sources */,
 				70D818382838BC610088E2C0 /* GetNameViewModel.swift in Sources */,
 				70A9037128897B150074814A /* PaywallViewModel.swift in Sources */,

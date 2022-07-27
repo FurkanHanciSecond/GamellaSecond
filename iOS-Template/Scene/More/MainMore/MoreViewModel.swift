@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import MobilliumUserDefaults
 protocol MoreViewDataSource {
     var numberOfItems: Int { get }
     func cellForItemAt(indexPath: IndexPath) -> MoreCellProtocol
@@ -21,6 +21,7 @@ protocol MoreViewEventSource {
 
 protocol MoreViewProtocol: MoreViewDataSource, MoreViewEventSource {
     func viewDidLoad()
+    func willAppear()
     func refreshData()
 }
 
@@ -47,6 +48,14 @@ final class MoreViewModel: BaseViewModel<MoreRouter>, MoreViewProtocol {
     
     func viewDidLoad() {
         getPremiumRequest(type: "beta")
+    }
+    
+    func willAppear() {
+        if let isFirst = DefaultsKey.isFirstRun.value {
+            if isFirst {
+                router.presentNotPremium()
+            }
+        }
     }
     
     func refreshData() {

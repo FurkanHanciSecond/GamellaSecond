@@ -6,5 +6,5 @@
 //
 
 final class MoreRouter: Router , MoreRouter.Routes {
-    typealias Routes = MoreDetailRoute
+    typealias Routes = MoreDetailRoute & NotPremiumRoute
 }
