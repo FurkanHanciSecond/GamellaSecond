@@ -34,11 +34,6 @@ final class PaywallViewController: BaseViewController<PaywallViewModel> {
         detailButton.addTarget(self, action: #selector(becomePremium), for: .touchUpInside)
     }
     
-    @objc private func becomePremium() {
-        DefaultsKey.isPremium.value = true
-        print(DefaultsKey.isPremium.value)
-        viewModel.router.close()
-    }
 }
 
 // MARK: - UILayout
@@ -55,9 +50,11 @@ extension PaywallViewController {
     
     private func addNavBar() {
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: UIScreen.main.bounds.minY + 15, width: view.frame.size.width, height: 44))
+        navBar.tintColor = .black
+        navBar.barTintColor = .black
         view.addSubview(navBar)
 
-        let navItem = UINavigationItem(title: "Gamella Premium 😎")
+        let navItem = UINavigationItem(title: "Gamella Premium 👑")
         let navBarButton = UIBarButtonItem(image: AppConstants.Style.Image.xMark, style: .plain, target: self, action: #selector(handel))
         navItem.rightBarButtonItem = navBarButton
 
@@ -76,5 +73,9 @@ extension PaywallViewController {
 extension PaywallViewController {
     @objc private func handel() {
         viewModel.dismissButtonTapped()
+    }
+    
+    @objc private func becomePremium() {
+        viewModel.becomePremiumTapped()
     }
 }
