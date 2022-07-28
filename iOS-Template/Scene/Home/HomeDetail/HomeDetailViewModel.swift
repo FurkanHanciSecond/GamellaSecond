@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import DataProvider
+import MobilliumUserDefaults
 import UIKit
 protocol HomeDetailViewModelDelegate {
     func shareButtonTapped()
@@ -23,6 +23,7 @@ protocol HomeDetailViewEventSource {
 
 protocol HomeDetailViewProtocol: HomeDetailViewDataSource, HomeDetailViewEventSource {
     func presentPaywall()
+    func checkHomePremium()
 }
 
 final class HomeDetailViewModel: BaseViewModel<HomeDetailRouter>, HomeDetailViewProtocol , HomeDetailViewModelDelegate {
@@ -30,6 +31,15 @@ final class HomeDetailViewModel: BaseViewModel<HomeDetailRouter>, HomeDetailView
     
     var backgroundColor: UIColor {
         return AppConstants.Style.Color.systemBackground
+    }
+    
+    func checkHomePremium() {
+        if let isPremium = DefaultsKey.isPremium.value {
+            if isPremium == false {
+                router.presentPaywall()
+                print(DefaultsKey.isPremium.value)
+            }
+        }
     }
     
     func presentPaywall() {

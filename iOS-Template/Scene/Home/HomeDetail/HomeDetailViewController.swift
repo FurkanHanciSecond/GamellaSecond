@@ -48,7 +48,7 @@ final class HomeDetailViewController: BaseViewController<HomeDetailViewModel> {
         super.viewDidLoad()
         configureContents()
         addSubViews()
-        viewModel.presentPaywall()
+        viewModel.checkHomePremium()
         
     }
 }

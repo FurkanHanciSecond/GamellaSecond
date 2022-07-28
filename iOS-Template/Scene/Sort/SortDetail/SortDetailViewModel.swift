@@ -7,7 +7,7 @@
 
 import Foundation
 import DataProvider
-
+import MobilliumUserDefaults
 protocol SortDetailViewModelDelegate {
     func shareButtonTapped()
     func presentSafariButtonTapped()
@@ -23,10 +23,20 @@ protocol SortDetailViewEventSource {
 
 protocol SortDetailViewProtocol: SortDetailViewDataSource, SortDetailViewEventSource {
     func presentPaywall()
+    func checkSortPremium()
 }
 
 final class SortDetailViewModel: BaseViewModel<SortDetailRouter>, SortDetailViewProtocol , SortDetailViewModelDelegate {
     var model: GameModel
+    
+    func checkSortPremium() {
+        if let isPremium = DefaultsKey.isPremium.value {
+            if isPremium == false {
+                router.presentPaywall()
+                print(DefaultsKey.isPremium.value)
+            }
+        }
+    }
     
     func presentPaywall() {
         router.presentPaywall()
