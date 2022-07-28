@@ -7,7 +7,6 @@
 
 import WidgetKit
 import SwiftUI
-
 struct WidgetModel : TimelineEntry {
     
     var date: Date

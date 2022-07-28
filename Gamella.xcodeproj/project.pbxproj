@@ -177,6 +177,11 @@
 		705BBB5F283A1A0D00F61E53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		705BBB68283A1B2300F61E53 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		706E313628906FBB0098ADB8 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		709170552891D60900A89E74 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709170592891D61100A89E74 /* MobilliumUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MobilliumUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7091705C2891D71D00A89E74 /* MobilliumDateFormatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MobilliumDateFormatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709170602891D7B500A89E74 /* libMobilliumUserDefaults-library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libMobilliumUserDefaults-library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		709170622891D7BB00A89E74 /* MobilliumUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MobilliumUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7091F78A286068BF00788302 /* SortDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailRouter.swift; sourceTree = "<group>"; };
 		7091F78B286068BF00788302 /* SortDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewController.swift; sourceTree = "<group>"; };
 		7091F78C286068BF00788302 /* SortDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDetailViewModel.swift; sourceTree = "<group>"; };
@@ -276,6 +281,11 @@
 		61CCB6795EDA5FF348F38BD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				709170622891D7BB00A89E74 /* MobilliumUserDefaults.framework */,
+				709170602891D7B500A89E74 /* libMobilliumUserDefaults-library.a */,
+				7091705C2891D71D00A89E74 /* MobilliumDateFormatter.framework */,
+				709170592891D61100A89E74 /* MobilliumUserDefaults.framework */,
+				709170552891D60900A89E74 /* Kingfisher.framework */,
 				FE7347FB27E715AD0019DB4F /* Utilities.framework */,
 				FE7347F827E715AA0019DB4F /* UIComponents.framework */,
 				FE7347F427E715A60019DB4F /* DataProvider.framework */,

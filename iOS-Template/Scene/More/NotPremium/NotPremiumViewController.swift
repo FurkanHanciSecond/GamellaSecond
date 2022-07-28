@@ -20,7 +20,7 @@ final class NotPremiumViewController: BaseViewController<NotPremiumViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemBackground
         self.navigationItem.setHidesBackButton(true, animated: true)
         view.addSubview(continueButton)
         continueButton.edgesToSuperview(insets: .horizontal(16) + .vertical(16))
