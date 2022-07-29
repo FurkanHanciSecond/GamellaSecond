@@ -9,6 +9,7 @@ import UIKit
 import UIComponents
 import StoreKit
 import BLTNBoard
+import MobilliumUserDefaults
 final class SettingsViewController: BaseViewController<SettingsViewModel> {
     
     private lazy var bulletinManager: BLTNItemManager = {
@@ -33,6 +34,14 @@ final class SettingsViewController: BaseViewController<SettingsViewModel> {
         subscribeViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let isPremium = DefaultsKey.isPremium.value {
+            if isPremium == false {
+                presentBulletIn()
+            }
+        }
+    }
 }
 
 // MARK: - UILayout
@@ -52,7 +61,6 @@ extension SettingsViewController {
 // MARK: - Configure
 extension SettingsViewController {
     private func configureContents() {
-        presentBulletIn()
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
@@ -120,7 +128,7 @@ extension SettingsViewController: UITableViewDelegate {
 // MARK: - SettingsSecondCellDelegate
 extension SettingsViewController: SettingsSecondCellDelegate {
     func premiumTapped() {
-        viewModel.presentPaywall()
+        viewModel.premiumTapped()
     }
 }
 

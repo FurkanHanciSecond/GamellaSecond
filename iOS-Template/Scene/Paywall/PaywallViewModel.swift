@@ -32,6 +32,7 @@ final class PaywallViewModel: BaseViewModel<PaywallRouter>, PaywallViewProtocol 
     }
     
     func becomePremiumTapped() {
+        AppGroupDefaults.shared.becomePremium()
         DefaultsKey.isPremium.value = true
         router.close()
     }

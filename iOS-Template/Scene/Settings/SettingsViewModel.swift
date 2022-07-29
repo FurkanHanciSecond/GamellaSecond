@@ -8,6 +8,7 @@
 import Foundation
 import StoreKit
 import Utilities
+import MobilliumUserDefaults
 protocol SettingsViewModelDelegate {
     func feedBackButtonTapped()
     func shareButtonTapped()
@@ -26,7 +27,6 @@ protocol SettingsViewEventSource {
 
 protocol SettingsViewProtocol: SettingsViewDataSource, SettingsViewEventSource {
     func didLoad()
-    func presentPaywall()
 }
 
 final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtocol , SettingsViewModelDelegate {
@@ -49,9 +49,6 @@ final class SettingsViewModel: BaseViewModel<SettingsRouter>, SettingsViewProtoc
         getGiveawayDatas()
     }
     
-    func presentPaywall() {
-        router.presentPaywall()
-    }
 }
 
 // MARK: - DataSource
@@ -108,6 +105,12 @@ extension SettingsViewModel {
     }
     
     func premiumTapped() {
-        router.presentPaywall()
+        if let isPremium = DefaultsKey.isPremium.value {
+            if isPremium == false {
+                router.presentPaywall()
+            } else {
+                EntryKitHelper.show("You are already have premium", type: .error)
+            }
+        }
     }
 }

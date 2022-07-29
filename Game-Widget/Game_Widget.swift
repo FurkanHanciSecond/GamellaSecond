@@ -20,12 +20,11 @@ struct Game_WidgetEntryView : View {
     @State private var mediumRange: Range<Int> = 0..<1
     let randomInt = Int.random(in: 0..<10)
     @Environment(\.widgetFamily) var family
+    @AppStorage("isPremium" , store: UserDefaults(suiteName: "group.com.furkanhanci.Gamella")) var isPremium: Bool = Bool()
     var body: some View {
-        
         switch family {
         case .systemLarge:
             largeSizeWidget()
-            
         case .systemMedium:
             mediumSizeWidget()
             
@@ -37,107 +36,121 @@ struct Game_WidgetEntryView : View {
     
     @ViewBuilder
     func mediumSizeWidget() -> some View {
-        GeometryReader { geo in
-            ZStack {
-            LinearGradient(colors: [Color("GamePurple"), Color("Fuschia")], startPoint: .topLeading, endPoint: .bottomTrailing)
-            
-            VStack {
-                Text("Magic Game 🤐 🕹👇")
-                    .font(.system(size: 15))
-                    .fontWeight(.bold)
-                    .padding(.top , 20)
+        if isPremium {
+            GeometryReader { geo in
+                ZStack {
+                LinearGradient(colors: [Color("GamePurple"), Color("Fuschia")], startPoint: .topLeading, endPoint: .bottomTrailing)
                 
-                Spacer()
-                ForEach(mediumRange , id: \.self) { gameData in
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: geo.size.width / 1.05 , height: 75)
-                            .foregroundColor(.white)
-                        HStack {
-                            Image(systemName: "gamecontroller")
-                                .foregroundColor(.black)
-                            VStack {
-                                Text(data.widgetData[gameData + randomInt].title ?? "")
-                                    .font(.system(size: 13))
-                                    .foregroundColor(.black)
-                                    .lineLimit(2)
-                                
-                                Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
-                                    .font(.system(size: 13))
-                                    .foregroundColor(.green)
-                                
-                                Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
-                                    .font(.system(size: 13))
-                                    .fontWeight(.light)
-                                    .foregroundColor(.black)
-                                
-                                Text("Published Date: \(data.widgetData[gameData + randomInt].publishedDate ?? "")")
-                                    .font(.system(size: 8))
-                                    .fontWeight(.light)
-                                    .foregroundColor(Color("GameIndigo"))
-                                    .lineLimit(2)
-                            }
-                            
-                        }
-                        .frame(width: 200)
-                        
-                    }.padding(.bottom , 5)
-                }
-            }
-        }
-            
-        }
-    }
-    
-    @ViewBuilder
-    func largeSizeWidget() -> some View {
-        GeometryReader { geo in
-            
-            ZStack {
-                LinearGradient(colors: [Color("GamePurple") , Color("GameIndigo") , Color("GameOrange")], startPoint: .bottomLeading, endPoint: .topTrailing)
                 VStack {
-                    Text("Some of Games 👾 🎮")
-                        .font(.system(size: 25))
+                    Text("Magic Game 🤐 🕹👇")
+                        .font(.system(size: 15))
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
                         .padding(.top , 20)
+                    
                     Spacer()
-                    ForEach(range , id: \.self) { gameData in
+                    ForEach(mediumRange , id: \.self) { gameData in
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .frame(width: geo.size.width / 1.10 , height: 100)
+                                .frame(width: geo.size.width / 1.05 , height: 75)
                                 .foregroundColor(.white)
                             HStack {
                                 Image(systemName: "gamecontroller")
                                     .foregroundColor(.black)
                                 VStack {
                                     Text(data.widgetData[gameData + randomInt].title ?? "")
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 13))
                                         .foregroundColor(.black)
                                         .lineLimit(2)
                                     
                                     Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 13))
                                         .foregroundColor(.green)
                                     
                                     Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 13))
                                         .fontWeight(.light)
                                         .foregroundColor(.black)
                                     
                                     Text("Published Date: \(data.widgetData[gameData + randomInt].publishedDate ?? "")")
-                                        .font(.system(size: 10))
-                                        .fontWeight(.regular)
+                                        .font(.system(size: 8))
+                                        .fontWeight(.light)
                                         .foregroundColor(Color("GameIndigo"))
                                         .lineLimit(2)
                                 }
                                 
-                            }.frame(width: 200)
+                            }
+                            .frame(width: 200)
                             
-                        }
+                        }.padding(.bottom , 5)
                     }
-                }.padding(.bottom , 30)
+                }
             }
+                
+            }
+        } else {
+            Text("You'll need have purchased premium to use this Widget.")
+                .font(.system(size: 20))
+                .fontWeight(.bold)
+            
+        }
+       
+    }
+    
+    @ViewBuilder
+    func largeSizeWidget() -> some View {
+        if isPremium {
+            GeometryReader { geo in
+                
+                ZStack {
+                    LinearGradient(colors: [Color("GamePurple") , Color("GameIndigo") , Color("GameOrange")], startPoint: .bottomLeading, endPoint: .topTrailing)
+                    VStack {
+                        Text("Some of Games 👾 🎮")
+                            .font(.system(size: 25))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.top , 20)
+                        Spacer()
+                        ForEach(range , id: \.self) { gameData in
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .frame(width: geo.size.width / 1.10 , height: 100)
+                                    .foregroundColor(.white)
+                                HStack {
+                                    Image(systemName: "gamecontroller")
+                                        .foregroundColor(.black)
+                                    VStack {
+                                        Text(data.widgetData[gameData + randomInt].title ?? "")
+                                            .font(.system(size: 15))
+                                            .foregroundColor(.black)
+                                            .lineLimit(2)
+                                        
+                                        Text("Price: \(data.widgetData[gameData + randomInt].worth ?? "")")
+                                            .font(.system(size: 15))
+                                            .foregroundColor(.green)
+                                        
+                                        Text("Status: \(data.widgetData[gameData + randomInt].status?.rawValue ?? "")")
+                                            .font(.system(size: 15))
+                                            .fontWeight(.light)
+                                            .foregroundColor(.black)
+                                        
+                                        Text("Published Date: \(data.widgetData[gameData + randomInt].publishedDate ?? "")")
+                                            .font(.system(size: 10))
+                                            .fontWeight(.regular)
+                                            .foregroundColor(Color("GameIndigo"))
+                                            .lineLimit(2)
+                                    }
+                                    
+                                }.frame(width: 200)
+                                
+                            }
+                        }
+                    }.padding(.bottom , 30)
+                }
+            }
+        } else {
+            Text("You'll need have purchased premium to use this Widget.")
+                .font(.system(size: 20))
+                .fontWeight(.bold)
         }
         
     }
