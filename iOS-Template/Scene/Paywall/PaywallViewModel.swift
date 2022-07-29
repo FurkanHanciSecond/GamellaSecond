@@ -7,6 +7,12 @@
 
 import UIKit
 import MobilliumUserDefaults
+
+protocol PaywallViewModelDelegate {
+    func dismissButtonTapped()
+    func becomePremiumTapped()
+}
+
 protocol PaywallViewDataSource {}
 
 protocol PaywallViewEventSource {
@@ -17,7 +23,7 @@ protocol PaywallViewProtocol: PaywallViewDataSource, PaywallViewEventSource {
     func didLoad()
 }
 
-final class PaywallViewModel: BaseViewModel<PaywallRouter>, PaywallViewProtocol {
+final class PaywallViewModel: BaseViewModel<PaywallRouter>, PaywallViewProtocol , PaywallViewModelDelegate {
     
     func didLoad() {
         print("didload")
@@ -26,7 +32,10 @@ final class PaywallViewModel: BaseViewModel<PaywallRouter>, PaywallViewProtocol 
     var backgroundColor: UIColor {
         return .systemBackground
     }
-    
+}
+
+// MARK: - Actions
+extension PaywallViewModel {
     func dismissButtonTapped() {
         router.close()
     }
